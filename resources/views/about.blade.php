@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 <div id="main_image"><img id="main_img" src="img/mount.jpeg"> </div>
