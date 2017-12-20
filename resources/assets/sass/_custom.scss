@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana,sans-serif;
+}
+/* --------------------------Header------------------------------- */
+.header {
+    background-color: #ffffff;
+    text-align: center;
+}
+IMG.logo{
+    width: 8%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* -------------- Navigation Bar ------------------- */
+.nav {
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav_item_left,.LogStat_dropdown {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* ----Left Nav----*/
+.nav_item_left {
+    float: left;
+}
+/* Change the link color to #111 (black) on hover */
+.nav_item_left:hover{
+    background-color: #111;
+}
+
+
+/*----Right nav-----*/
+.LogStat_dropdown {
+    overflow: hidden;
+    float: right;;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.LogStat_dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #747474;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(87, 95, 84, 0.64);
+    z-index: 1;
+    margin-top: 12px;
+    float: none;
+
+}
+/* Links inside the dropdown */
+.LogStat_dropdown_content a {
+    color: #f9f9f9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Change color of dropdown links on hover */
+.LogStat_dropdown_content a:hover {
+    background-color: #f9f9f9;
+    color: #2a2a2a;
+}
+/* Show the dropdown menu on hover */
+.LogStat_dropdown:hover .LogStat_dropdown_content {
+    display: block;
+}
+.icon_Cart{
+    width: 20px;
+    float: left;
+}
+
+
+
+/*-----------------Footer-------------------*/
+.footer {
+    background-color: #333;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.icon{
+    width: 20px;
+    float: right;
+    margin: 2px;
+}
+
+
