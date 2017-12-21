@@ -8,30 +8,44 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'webtech') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet"  href="/css/app.css"> 
+    <!--<link rel="stylesheet"  href="/css/app.css"> -->
     <link href="{{ asset('css/all.css') }}" media="all" rel="stylesheet" type="text/css" />
        
     <!--Script-->    
     <script type="text/javascript" src="{{ asset('js/productslide.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/overlayer.js') }}"></script>
 </head>
+<!-- damit das erste bild angezeit wird des Products
+@if(Request::is('/shop/show'))
+<body onload="showSlides(1)">
+@else
+<body>
+@endif
+    -->
 <body>
     <div id="app">
         @include ('inc.header')
         @include('inc.navbar')
         @include ('inc/messages')
         @yield('content')
+        
+        <!-- auth hat eigens login erstellt overlayer derzeit zu kompliziert
         <div id="overlayer">
         @include('login')
         </div>  
+        -->
 
         @include ('inc/footer')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!--Texteditorbar to use for text areas ..by giving id="article-ckeditor"
+        <script>
+            CKEDITOR.replace('article-ckeditor');
+        </script>-->
 </body>
 </html>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/*NOT USED / NEEDED -- replaced by AuthControllers*/
+
 class UserController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+        
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +25,7 @@ class UserController extends Controller
     public function create()
     {
         //Register
-        return view('user.create');
+        
     }
 
     /**
@@ -34,39 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //make New User after Register
-
-       $this->validate($request, [
-       'firstname'=>'required',
-        'lastname'=>'required',
-        'email'=>'required',
-        'password'=>'required',
-       ]);
-
-       //Create User 
-       $user  = new User;
-       /*
-        //Create new Message
-      $register =new Register;
-      $register->firstName =$request->input('firstname');
-      $register->lastName =$request->input('lastname');
-      $register->email =$request->input('email');
-      //$register->password =$request->input('password');
-      $register->street =$request->input('street');
-      $register->city =$request->input('city');
-      $register->zipcode =$request->input('zipcode');
-      $register->country =$request->input('country');
-
-      $register->confcode="notavalible";
-      $register->status=0; 
-
-      //Save Message
-      $register->save();
-      */
-
-
-      //Redirect
-      return redirect('/')->with('success','Successfuly registered');
+       
 
     }
 

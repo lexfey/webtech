@@ -1,5 +1,4 @@
-@extends('layouts.app2')
-<!--user/{{$user->id}}/edit-->
+@extends('layouts.app')
 
 @section('content') 
     <h2>Account</h2>

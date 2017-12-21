@@ -1,64 +1,41 @@
+<nav class="navbar navbar-inverse">
+            <div class="nav">
+                
+                <!-- Left Side Of Navbar -->
+                <a class="nav_item_left" href="#">Home</a></li>
+                <a class="nav_item_left" href="{{ route('shop.index') }}">Shop</a></li>
+                <a class="nav_item_left" href="/">About</a></li>
 
- <nav class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                <!-- Right Side Of Navbar -->
+                <div class="LogStat_dropdown">
+                    <!-- Authentication Links -->
+                    @guest
+                         <span class="log_status">Not LoggedIn</span>
+                         <div class="LogStat_dropdown_content">
+                            <a href="cart.php"><img src="img/cart.png" class="icon_Cart">Cart</a>
+                            <a  href="{{ route('login') }}">Login</a>
+                            <a  href="{{ route('register') }}">Register</a>
+                         </div>
+                    @else
+                        <span class="log_status">{{ Auth::user()->name }}</span>
+                         <div class="LogStat_dropdown_content">
+                            <a href="#"><img src="img/cart.png" class="icon_Cart">Cart</a>
+                            <a  href="profile">Profile</a>
+                            <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                       <li> <a class="nav_item_left" href="#">Home</a></li>
-                        <li><a class="nav_item_left" href="shop">Shop</a></li>
-                        <li><a class="nav_item_left" href="/">About</a></li>
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                            <li><a href="cart.php"><img src="img/cart.png" class="icon_Cart">Cart</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                    <li><a  href="profile">Profile</a></li>
-                                    <li><a  href="#">Settings</a></li>
-                                      <li><a href="cart.php"><img src="img/cart.png" class="icon_Cart">Cart</a></li>
-                                    
-                                </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                             </li>
-                        @endguest
-                    </ul>
+                         </div>
+                    @endguest
                 </div>
+               
             </div>
         </nav>

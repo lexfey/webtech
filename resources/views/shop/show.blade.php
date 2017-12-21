@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 
 <!--
 ToDo with $product->X die daten des produkts aufrufen

@@ -7,18 +7,13 @@ use App\Product;   //The model
 
 class ProductController extends Controller
 {
-     /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //Alternativ:
-        //$posts =Post::orderBy('titel', 'desc')->get();
-        //return Post::where('titel', 'Post Two')->get();
-        //$posts =DB::select('SELECT * FROM posts');
-
          $products = Product::all(); //gets all the Data
         return view('shop.index')->with('products', $products);
     }
@@ -30,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //Use for edeting the Products by admin
+        return view('shop.create');
     }
 
     /**
@@ -41,7 +36,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //make New Product
+
+       $this->validate($request, [
+       //What needs to be validated
+       ]);
+
+       //Create Product 
+       $product  = new Product;
+    
+      /*       
+      $pruduct->para =$request->input('para');
+      .....
+      
+
+      //Save Message
+      $product->save();
+      */
+
+
+      //Redirect
+      return redirect('/')->with('success','Successfuly registered');
     }
 
     /**
@@ -64,7 +79,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+       return view('shop.edit');
     }
 
     /**
@@ -76,7 +91,26 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         //make New Product
+
+       $this->validate($request, [
+       //What needs to be validated
+       ]);
+
+       //Create Product 
+       $product  = Product::find($id);       
+       
+      /*
+      $pruduct->para =$request->input('para');
+      .....
+      
+
+      //Save Message
+      $product->save();
+      */
+
+      //Redirect
+      return redirect('shop.index')->with('success','Successfuly registered');
     }
 
     /**
