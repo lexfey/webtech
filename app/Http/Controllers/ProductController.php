@@ -118,7 +118,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-       return view('shop.edit');
+       $product= Product::find($id);
+       return view('shop.edit')->with('product', $product);
     }
 
     /**
@@ -130,26 +131,51 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-         //make New Product
-
+        //What needs to be validated
        $this->validate($request, [
-       //What needs to be validated
+        'name' =>'required',
+        'price' =>'required',
+        'image'=>'image|max:1999',
        ]);
 
-       //Create Product 
-       $product  = Product::find($id);       
-       
-      /*
-      $pruduct->para =$request->input('para');
-      .....
+       //Handel file upload for img |nullable| (here no nullable possible)
+       /*
+       * Saves file new under unique name and gives the name to database
+       */
+       if($request->hasFile('image')){
+        //Get filename with the extension
+          $filenameWithEXT= $request->file('image')->getClientOriginalName();
+          //Get just filename
+          $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+          //Get just ext
+          $extension = $request->file('image')->getClientOriginalExtension();
+          //Filename to store
+          $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
+          //Upload Image
+          $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+       }
+
+
+      //Create new Product 
+      $product = Product::find($id); 
+      
+      $product->name = $request->input('name');
+      $product->descr = $request->input('descr');
+      if($request->hasFile('cover_image')){
+          $product->image = $fileNameToStore;
+      }
+      $product->size = $request->input('size');
+      $product->color = $request->input('color');
+      $product->status = $request->input('status');
+      $product->price = $request->input('price');
+        
+      //Save Product
+      $product->save();
       
 
-      //Save Message
-      $product->save();
-      */
-
       //Redirect
-      return redirect('shop.index')->with('success','Successfuly registered');
+      return redirect('/shop')->with('success','Successfuly edited');
+      
     }
 
     /**
@@ -160,6 +186,20 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        //toDo Check for admin rights?! 
+
+       // mag nicht
+        /*
+       if($product->image != 'noimage.jpg'){
+            // Delete Image
+            Storage::delete('public/images/'.$product->image);
+        }
+        */
+
+        $product->delete();
+        return redirect('/shop')->with('success','Successfuly deleted');
+        
     }
 }

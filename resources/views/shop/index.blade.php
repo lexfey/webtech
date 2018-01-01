@@ -6,17 +6,19 @@
         <div class="column side">
             <h2>Side</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-            <!--ToDo überprüfe ob admin rechte -->
-            <a href="shop/create" class="btn" id="Button">
-                add Product
-            </a>
-             <a href="shop/edit" class="btn" id="Button">
-                edit Product
-            </a>
+            
+            <!--Just for Admin -->
+             @if(!Auth::guest())
+                @if(Auth::user()->name == 'Admin')
+                    <a href="shop/create" class="btn" id="Button">
+                        add Product
+                    </a>
+                @endif
+            @endif
+
         </div>
         <div class="column middle">
             <!--Get Products from Database-->
-
             @if(count($products)>0)
                   @foreach($products as $product)
                     <div class="gallery">
@@ -31,36 +33,6 @@
             <div class="gallery">
                 <a href="shop/show">
                     <img src="img/shop1.jpg" alt="Fjords" width="800" height="800">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a  href="#">
-                    <img src="img/shop2.jpeg" alt="Forest" width="800" height="800">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a  href="#">
-                    <img src="img/shop3.jpg" alt="Forest" width="800" height="800">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a  href="#">
-                    <img src="img/shop4.jpg" alt="Fjords" width="800" height="800">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a  href="#">
-                    <img src="img/shop5.jpg" alt="Forest" width="800" height="800">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a  href="#">
-                    <img src="img/shop6.jpg" alt="Forest" width="800" height="800">
                 </a>
                 <div class="desc">Add a description of the image here</div>
             </div>

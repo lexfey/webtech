@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="registerbox">
-<h2>Editing the ProductDatabase for Admin</h2>
+<h2>Adding to the ProductDatabase for Admin</h2>
 {!! Form::open(['action' => 'ProductController@store', 'method'=> 'POST', 'enctype' => 'multipart/form-data']) !!}
 	<div class="form-group">
 		{{Form::label('name', 'Product Name')}}

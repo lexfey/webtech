@@ -11,7 +11,7 @@ ToDo with $product->X die daten des produkts aufrufen
         <div class="container">
             <!-- Full-width images with number text -->
             <div class="mySlides">
-                 <img src="public/img/product1.jpg" style="width:100%">
+                 <img src="/storage/images/{{$product->image}}" style="width:100%">
             </div>
             <div class="mySlides">
                  <img src="img/product2.jpg" style="width:100%">
@@ -32,7 +32,7 @@ ToDo with $product->X die daten des produkts aufrufen
             <!-- Thumbnail images -->
             <div class="row">
                 <div class="column">
-                    <img class="demo cursor" src="img/product1.jpg" style="width:100%" onclick="currentSlide(1)" >
+                    <img class="demo cursor" src="/storage/images/{{$product->image}}" style="width:100%" onclick="currentSlide(1)" >
                 </div>
                 <div class="column">
                     <img class="demo cursor" src="img/product2.jpg" style="width:100%" onclick="currentSlide(2)" >
@@ -51,21 +51,25 @@ ToDo with $product->X die daten des produkts aufrufen
     <div class="column-right">
         <form method="post" action="cart.php">
             <div class="product_description">
-                <p class="product_name">Hoodie mit Motiv </p>
-                <p class="product_price"> 29,99 </p>
+                <p class="product_name">{{$product->name}}</p>
+                <p class="product_price">{{$product->price}}</p>
+                <p>{{$product->descr}}</p>
             </div>
 
             <div class="product_description">
             <p class="lables">Color</p>
-            <ul class="color_option">   <!--todo once clicked a link reload the size and:- mark choosen color - enable "add to cart" - change pic if possible -->
+            <p class="color">{{$product->color}}</p>
+           <!-- <ul class="color_option">    
                 <li class="color"><a href="#"><img src="img/red.png"></a></li>
                 <li class="color"><a href="#"><img src="img/green.png"></a></li>
                 <li class="color"><a href="#"><img src="img/yellow.jpe"></a></li>
-            </ul>
+            </ul> -->
             </div>
 
             <div class="product_description">
             <span class="lables">Size</span><span class="product_options">
+                <p>{{$product->size}}</p>
+                <!--
                 <select name="Size">
                     <option value="null">    </option>
 	                <option value="S">S</option>
@@ -73,9 +77,19 @@ ToDo with $product->X die daten des produkts aufrufen
                     <option value="L">L</option>
                     <option value="XL">XL</option>
                 </select>
+                -->
             </span>
             <a href="#">Sizetable</a>
             </div>
+
+            <!--Nur für Admin-->
+             @if(!Auth::guest())
+                @if(Auth::user()->name == 'Admin')
+                    <a href="/shop/{{$product->id}}/edit" class="btn" id="Button">
+                        edit Product
+                    </a>
+                @endif
+            @endif
 
             <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
         </form>
