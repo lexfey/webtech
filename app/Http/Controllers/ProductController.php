@@ -3,10 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;   //The model
+//use Illuminate\Support\Facades\Storage; 
+use App\Product;   
+//use DB;
 
 class ProductController extends Controller
 {
+   //Überprüfen ob user eingeloggt ist. Hier nicht notwendig (aber vielleicht wo anders später) 
+   /**
+     * Create a new controller instance.
+     *
+     * @return void
+   public function __construct()
+    {
+    $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+   */
+
    /**
      * Display a listing of the resource.
      *
@@ -14,7 +27,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-         $products = Product::all(); //gets all the Data
+        $products = Product::all(); //gets all the Data
         return view('shop.index')->with('products', $products);
     }
 
@@ -30,33 +43,59 @@ class ProductController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *  created New Product is saved to Database
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)  
     {
-        //make New Product
-
+       
+      //What needs to be validated
        $this->validate($request, [
-       //What needs to be validated
+        'name' =>'required',
+        'price' =>'required',
+        'image'=>'image|max:1999|required',
        ]);
 
-       //Create Product 
-       $product  = new Product;
-    
-      /*       
-      $pruduct->para =$request->input('para');
-      .....
+       //Handel file upload for img |nullable| (here no nullable possible)
+       /*
+       * Saves file new under unique name and gives the name to database
+       */
+       if($request->hasFile('image')){
+        //Get filename with the extension
+          $filenameWithEXT= $request->file('image')->getClientOriginalName();
+          //Get just filename
+          $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+          //Get just ext
+          $extension = $request->file('image')->getClientOriginalExtension();
+          //Filename to store
+          $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
+          //Upload Image
+          $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+       }else{
+          $fileNameToStore = 'noimage.jpg';
+       }
+
+
+      //Create new Product 
+      $product =new Product; 
+      
+      $product->name = $request->input('name');
+      $product->descr = $request->input('descr');
+      $product->image = $fileNameToStore;
+      $product->size = $request->input('size');
+      $product->color = $request->input('color');
+      $product->status = $request->input('status');
+      $product->price = $request->input('price');
+        
+      //Save Product
+      $product->save();
       
 
-      //Save Message
-      $product->save();
-      */
-
-
       //Redirect
-      return redirect('/')->with('success','Successfuly registered');
+      return redirect('/shop')->with('success','Successfuly added');
+
     }
 
     /**

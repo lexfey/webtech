@@ -6,15 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-	//By Default
-	/*
     //Table Name
-    protected $table = 'tests';
+    protected $table = 'products';
 
-    //PrimaryKey
+    //Primary Key
     public $primaryKey = 'id';
 
     //Timestamps
-    public $timestamps = ture; 
+    public $timestamps = true; 
+
+    //Um verbindung zu User herzustellen benötigt beim Warenkorb
+    /*
+    public function user(){
+    	return $this->belongsTo('App/User');
+    }
     */
+
 }

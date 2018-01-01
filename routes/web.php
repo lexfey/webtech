@@ -25,9 +25,8 @@ Route::get('/profile', function () {
 });
 
 Route::post('/contact/submit', 'MessageController@submit'); 
-
-
+ 
 Route::resource('/shop', 'ProductController'); 
 
 Auth::routes();
-Route::get('/dashboard', 'DashboardController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index');

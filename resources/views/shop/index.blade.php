@@ -6,20 +6,27 @@
         <div class="column side">
             <h2>Side</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+            <!--ToDo überprüfe ob admin rechte -->
+            <a href="shop/create" class="btn" id="Button">
+                add Product
+            </a>
+             <a href="shop/edit" class="btn" id="Button">
+                edit Product
+            </a>
         </div>
         <div class="column middle">
             <!--Get Products from Database-->
-            @if(count($products)>1)
-                  @foreach($products as $products)
+
+            @if(count($products)>0)
+                  @foreach($products as $product)
                     <div class="gallery">
-                         <a href="shop/{{$products->id}}">
-                         <img src={{$products->img}} alt={{$products->name}}>
+                         <a href="shop/{{$product->id}}">
+                         <img src="/storage/images/{{$product->image}}" alt="{{$product->name}}">
                         </a>
-                        <div class="desc">{{$products->description}}</div>
+                        <div class="desc">{{$product->descr}}</div>
                     </div>
                   @endforeach
             @else
-
             <!--Default Pics-->
             <div class="gallery">
                 <a href="shop/show">
@@ -58,6 +65,7 @@
                 <div class="desc">Add a description of the image here</div>
             </div>
             @endif
-        </div>    <!---toDo bind phpFile that creats for each Product one Gallary --->
+
+        </div>    <!--toDo bind phpFile that creats for each Product one Gallary-->
     </div>
 @endsection

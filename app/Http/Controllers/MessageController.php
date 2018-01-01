@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Message;
 
 class MessageController extends Controller
 {
@@ -19,30 +20,11 @@ class MessageController extends Controller
    //Wenn neuRegistrierung 
    public function submit(Request $request){
       $this->validate($request, [
-        'firstname'=>'required',
-        'lastname'=>'required',
-        'email'=>'required',
-        'password'=>'required',
+        'name'=>'required',
+        'email'=>'required'
       ]);
 
-      /*
-        //Create new Message
-      $register =new Register;
-      $register->firstName =$request->input('firstname');
-      $register->lastName =$request->input('lastname');
-      $register->email =$request->input('email');
-      //$register->password =$request->input('password');
-      $register->street =$request->input('street');
-      $register->city =$request->input('city');
-      $register->zipcode =$request->input('zipcode');
-      $register->country =$request->input('country');
-
-      $register->confcode="notavalible";
-      $register->status=0; 
-
-      //Save Message
-      $register->save();
-      */
+     
        //Create new Message
         $message =new Message;
         $message->name =$request->input('name');
@@ -53,7 +35,7 @@ class MessageController extends Controller
 
 
       //Redirect
-      return redirect('/')->with('success','Successfuly registered');
+      return redirect('/')->with('success','Successfuly send');
     }
 
 

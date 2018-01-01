@@ -43,9 +43,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <!--Texteditorbar to use for text areas ..by giving id="article-ckeditor"
+    <!--Texteditorbar to use for text areas ..by giving id="article-ckeditor"-->
         <script>
             CKEDITOR.replace('article-ckeditor');
-        </script>-->
+        </script>
 </body>
 </html>

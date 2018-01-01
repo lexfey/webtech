@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Ein user kann mehreren Produkten zu geordent werden, benötigt für warenkorb/bestellungen
+    /*
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
+    */
 }
