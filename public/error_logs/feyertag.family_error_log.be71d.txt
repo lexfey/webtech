@@ -1,0 +1,524 @@
+[Wed Dec 27 03:33:38 2017] [error] [client 176.50.223.153] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 03:33:38 2017] [error] [client 176.50.223.153] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 03:46:52 2017] [error] [client 91.234.62.57] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 03:46:52 2017] [error] [client 91.234.62.57] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 04:03:44 2017] [error] [client 37.192.242.69] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 04:03:44 2017] [error] [client 37.192.242.69] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 04:32:48 2017] [error] [client 82.209.232.150] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 04:32:48 2017] [error] [client 82.209.232.150] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 04:32:48 2017] [error] [client 82.209.232.150] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 04:32:48 2017] [error] [client 82.209.232.150] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 04:51:50 2017] [error] [client 94.139.228.190] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 04:51:50 2017] [error] [client 94.139.228.190] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 05:16:06 2017] [error] [client 188.191.24.174] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 05:16:06 2017] [error] [client 188.191.24.174] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 05:23:46 2017] [error] [client 46.219.99.56] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 05:23:46 2017] [error] [client 46.219.99.56] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 05:26:06 2017] [error] [client 94.139.228.190] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 05:26:06 2017] [error] [client 94.139.228.190] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 05:49:46 2017] [error] [client 95.31.35.93] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 05:49:47 2017] [error] [client 95.31.35.93] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 05:52:32 2017] [error] [client 5.141.212.171] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 05:52:32 2017] [error] [client 5.141.212.171] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 06:34:44 2017] [error] [client 90.143.159.241] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 06:34:44 2017] [error] [client 90.143.159.241] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 07:21:50 2017] [error] [client 213.87.240.195] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 07:21:50 2017] [error] [client 213.87.240.195] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 07:22:11 2017] [error] [client 78.37.31.208] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 07:22:11 2017] [error] [client 78.37.31.208] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 07:28:22 2017] [error] [client 213.24.127.115] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 07:28:22 2017] [error] [client 213.24.127.115] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 07:32:07 2017] [error] [client 46.37.128.73] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 07:32:08 2017] [error] [client 46.37.128.73] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 07:39:16 2017] [error] [client 79.122.168.14] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 07:39:16 2017] [error] [client 79.122.168.14] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 07:49:11 2017] [error] [client 185.11.48.246] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 07:49:11 2017] [error] [client 185.11.48.246] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 07:57:29 2017] [error] [client 94.254.88.110] File does not exist: /home/.sites/538/site7091147/web/wp-content
+[Wed Dec 27 07:57:29 2017] [error] [client 94.254.88.110] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 08:01:26 2017] [error] [client 79.71.151.224] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 08:01:26 2017] [error] [client 79.71.151.224] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 08:06:02 2017] [error] [client 91.234.153.194] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 08:06:02 2017] [error] [client 91.234.153.194] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 08:13:18 2017] [error] [client 185.17.133.192] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 08:13:20 2017] [error] [client 185.17.133.192] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 08:14:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 08:14:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:14:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 08:14:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:14:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 08:14:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:14:41 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/favicon.ico, referer: http://www.feyertag.family/
+[Wed Dec 27 08:14:41 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:31:57 2017] [error] [client 109.252.206.69] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 08:31:57 2017] [error] [client 109.252.206.69] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 08:39:06 2017] [error] [client 31.173.82.147] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 08:39:06 2017] [error] [client 31.173.82.147] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 08:42:52 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 08:51:17 2017] [error] [client 93.183.125.66] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 08:51:17 2017] [error] [client 93.183.125.66] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:01:34 2017] [error] [client 212.118.47.140] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:01:34 2017] [error] [client 212.118.47.140] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:03:15 2017] [error] [client 197.14.55.198] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:03:17 2017] [error] [client 197.14.55.198] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:04:51 2017] [error] [client 81.25.45.50] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:04:51 2017] [error] [client 81.25.45.50] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:15:08 2017] [error] [client 109.252.206.0] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:15:08 2017] [error] [client 109.252.206.0] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:23:05 2017] [error] [client 188.255.21.95] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:23:05 2017] [error] [client 188.255.21.95] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:23:48 2017] [error] [client 5.104.206.2] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:23:50 2017] [error] [client 5.104.206.2] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:28:51 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:28:51 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:29:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:31:13 2017] [error] [client 37.192.242.69] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:31:13 2017] [error] [client 37.192.242.69] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:31:29 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 09:31:29 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:41:07 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/favicon.ico
+[Wed Dec 27 09:41:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:41:08 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/favicon.ico
+[Wed Dec 27 09:41:08 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:49:24 2017] [error] [client 194.54.160.13] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:49:24 2017] [error] [client 194.54.160.13] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 09:52:11 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 09:52:12 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 09:58:56 2017] [error] [client 94.25.161.96] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 09:58:56 2017] [error] [client 94.25.161.96] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:07:53 2017] [error] [client 79.134.3.25] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:07:53 2017] [error] [client 79.134.3.25] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:09:49 2017] [error] [client 78.109.36.16] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:09:49 2017] [error] [client 78.109.36.16] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:10:40 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:10:40 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:15:20 2017] [error] [client 128.72.148.47] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:15:20 2017] [error] [client 128.72.148.47] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:16:07 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:07 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:09 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/favicon.ico, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:09 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:16:15 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:16:15 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:16:16 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:16:16 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:16:16 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:16:16 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:16:16 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:16:16 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 10:18:04 2017] [error] [client 95.182.44.198] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:18:04 2017] [error] [client 95.182.44.198] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:26:38 2017] [error] [client 145.255.30.169] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:26:40 2017] [error] [client 145.255.30.169] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:29:53 2017] [error] [client 176.124.146.249] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:29:53 2017] [error] [client 176.124.146.249] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:32:12 2017] [error] [client 31.132.188.8] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:32:12 2017] [error] [client 31.132.188.8] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:32:18 2017] [error] [client 82.140.201.216] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:32:18 2017] [error] [client 82.140.201.216] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:34:46 2017] [error] [client 195.94.238.50] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:34:46 2017] [error] [client 195.94.238.50] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:39:19 2017] [error] [client 194.190.137.61] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:39:19 2017] [error] [client 194.190.137.61] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:44:56 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 10:44:56 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:56 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:56 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:56 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:57 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:57 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:57 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:57 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:59 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/favicon.ico, referer: http://www.feyertag.family/
+[Wed Dec 27 10:44:59 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:51:22 2017] [error] [client 176.215.10.207] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:51:22 2017] [error] [client 176.215.10.207] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:54:07 2017] [error] [client 78.29.18.102] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 10:54:07 2017] [error] [client 78.29.18.102] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 10:58:19 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:20 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/favicon.ico, referer: http://www.feyertag.family/
+[Wed Dec 27 10:58:20 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 11:01:43 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/database/
+[Wed Dec 27 11:01:43 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/database/
+[Wed Dec 27 11:01:43 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/database/
+[Wed Dec 27 11:01:43 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/database/
+[Wed Dec 27 11:01:43 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/database/
+[Wed Dec 27 11:01:43 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/database/
+[Wed Dec 27 11:02:00 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 11:02:00 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:12:17 2017] [error] [client 178.72.73.17] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:12:17 2017] [error] [client 178.72.73.17] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:13:03 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/resources
+[Wed Dec 27 11:13:03 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:13:05 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/favicon.ico, referer: http://www.feyertag.family/resources/views/shop/show.blade.php
+[Wed Dec 27 11:13:05 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/views/shop/show.blade.php
+[Wed Dec 27 11:13:19 2017] [alert] [client 193.83.191.143] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 11:13:19 2017] [error] [client 193.83.191.143] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:14:31 2017] [error] [client 213.87.136.56] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:14:31 2017] [error] [client 213.87.136.56] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:18:40 2017] [error] [client 217.19.116.26] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:18:40 2017] [error] [client 217.19.116.26] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:19:04 2017] [error] [client 109.195.4.174] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:19:04 2017] [error] [client 109.195.4.174] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:24:24 2017] [alert] [client 2.247.250.142] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 11:24:24 2017] [error] [client 2.247.250.142] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 11:25:35 2017] [error] [client 95.83.40.146] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:25:35 2017] [error] [client 95.83.40.146] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:25:47 2017] [error] [client 194.190.42.28] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:25:47 2017] [error] [client 194.190.42.28] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:27:37 2017] [error] [client 87.117.185.180] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:27:37 2017] [error] [client 87.117.185.180] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:46:42 2017] [error] [client 188.94.174.93] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:46:42 2017] [error] [client 188.94.174.93] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:50:11 2017] [error] [client 77.114.168.42] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:50:11 2017] [error] [client 77.114.168.42] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:52:32 2017] [error] [client 213.87.161.154] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:52:32 2017] [error] [client 213.87.161.154] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 11:53:36 2017] [error] [client 87.245.166.242] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 11:53:36 2017] [error] [client 87.245.166.242] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:04:59 2017] [error] [client 109.195.81.143] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:05:01 2017] [error] [client 109.195.81.143] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:06:47 2017] [error] [client 217.118.64.52] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:06:47 2017] [error] [client 217.118.64.52] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:13:22 2017] [error] [client 178.214.34.144] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:13:22 2017] [error] [client 178.214.34.144] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:26:44 2017] [error] [client 36.79.141.90] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:26:44 2017] [error] [client 36.79.141.90] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:28:51 2017] [alert] [client 178.165.131.204] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 12:28:55 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:55 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:56 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:56 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:56 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:56 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:56 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:56 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:58 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/favicon.ico, referer: http://www.feyertag.family/
+[Wed Dec 27 12:28:58 2017] [error] [client 178.165.131.204] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 12:34:55 2017] [error] [client 86.57.133.2] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:34:55 2017] [error] [client 86.57.133.2] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:34:56 2017] [error] [client 86.57.133.2] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:34:56 2017] [error] [client 86.57.133.2] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:41:43 2017] [error] [client 91.210.133.2] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:41:43 2017] [error] [client 91.210.133.2] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 12:50:41 2017] [error] [client 94.29.126.93] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 12:50:42 2017] [error] [client 94.29.126.93] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:03:01 2017] [error] [client 217.25.233.185] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 13:03:01 2017] [error] [client 217.25.233.185] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:22:49 2017] [error] [client 196.203.219.138] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 13:22:49 2017] [error] [client 196.203.219.138] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:26:56 2017] [error] [client 89.208.132.99] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 13:26:56 2017] [error] [client 89.208.132.99] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:34:37 2017] [error] [client 66.249.64.155] File does not exist: /home/.sites/538/site7091147/web/robots.txt
+[Wed Dec 27 13:34:37 2017] [error] [client 66.249.64.155] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:34:38 2017] [alert] [client 66.249.64.155] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 13:39:57 2017] [error] [client 109.194.199.3] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 13:39:57 2017] [error] [client 109.194.199.3] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:41:08 2017] [error] [client 185.107.214.134] File does not exist: /home/.sites/538/site7091147/web/wp-content
+[Wed Dec 27 13:41:08 2017] [error] [client 185.107.214.134] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:41:08 2017] [error] [client 185.107.214.134] File does not exist: /home/.sites/538/site7091147/web/wp-content
+[Wed Dec 27 13:41:08 2017] [error] [client 185.107.214.134] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 13:56:30 2017] [error] [client 94.50.1.96] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 13:56:30 2017] [error] [client 94.50.1.96] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 14:03:19 2017] [error] [client 188.113.29.41] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 14:03:19 2017] [error] [client 188.113.29.41] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 14:19:34 2017] [error] [client 46.158.67.164] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 14:19:34 2017] [error] [client 46.158.67.164] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 14:34:53 2017] [error] [client 188.191.24.174] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 14:34:53 2017] [error] [client 188.191.24.174] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 14:42:13 2017] [error] [client 195.158.250.202] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 14:42:13 2017] [error] [client 195.158.250.202] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 14:50:40 2017] [error] [client 109.108.49.200] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 14:50:40 2017] [error] [client 109.108.49.200] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 14:53:22 2017] [alert] [client 178.165.129.12] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 14:53:30 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:30 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:31 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:31 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:32 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:32 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:56 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:56 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:57 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:57 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:57 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:53:57 2017] [error] [client 178.165.129.12] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [alert] [client 213.225.4.99] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 14:55:33 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 14:58:47 2017] [error] [client 37.205.52.53] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 14:58:47 2017] [error] [client 37.205.52.53] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 15:05:06 2017] [alert] [client 213.225.4.99] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:06 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:05:15 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/database/
+[Wed Dec 27 15:05:15 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/database/
+[Wed Dec 27 15:05:15 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/database/
+[Wed Dec 27 15:05:15 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/database/
+[Wed Dec 27 15:05:15 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/database/
+[Wed Dec 27 15:05:15 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/database/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:20 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:05:24 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/app/Http/
+[Wed Dec 27 15:16:02 2017] [error] [client 213.141.244.204] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 15:16:02 2017] [error] [client 213.141.244.204] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 15:19:24 2017] [error] [client 46.45.15.160] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 15:19:24 2017] [error] [client 46.45.15.160] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 15:21:55 2017] [error] [client 77.87.102.103] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 15:21:55 2017] [error] [client 77.87.102.103] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 15:23:20 2017] [error] [client 5.141.212.171] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 15:23:20 2017] [error] [client 5.141.212.171] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 15:30:00 2017] [alert] [client 213.225.4.99] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 15:30:00 2017] [error] [client 213.225.4.99] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 15:50:20 2017] [error] [client 5.141.215.20] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 15:50:20 2017] [error] [client 5.141.215.20] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 16:01:23 2017] [error] [client 188.186.57.121] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 16:01:23 2017] [error] [client 188.186.57.121] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 16:21:26 2017] [error] [client 93.116.212.103] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 16:21:26 2017] [error] [client 93.116.212.103] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 16:32:48 2017] [error] [client 80.250.213.58] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 16:32:48 2017] [error] [client 80.250.213.58] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 16:42:56 2017] [error] [client 37.144.86.228] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 16:42:56 2017] [error] [client 37.144.86.228] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 16:54:25 2017] [error] [client 77.73.111.254] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 16:54:25 2017] [error] [client 77.73.111.254] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 17:24:16 2017] [error] [client 93.170.247.149] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 17:24:16 2017] [error] [client 93.170.247.149] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 17:28:31 2017] [error] [client 185.76.80.165] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 17:28:31 2017] [error] [client 185.76.80.165] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 17:29:06 2017] [error] [client 188.170.202.125] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 17:29:06 2017] [error] [client 188.170.202.125] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 17:40:10 2017] [error] [client 5.142.127.133] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 17:40:10 2017] [error] [client 5.142.127.133] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 17:40:11 2017] [error] [client 188.18.112.144] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 17:40:11 2017] [error] [client 188.18.112.144] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 17:40:57 2017] [error] [client 195.68.163.154] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 17:40:57 2017] [error] [client 195.68.163.154] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 17:46:08 2017] [error] [client 94.242.155.157] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 17:46:08 2017] [error] [client 94.242.155.157] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 18:21:11 2017] [error] [client 178.46.213.163] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 18:21:11 2017] [error] [client 178.46.213.163] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 18:37:11 2017] [error] [client 188.170.83.120] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 18:37:11 2017] [error] [client 188.170.83.120] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 18:37:39 2017] [error] [client 85.143.164.122] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 18:37:39 2017] [error] [client 85.143.164.122] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 18:54:46 2017] [error] [client 93.124.9.231] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 18:54:46 2017] [error] [client 93.124.9.231] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 18:58:39 2017] [error] [client 212.49.121.254] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 18:58:39 2017] [error] [client 212.49.121.254] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 19:01:55 2017] [error] [client 93.94.156.42] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 19:01:55 2017] [error] [client 93.94.156.42] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 19:07:06 2017] [error] [client 95.73.196.35] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 19:07:06 2017] [error] [client 95.73.196.35] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 19:09:48 2017] [error] [client 43.239.73.34] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 19:09:48 2017] [error] [client 43.239.73.34] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 19:18:21 2017] [error] [client 31.51.170.161] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 19:18:21 2017] [error] [client 31.51.170.161] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 19:19:01 2017] [error] [client 79.133.105.33] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 19:19:01 2017] [error] [client 79.133.105.33] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:11:42 2017] [error] [client 178.22.55.149] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:11:42 2017] [error] [client 178.22.55.149] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:13:38 2017] [error] [client 85.140.92.36] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:13:38 2017] [error] [client 85.140.92.36] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:14:16 2017] [error] [client 103.10.61.82] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:14:16 2017] [error] [client 103.10.61.82] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:20:08 2017] [error] [client 93.85.212.109] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:20:08 2017] [error] [client 93.85.212.109] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:36:04 2017] [alert] [client 91.141.0.211] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:04 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 20:36:36 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/resources/
+[Wed Dec 27 20:36:36 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/resources/
+[Wed Dec 27 20:36:36 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/
+[Wed Dec 27 20:36:36 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/
+[Wed Dec 27 20:36:36 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/resources/
+[Wed Dec 27 20:36:36 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:36:40 2017] [error] [client 91.141.0.211] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/resources/views/
+[Wed Dec 27 20:41:18 2017] [error] [client 176.59.193.183] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:41:18 2017] [error] [client 176.59.193.183] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:46:16 2017] [error] [client 85.143.164.122] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:46:16 2017] [error] [client 85.143.164.122] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:48:33 2017] [error] [client 86.105.60.72] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:48:33 2017] [error] [client 86.105.60.72] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 20:53:45 2017] [alert] [client 91.141.0.211] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 20:56:38 2017] [error] [client 85.114.17.218] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 20:56:38 2017] [error] [client 85.114.17.218] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 21:06:20 2017] [error] [client 91.122.73.222] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 21:06:20 2017] [error] [client 91.122.73.222] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 21:20:38 2017] [error] [client 78.138.169.142] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 21:20:38 2017] [error] [client 78.138.169.142] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 21:55:28 2017] [error] [client 178.173.22.39] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 21:55:28 2017] [error] [client 178.173.22.39] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 21:58:45 2017] [error] [client 77.87.102.103] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 21:58:45 2017] [error] [client 77.87.102.103] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 22:02:36 2017] [error] [client 85.143.164.122] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 22:02:36 2017] [error] [client 85.143.164.122] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 22:51:56 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:56 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:59 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/favicon.ico, referer: http://www.feyertag.family/
+[Wed Dec 27 22:51:59 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:01:52 2017] [error] [client 72.167.232.140] File does not exist: /home/.sites/538/site7091147/web/wp-content
+[Wed Dec 27 23:01:52 2017] [error] [client 72.167.232.140] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 23:01:52 2017] [error] [client 72.167.232.140] File does not exist: /home/.sites/538/site7091147/web/wp-content
+[Wed Dec 27 23:01:52 2017] [error] [client 72.167.232.140] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 23:09:10 2017] [error] [client 184.168.27.24] File does not exist: /home/.sites/538/site7091147/web/wp-content
+[Wed Dec 27 23:09:10 2017] [error] [client 184.168.27.24] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 23:09:10 2017] [error] [client 184.168.27.24] File does not exist: /home/.sites/538/site7091147/web/wp-content
+[Wed Dec 27 23:09:10 2017] [error] [client 184.168.27.24] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 23:15:58 2017] [error] [client 86.137.41.69] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 23:15:58 2017] [error] [client 86.137.41.69] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 23:25:44 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:44 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:25:55 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:25:55 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 23:27:35 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/icons, referer: http://www.feyertag.family/
+[Wed Dec 27 23:27:35 2017] [error] [client 62.47.31.119] File does not exist: /home/.sites/538/site7091147/web/error, referer: http://www.feyertag.family/
+[Wed Dec 27 23:31:51 2017] [error] [client 94.25.161.103] File does not exist: /home/.sites/538/site7091147/web/wp-login.php
+[Wed Dec 27 23:31:51 2017] [error] [client 94.25.161.103] File does not exist: /home/.sites/538/site7091147/web/error
+[Wed Dec 27 23:37:21 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:37:21 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:37:33 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:37:33 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:37:58 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
+[Wed Dec 27 23:37:58 2017] [alert] [client 62.47.31.119] /home/.sites/538/site7091147/web/public/.htaccess: Options not allowed here
