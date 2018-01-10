@@ -1,3 +1,3 @@
 <div class="header">
-        <img class="logo" src="img/logo.jpg">
+        <img class="logo" src="{{asset('img/logo.jpg')}}">
 </div>

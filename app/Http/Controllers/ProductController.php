@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Faker\Provider\File;
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Storage; 
+use Illuminate\Support\Facades\Storage;
 use App\Product;   
-//use DB;
+use DB;
 
 class ProductController extends Controller
 {
@@ -72,7 +73,9 @@ class ProductController extends Controller
           //Filename to store
           $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
           //Upload Image
-          $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+          //$request->file('image')->move('storage/app/public/images', $fileNameToStore);
+           
        }else{
           $fileNameToStore = 'noimage.jpg';
        }
@@ -94,7 +97,7 @@ class ProductController extends Controller
       
 
       //Redirect
-      return redirect('/shop')->with('success','Successfuly added');
+      return redirect('/shop')->with('success','Successfuly added'.$path.'.');
 
     }
 
@@ -153,6 +156,7 @@ class ProductController extends Controller
           $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
           //Upload Image
           $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+
        }
 
 
@@ -191,12 +195,12 @@ class ProductController extends Controller
         //toDo Check for admin rights?! 
 
        // mag nicht
-        /*
+
        if($product->image != 'noimage.jpg'){
             // Delete Image
             Storage::delete('public/images/'.$product->image);
         }
-        */
+
 
         $product->delete();
         return redirect('/shop')->with('success','Successfuly deleted');
