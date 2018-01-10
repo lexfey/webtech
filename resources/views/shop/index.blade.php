@@ -27,7 +27,7 @@
                   @foreach($products as $product)
                     <div class="gallery">
                          <a href="shop/{{$product->id}}">
-                         <img src="images/{{$product->image}}" alt="{{$product->name}}">
+                         <img src="{{asset('images/'.$product->image)}}" alt="{{$product->name}}">
                         </a>
                         <div class="desc">{{$product->descr}}</div>
                     </div>

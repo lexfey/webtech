@@ -11,8 +11,9 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
-        "unisharp/laravel-ckeditor": "^4.6"
-,         "intervention/image": "dev-master"    },
+        "unisharp/laravel-ckeditor": "^4.6",
+        "intervention/image": "dev-master"   
+    },
     "require-dev": {
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",

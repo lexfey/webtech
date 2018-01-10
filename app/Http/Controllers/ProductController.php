@@ -73,8 +73,8 @@ class ProductController extends Controller
           //Filename to store
           $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
           //Upload Image
-            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-          //$request->file('image')->move('storage/app/public/images', $fileNameToStore);
+           // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+           $path =$request->file('image')->move('images', $fileNameToStore);
            
        }else{
           $fileNameToStore = 'noimage.jpg';

@@ -11,7 +11,7 @@ ToDo with $product->X die daten des produkts aufrufen
         <div class="container">
             <!-- Full-width images with number text -->
             <div class="mySlides">
-                 <img src="/storage/images/{{$product->image}}" style="width:100%">
+                 <img src="{{asset('images/'.$product->image)}}" style="width:100%">
             </div>
             <div class="mySlides">
                  <img src="img/product2.jpg" style="width:100%">
@@ -32,7 +32,7 @@ ToDo with $product->X die daten des produkts aufrufen
             <!-- Thumbnail images -->
             <div class="row">
                 <div class="column">
-                    <img class="demo cursor" src="/storage/images/{{$product->image}}" style="width:100%" onclick="currentSlide(1)" >
+                    <img class="demo cursor" src="{{asset('images/'.$product->image)}}" style="width:100%" onclick="currentSlide(1)" >
                 </div>
                 <div class="column">
                     <img class="demo cursor" src="img/product2.jpg" style="width:100%" onclick="currentSlide(2)" >
