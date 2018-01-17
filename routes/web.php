@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('images/{imagename}', 'ImageController@get');
+//Route::get('images/{imagename}', 'ImageController@get');
 
 Route::get('/', function () {
-    return view('about');
+    return view('home');
 });
 Route::get('/cart', function () {
     return view('cart');
@@ -24,6 +24,9 @@ Route::get('/contact', function () {
 });
 Route::get('/profile', function () {
     return view('profile');
+});
+Route::get('/about', function () {
+    return view('about');
 });
 
 Route::post('/contact/submit', 'MessageController@submit'); 

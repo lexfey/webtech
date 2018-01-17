@@ -3,42 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Message;
+use App\Product;   //The model
 
-class MessageController extends Controller
+
+class ShopController extends Controller
 {
-
-    public function signin (Request $request){
-      $this->validate($request, [
-        'email'=>'required',
-        'password'=>'required'
-      ]);
-
-      return 'SUCCESS';
-   }
-
-   //Wenn neuRegistrierung 
-   public function submit(Request $request){
-      $this->validate($request, [
-        'name'=>'required',
-        'email'=>'required'
-      ]);
-
-     
-       //Create new Message
-        $message =new Message;
-        $message->name =$request->input('name');
-        $message->email =$request->input('email');
-        $message->message =$request->input('message');
-        //Save Message
-        $message->save();
-
-
-      //Redirect
-      return redirect('/')->with('success','Successfuly send');
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +15,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+         $products = Product::all(); //gets all the Data
+        return view('shop.index')->with('products', $products);
     }
 
     /**
@@ -78,7 +48,8 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        //
+        $product= Product::find($id);
+        return view('shop.show')->with('product', $product);
     }
 
     /**

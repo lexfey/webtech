@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{--<div id="main_image"><img id="main_img" src="img/mount.jpeg"> </div>--}}
+<div id="main_image"><img id="main_img" src="img/mount.jpeg"> </div>
     <div id="who">
         <div class="content_center">  <!---right now not needed because just one element inside-->
             <div class="card">
@@ -14,5 +14,14 @@
             </div>
         </div>
     </div>
-
+    <div id="news">
+        <div class="content_center">  <!---right now not needed because just one element inside-->
+             <div class="section_label">Whats New</div>  
+        </div>
+    </div>
+    <div id="gallery">
+        <div class="content_center">  <!---right now not needed because just one element inside-->
+            <div class="section_label">Gallery</div>  
+        </div>
+    </div>
 @endsection
