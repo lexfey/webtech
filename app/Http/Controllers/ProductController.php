@@ -71,26 +71,65 @@ class ProductController extends Controller
           //Get just ext
           $extension = $request->file('image')->getClientOriginalExtension();
           //Filename to store
-          $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
+          $fileNameToStore0 =$filename.'_'.time().'.'.$extension; //makes file name unique
           //Upload Image
            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-           $path =$request->file('image')->move('images', $fileNameToStore);
+           $path =$request->file('image')->move('images', $fileNameToStore0);
            
        }else{
-          $fileNameToStore = 'noimage.jpg';
+          $fileNameToStore0 = 'noimage.jpg';
        }
 
+        if($request->hasFile('image2')){
+            //Get filename with the extension
+            $filenameWithEXT= $request->file('image2')->getClientOriginalName();
+            //Get just filename
+            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('image2')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore2 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            //Upload Image
+            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path =$request->file('image2')->move('images', $fileNameToStore2);
+
+        }else{
+            $fileNameToStore2 = null;
+        }
+
+        if($request->hasFile('image3')){
+            //Get filename with the extension
+            $filenameWithEXT= $request->file('image3')->getClientOriginalName();
+            //Get just filename
+            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('image3')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore3 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            //Upload Image
+            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path =$request->file('image3')->move('images', $fileNameToStore3);
+
+        }else{
+            $fileNameToStore3 = null;
+        }
 
       //Create new Product 
       $product =new Product; 
       
       $product->name = $request->input('name');
       $product->descr = $request->input('descr');
-      $product->image = $fileNameToStore;
+      $product->image = $fileNameToStore0;
       $product->size = $request->input('size');
       $product->color = $request->input('color');
       $product->status = $request->input('status');
       $product->price = $request->input('price');
+      if($fileNameToStore2 != null){
+          $product->image2 = $fileNameToStore2;
+      }
+      if($fileNameToStore3 != null){
+        $product->image3 = $fileNameToStore3;
+      }
         
       //Save Product
       $product->save();
@@ -156,17 +195,57 @@ class ProductController extends Controller
           $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
           //Upload Image
           $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-
+       }else{
+           $fileNameToStore = null;
        }
 
+        if($request->hasFile('image2')){
+            //Get filename with the extension
+            $filenameWithEXT= $request->file('image2')->getClientOriginalName();
+            //Get just filename
+            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('image2')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore2 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            //Upload Image
+            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path =$request->file('image2')->move('images', $fileNameToStore2);
+
+        }else{
+            $fileNameToStore2 = null;
+        }
+
+        if($request->hasFile('image3')){
+            //Get filename with the extension
+            $filenameWithEXT= $request->file('image3')->getClientOriginalName();
+            //Get just filename
+            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('image3')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore3 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            //Upload Image
+            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path =$request->file('image3')->move('images', $fileNameToStore3);
+
+        }else{
+            $fileNameToStore3 = null;
+        }
 
       //Create new Product 
       $product = Product::find($id); 
       
       $product->name = $request->input('name');
       $product->descr = $request->input('descr');
-      if($request->hasFile('cover_image')){
+      if($request->hasFile('image')){
           $product->image = $fileNameToStore;
+      }
+      if($request->hasFile('image2')){
+        $product->image2 = $fileNameToStore2;
+      }
+      if($request->hasFile('image3')){
+        $product->image3 = $fileNameToStore3;
       }
       $product->size = $request->input('size');
       $product->color = $request->input('color');
@@ -192,13 +271,10 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        //toDo Check for admin rights?! 
-
-       // mag nicht
-
+        //toDo image delete (all)?!
        if($product->image != 'noimage.jpg'){
             // Delete Image
-            Storage::delete('public/images/'.$product->image);
+            Storage::delete("{{asset('images/'.$product->image)}}");
         }
 
 

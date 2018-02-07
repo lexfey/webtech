@@ -20,7 +20,7 @@
                     @else
                         <span class="log_status">{{ Auth::user()->name }}</span>
                          <div class="LogStat_dropdown_content">
-                            <a href="#"><img src="{{asset('img/cart.png')}}" class="icon_Cart">Cart</a>
+                            <a href="/cart"><img src="{{asset('img/cart.png')}}" class="icon_Cart">Cart</a>
                             <a  href="#">Profile</a>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

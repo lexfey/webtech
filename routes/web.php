@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('images/{imagename}', 'ImageController@get');
 
 Route::get('/', function () {
     return view('about');

@@ -17,7 +17,9 @@
     <!--Script-->    
     <script type="text/javascript" src="{{ asset('js/productslide.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/overlayer.js') }}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
+
 <!-- damit das erste bild angezeit wird des Products
 @if(Request::is('/shop/show'))
 <body onload="showSlides(1)">
@@ -30,13 +32,8 @@
         @include ('inc.header')
         @include('inc.navbar')
         @include ('inc/messages')
+
         @yield('content')
-        
-        <!-- auth hat eigens login erstellt overlayer derzeit zu kompliziert
-        <div id="overlayer">
-        @include('login')
-        </div>  
-        -->
 
         @include ('inc/footer')
     </div>

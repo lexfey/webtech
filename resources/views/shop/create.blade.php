@@ -26,6 +26,8 @@
 		{{Form::label('color', 'Product Color')}}
 	   	{{Form::text('color', '', ['class' => 'form-control'])}}
 	</div>
+
+	<!-- todo make auswahl -->
 	<div class="form-group">
 		{{Form::label('status', 'Product Status')}}
 	   	{{Form::text('status', '', ['class' => 'form-control'])}}
@@ -35,7 +37,19 @@
 		{{Form::label('image', 'Uploade Image')}}
 	   	{{Form::file('image')}}
 	</div>
-	{{Form::submit('Submit', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
+	<!-- toDo if more pics -->
+	<div class="form-group">
+		{{Form::label('image2', 'Uploade Image2')}}
+		{{Form::file('image2')}}
+	</div>
+	<div class="form-group">
+		{{Form::label('image3', 'Uploade Image3')}}
+		{{Form::file('image3')}}
+	</div>
+	<!-->
 
-{!! Form::close() !!}
+
+	{{Form::submit('Submit', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
+	{!! Form::close() !!}
+</div>
 @endsection

@@ -4,13 +4,6 @@
 
  <div class="row">
         <div class="column side">
-            <h2>Side</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-
-            <a href="shop/create" class="btn" id="Button">
-                add Product
-            </a>
-
             <!--Just for Admin -->
              @if(!Auth::guest())
                 @if(Auth::user()->name == 'Admin')

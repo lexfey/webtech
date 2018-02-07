@@ -9,20 +9,18 @@ ToDo with $product->X die daten des produkts aufrufen
     <div class="column-left">
         <!-- Container for the image gallery -->
         <div class="container">
-            <!-- Full-width images with number text -->
+            <!-- Full-width images -->
             <div class="mySlides">
                  <img src="{{asset('images/'.$product->image)}}" style="width:100%">
             </div>
             <div class="mySlides">
-                 <img src="img/product2.jpg" style="width:100%">
+                 <img src="{{asset('images/'.$product->image2)}}" style="width:100%">
             </div>
             <div class="mySlides">
 
-                 <img src="img/product3.jpg" style="width:100%">
+                 <img src="{{asset('images/'.$product->image3)}}" style="width:100%">
             </div>
-            <div class="mySlides">
-                 <img src="img/product4.jpg" style="width:100%">
-            </div>
+
 
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -35,13 +33,10 @@ ToDo with $product->X die daten des produkts aufrufen
                     <img class="demo cursor" src="{{asset('images/'.$product->image)}}" style="width:100%" onclick="currentSlide(1)" >
                 </div>
                 <div class="column">
-                    <img class="demo cursor" src="img/product2.jpg" style="width:100%" onclick="currentSlide(2)" >
+                    <img class="demo cursor" src="{{asset('images/'.$product->image2)}}" style="width:100%" onclick="currentSlide(2)" >
                 </div>
                 <div class="column">
-                    <img class="demo cursor" src="img/product3.jpg" style="width:100%" onclick="currentSlide(3)" >
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="img/product4.jpg" style="width:100%" onclick="currentSlide(4)" >
+                    <img class="demo cursor" src="{{asset('images/'.$product->image3)}}" style="width:100%" onclick="currentSlide(3)" >
                 </div>
              </div>
         </div>  

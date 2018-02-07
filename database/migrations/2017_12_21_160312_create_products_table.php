@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->mediumText('descr');
             $table->string ('image');
+            $table->string ('image2');
+            $table->string ('image3');
             $table->string('size');
             $table->string('color');
             $table->string('status');

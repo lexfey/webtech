@@ -37,6 +37,15 @@
 		{{Form::label('image', 'Uploade new Image to replace')}}
 	   	{{Form::file('image')}}
 	</div>
+	<div class="form-group">
+		{{Form::label('image2', 'Uploade new Image2 to replace')}}
+		{{Form::file('image2')}}
+	</div>
+	<div class="form-group">
+		{{Form::label('image3', 'Uploade new Image3 to replace')}}
+		{{Form::file('image3')}}
+	</div>
+
 	</div>
 {{Form::hidden('_method', 'PUT')}} 
 {{Form::submit('Submit', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
