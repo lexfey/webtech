@@ -13,6 +13,14 @@
 
 
 Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/about', function () {
     return view('about');
 });
 Route::get('/cart', function () {
@@ -31,3 +39,10 @@ Route::resource('/shop', 'ProductController');
 
 Auth::routes();
 Route::get('/dashboard', 'DashboardController@index');
+
+
+Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
+
+Route::get('/shoppingCart', [
+    'uses'=>'ProductController@getCart',
+    'as'=>'product.shoppingCart']);

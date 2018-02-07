@@ -26,7 +26,7 @@ body {
 }
 
 .alert {
-    width: 100%
+    width: 100%;
     padding: 20px;
     color: white;
     margin-bottom: 15px;
@@ -60,7 +60,7 @@ IMG.logo{
     background-color: #333;
 }
 
-.nav_item_left,.LogStat_dropdown {
+.nav_item_left,.LogStat_dropdown, .nav_item_right {
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -115,7 +115,9 @@ IMG.logo{
     width: 20px;
     float: left;
 }
-
+.nav_item_right{
+    float: right;
+}
 
 
 /*-----------------Footer-------------------*/

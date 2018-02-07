@@ -15,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //Register
+        //RegisterController
         
     }
 
@@ -82,25 +82,6 @@ class UserController extends Controller
 
        //Create User 
        $user  = User::find($id);
-       /*
-        //Create new Message
-      $register =new Register;
-      $register->firstName =$request->input('firstname');
-      $register->lastName =$request->input('lastname');
-      $register->email =$request->input('email');
-      //$register->password =$request->input('password');
-      $register->street =$request->input('street');
-      $register->city =$request->input('city');
-      $register->zipcode =$request->input('zipcode');
-      $register->country =$request->input('country');
-
-      $register->confcode="notavalible";
-      $register->status=0; 
-
-      //Save Message
-      $register->save();
-      */
-
 
       //Redirect
       return redirect('/')->with('success','Successfuly updated');
@@ -114,6 +95,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //todo
     }
 }

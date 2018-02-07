@@ -41,10 +41,10 @@ ToDo with $product->X die daten des produkts aufrufen
              </div>
         </div>  
     </div>
-    
+
 
     <div class="column-right">
-        <form method="post" action="cart.php">
+       <form action="addToCart/{{$product->id}}" method="get" >
             <div class="product_description">
                 <p class="product_name">{{$product->name}}</p>
                 <p class="product_price">{{$product->price}}</p>
@@ -86,8 +86,9 @@ ToDo with $product->X die daten des produkts aufrufen
                 @endif
             @endif
 
-            <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
+        <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
         </form>
+
     </div>
 </div>
 @endsection

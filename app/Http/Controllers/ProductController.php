@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Product;   
 use DB;
@@ -31,7 +33,30 @@ class ProductController extends Controller
         $products = Product::all(); //gets all the Data
         return view('shop.index')->with('products', $products);
     }
+    /*** for shopping Cart*/
+    public function getCart(){
+        if(!Session::has('cart')){
+            return view('shop.shoppingCart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('shop.shoppingCart', ['products'=> $cart->items, 'totalPrice'=> $cart->totalPrice]);
+    }
 
+
+    public function getAddToCart(Request $request, $id){
+        $product = Product::find($id);
+        //check if there is already a cart and gets it.
+        $oldCart = Session::has('cart') ? Session::get('cart'): null;
+        //make a new cart and add the product
+        $cart = new Cart($oldCart);
+        $cart->add($product,$product->id);
+        //update the session by giving it the new cart
+        $request->session()->put('cart', $cart);
+        return redirect()->route('shop.index');
+    }
+
+    /**For Admin only*/
     /**
      * Show the form for creating a new resource.
      *
