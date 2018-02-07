@@ -13,7 +13,7 @@
                     @guest
                          <span class="log_status">Not LoggedIn</span>
                          <div class="LogStat_dropdown_content">
-                            <a href="#"><img src="{{asset('img/cart.png')}}" class="icon_Cart">Cart</a>
+                            <a href="/cart"><img src="{{asset('img/cart.png')}}" class="icon_Cart">Cart</a>
                             <a  href="{{ route('login') }}">Login</a>
                             <a  href="{{ route('register') }}">Register</a>
                          </div>
