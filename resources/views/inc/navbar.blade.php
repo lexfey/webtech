@@ -2,9 +2,9 @@
             <div class="nav">
                 
                 <!-- Left Side Of Navbar -->
-                <a class="nav_item_left" href="#">Home</a>
+                <a class="nav_item_left" href="/">Home</a>
                 <a class="nav_item_left" href="{{ route('shop.index') }}">Shop</a>
-                <a class="nav_item_left" href="/">About</a>
+                <a class="nav_item_left" href="/about">About</a>
 
 
                 <!-- Right Side Of Navbar -->
