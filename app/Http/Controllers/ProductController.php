@@ -33,14 +33,15 @@ class ProductController extends Controller
         $products = Product::all(); //gets all the Data
         return view('shop.index')->with('products', $products);
     }
-    /*** for shopping Cart*/
+
+
+    /*** for shopping Cart-----------------------*/
     public function getCart(){
         if(!Session::has('cart')){
             return view('shop.shoppingCart');
         }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        return view('shop.shoppingCart', ['products'=> $cart->items, 'totalPrice'=> $cart->totalPrice]);
+        $cart  = Session::get('cart');
+        return view('shop.shoppingCart', ['products'=>$cart->items , 'totalPrice'=> $cart->totalPrice]);
     }
 
 
@@ -50,10 +51,11 @@ class ProductController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart'): null;
         //make a new cart and add the product
         $cart = new Cart($oldCart);
+        //todo here bug ^
         $cart->add($product,$product->id);
         //update the session by giving it the new cart
         $request->session()->put('cart', $cart);
-        return redirect()->route('shop.index');
+        return redirect()->route('product.shoppingCart');
     }
 
     /**For Admin only*/

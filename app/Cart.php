@@ -5,12 +5,12 @@ namespace App;
 
 class Cart
 {
-    public $items = null; //Group(Item with all the variabls of Products
+    public $items=null; //Group(Item with all the variabls of Products
     //total Quantity
     public $totalQty = 0;
     public $totalPrice =0;
 
-    public function _construct($oldCart)
+    public function __construct($oldCart)
     {
         if($oldCart){
             $this->items = $oldCart->items;
@@ -21,7 +21,7 @@ class Cart
 
     public function add($item, $id){
         //one Group/Item as assotiatives Array
-        $storedItem = ['qty' => 0, 'price' =>$item->price, 'item'=> $item];
+        $storedItem = ['qty'=>0, 'price'=>$item->price, 'item'=>$item];
 
         //checking if item already exists
         if($this->items){

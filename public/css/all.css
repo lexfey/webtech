@@ -111,14 +111,16 @@ IMG.logo{
 .LogStat_dropdown:hover .LogStat_dropdown_content {
     display: block;
 }
-.icon_Cart{
-    width: 20px;
-    float: left;
+.LogStat_dropdown:hover{
+    background-color: #747474;
 }
+
 .nav_item_right{
     float: right;
 }
-
+.nav_item_right:hover{
+    background-color: #111;
+}
 
 /*-----------------Footer-------------------*/
 .footer {
@@ -130,9 +132,14 @@ IMG.logo{
 }
 
 .icon{
-    width: 20px;
+    text-decoration: none;
+    width: 40px;
     float: right;
-    margin: 2px;
+    margin: 4px;
+}
+
+a{
+    text-decoration: none;
 }
 
 #copywrite{

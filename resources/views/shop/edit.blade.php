@@ -32,7 +32,6 @@
 		{{Form::label('status', 'Product Status')}}
 	   	{{Form::text('status', $product->status, ['class' => 'form-control'])}}
 	</div>
-
 	<div class="form-group">
 		{{Form::label('image', 'Uploade new Image to replace')}}
 	   	{{Form::file('image')}}

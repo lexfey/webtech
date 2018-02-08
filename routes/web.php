@@ -23,9 +23,7 @@ Route::get('/home', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -35,7 +33,8 @@ Route::get('/profile', function () {
 
 Route::post('/contact/submit', 'MessageController@submit'); 
  
-Route::resource('/shop', 'ProductController'); 
+Route::resource('/shop', 'ProductController');
+Route::resource('/cart', 'CartController');
 
 Auth::routes();
 Route::get('/dashboard', 'DashboardController@index');

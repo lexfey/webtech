@@ -10,7 +10,6 @@
                             <span class="right">{{$product['qty']}}</span>
                             <span>{{$product['item']['name']}}</span>
                             <span class="lable">{{$product['price']}}</span>
-
                             <div class="">
                                 <button>Remove</button>
                             </div>

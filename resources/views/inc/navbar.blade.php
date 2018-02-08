@@ -13,14 +13,12 @@
                     @guest
                          <span class="log_status">Not LoggedIn</span>
                          <div class="LogStat_dropdown_content">
-                            <a href="/cart"><img src="{{asset('img/cart.png')}}" class="icon_Cart">Cart</a>
                             <a  href="{{ route('login') }}">Login</a>
                             <a  href="{{ route('register') }}">Register</a>
                          </div>
                     @else
-                        <span class="log_status">{{ Auth::user()->name }}</span>
+                        <span class="log_status">Welcome {{ Auth::user()->name }}</span>
                          <div class="LogStat_dropdown_content">
-                            <a href="/cart"><img src="{{asset('img/cart.png')}}" class="icon_Cart">Cart</a>
                             <a  href="#">Profile</a>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -33,7 +31,7 @@
                          </div>
                     @endguest
                 </div>
-                <a class="nav_item_right" href="{{route("product.shoppingCart")}}">Cart<i class="fas fa-shopping-cart"></i>
+                <a class="nav_item_right" href="{{route("product.shoppingCart")}}">Cart <i class="fas fa-shopping-cart"></i>
                     <span>{{Session:: has('cart')? Session::get('cart')->totalQty: ''}}</span></a>
 
             </div>

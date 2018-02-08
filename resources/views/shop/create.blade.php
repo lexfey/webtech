@@ -20,19 +20,16 @@
 	</div>
 	<div class="form-group">
 		{{Form::label('size', 'Product Size')}}
-	   	{{Form::text('size', '', ['class' => 'form-control'])}}
+		{{Form::select('size', ['small'=>'Small', 'medium'=>'Medium', 'large'=>'Large'], null, ['class' => 'form-control'])}}
 	</div>
 	<div class="form-group">
 		{{Form::label('color', 'Product Color')}}
 	   	{{Form::text('color', '', ['class' => 'form-control'])}}
 	</div>
-
-	<!-- todo make auswahl -->
 	<div class="form-group">
 		{{Form::label('status', 'Product Status')}}
-	   	{{Form::text('status', '', ['class' => 'form-control'])}}
+		{{Form::select('status', ['av'=>'Available', 'cs'=>'Coming soon', 'out'=>'Sold out'], null, ['class' => 'form-control'])}}
 	</div>
-
 	<div class="form-group">
 		{{Form::label('image', 'Uploade Image')}}
 	   	{{Form::file('image')}}
