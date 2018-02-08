@@ -28,13 +28,14 @@ Route::get('/contact', function () {
     return view('contact');
 });
 Route::get('/profile', function () {
-    return view('profile');
+    return view('user.profile');
 });
 
 Route::post('/contact/submit', 'MessageController@submit'); 
  
 Route::resource('/shop', 'ProductController');
 Route::resource('/cart', 'CartController');
+Route::resource('/user', 'UserController');
 
 Auth::routes();
 Route::get('/dashboard', 'DashboardController@index');

@@ -19,7 +19,7 @@
                     @else
                         <span class="log_status">Welcome {{ Auth::user()->name }}</span>
                          <div class="LogStat_dropdown_content">
-                            <a  href="#">Profile</a>
+                            <a  href="{{route('user.index') }}">Profile</a>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">

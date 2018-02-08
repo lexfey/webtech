@@ -1,35 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="cart">
+    <h1 class="titel">Shopping Cart</h1>
     @if(Session::has('cart'))
-        <div class="row">
-            <div class="col">
-                <ul class="list-group">
-                    @if(count($products)>0)
-                        @foreach((array)$products as $product)
-                            <span class="right">{{$product['qty']}}</span>
-                            <span>{{$product['item']['name']}}</span>
-                            <span class="lable">{{$product['price']}}</span>
-                            <div class="">
-                                <button>Remove</button>
+        <ul class="cartWrap">
+            @if(count($products)>0)
+                @foreach((array)$products as $product)
+                    <li class="items">
+                            <div class="infoWrap" >
+                            <img class="itemImg" src="{{asset('images/'.$product['item']['image'])}}" alt="{{$product['item']['name']}}">
                             </div>
-                        @endforeach
-                    @else
-                        <span>nix gefunden</span>
-                    @endif
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <strong>Total: {{$totalPrice}}</strong>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button>Check</button>
-            </div>
-        </div>
+                                <div class="infoWrap">
+                                <h3>{{$product['item']['name']}}</h3>
+                                <p>Size {{$product['item']['size']}} </p>
+                                <p>Quantity: {{$product['qty']}}</p>
+                                <p>per Item {{$product['price']}} € </p>
+                            </div>
+                            <div class="removeWrap">
+                                <a href="#" class="remove"><i class="fas fa-times"></i></a>
+                            </div>
+
+                    </li>
+                @endforeach
+            @else
+                <span>nix gefunden</span>
+            @endif
+                <div class="final">
+                    <p>Total Price: {{$totalPrice}} €</p>
+                    <button>Check Out</button>
+                </div>
+        </ul>
+    </div>
     @else
         <div class="row">
             <div class="col">

@@ -86,7 +86,7 @@ ToDo with $product->X die daten des produkts aufrufen
                 @endif
             @endif
 
-        <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
+        <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart"><i class="fas fa-cart-arrow-down"></i>
 
        </form>
 
