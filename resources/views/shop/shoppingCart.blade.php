@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('stylesheet')
+    <link href="{{ asset('css/cart.css') }}" media="all" rel="stylesheet" type="text/css" />
+@endsection
 
 @section('content')
     <div class="cart">

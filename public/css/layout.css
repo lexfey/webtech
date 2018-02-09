@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana,sans-serif;
+}
+/*------------------------Messages (warning) -----------------------*/
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+.alert {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+    opacity: 1;
+    transition: opacity 0.6s; /* 600ms to fade out */
+}
+
+.alert-danger{
+    background-color: #f44336; /* Red */
+}
+.alert-success{
+    background-color: #8cff66; /* Green */
+}
+
+/* --------------------------Header------------------------------- */
+.header {
+    background-color: #ffffff;
+    text-align: center;
+}
+IMG.logo{
+    width: 8%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* -------------- Navigation Bar ------------------- */
+.nav {
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav_item_left,.LogStat_dropdown, .nav_item_right {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* ----Left Nav----*/
+.nav_item_left {
+    float: left;
+}
+/* Change the link color to #111 (black) on hover */
+.nav_item_left:hover{
+    background-color: #111;
+}
+
+
+/*----Right nav-----*/
+.LogStat_dropdown {
+    overflow: hidden;
+    float: right;;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.LogStat_dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #747474;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(87, 95, 84, 0.64);
+    z-index: 1;
+    margin-top: 12px;
+    float: none;
+
+}
+/* Links inside the dropdown */
+.LogStat_dropdown_content a {
+    color: #f9f9f9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Change color of dropdown links on hover */
+.LogStat_dropdown_content a:hover {
+    background-color: #f9f9f9;
+    color: #2a2a2a;
+}
+/* Show the dropdown menu on hover */
+.LogStat_dropdown:hover .LogStat_dropdown_content {
+    display: block;
+}
+.LogStat_dropdown:hover{
+    background-color: #747474;
+}
+
+.nav_item_right{
+    float: right;
+}
+.nav_item_right:hover{
+    background-color: #111;
+}
+
+/*-----------------Footer-------------------*/
+.footer {
+    background-color: #333;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.icon{
+    text-decoration: none;
+    width: 40px;
+    float: right;
+    margin: 4px;
+}
+
+a{
+    text-decoration: none;
+}
+
+#copywrite{
+    color: grey;
+}

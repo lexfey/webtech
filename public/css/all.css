@@ -572,37 +572,6 @@ img.logo{
     color: #4b4b4b;
 }
 
-/* --- toChoose Infos ----*/
-
-.color_option{
-    display: inline;
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
-}
-.product_options select{
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: #333;
-    color: white;
-    border: 2px solid white;
-    width: 60px;
-    height: 35px;
-
-}
-.color{
-    display: inline;
-
-}
-.color img{
-    width: 10px;
-    margin: 5px;
-}
-
-.color img:hover{
-    width: 15px;
-    box-shadow: 0px 8px 16px 0px rgba(180, 188, 181, 0.64);
-}
 
 /* --- Button ----*/
 .AddToCart {

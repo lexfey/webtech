@@ -11,8 +11,9 @@
     <title>{{ config('app.name', 'Webtech Online Shop') }}</title>
 
     <!-- Styles -->
-    <!--<link rel="stylesheet"  href="/css/app.css"> -->
-    <link href="{{ asset('css/all.css') }}" media="all" rel="stylesheet" type="text/css" />
+    <!---->
+    <link href="{{asset('css/layout.css') }}" media="all" rel="stylesheet" type="text/css" />
+    @yield('stylesheet')
        
     <!--Script-->    
     <script type="text/javascript" src="{{ asset('js/productslide.js') }}"></script>
@@ -20,14 +21,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
-<!-- damit das erste bild angezeit wird des Products
-@if(Request::is('/shop/show'))
+
 <body onload="showSlides(1)">
-@else
-<body>
-@endif
-    -->
-<body>
     <div id="app">
         @include ('inc.header')
         @include('inc.navbar')

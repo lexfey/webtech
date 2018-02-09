@@ -1,6 +1,8 @@
 
 @extends('layouts.app')
-
+@section('stylesheet')
+    <link href="{{ asset('css/home.css') }}" media="all" rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
 <div id="main_image"><img id="main_img" src="img/mount.jpeg"> </div>
     <div id="who">

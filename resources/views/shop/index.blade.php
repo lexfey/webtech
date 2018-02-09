@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('stylesheet')
+    <link href="{{ asset('css/shop.css') }}" media="all" rel="stylesheet" type="text/css" />
+@endsection
+
 @section('content')
 
  <div class="row">
@@ -7,7 +11,7 @@
             <!--Just for Admin -->
              @if(!Auth::guest())
                 @if(Auth::user()->name == 'Admin')
-                    <a href="shop/create" class="btn" id="Button">
+                    <a href="{{route('shop/create')}}" class="btn" id="Button">
                         add Product
                     </a>
                 @endif
