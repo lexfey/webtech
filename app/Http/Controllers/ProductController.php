@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
 namespace App\Http\Controllers;
 
 use App\Cart;
@@ -56,6 +61,21 @@ class ProductController extends Controller
         $request->session()->put('cart', $cart);
         return redirect()->route('product.shoppingCart');
     }
+
+    /**Checking out**/
+    public function getCheckout(){
+        if(!Session::has('cart')){
+            return view("shop.shoppingcart");
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+        return view('shop.checkout', ['total'=>$total]);
+    }
+    public function postCheckout(){
+        return view('shop.index');
+    }
+
 
     /**For Admin only*/
     /**
@@ -162,7 +182,7 @@ class ProductController extends Controller
       
 
       //Redirect
-      return redirect('/shop')->with('success','Successfuly added'.$path.'.');
+      return redirect('/shop')->with('success','Successfuly added');
 
     }
 

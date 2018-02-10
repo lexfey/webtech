@@ -62,7 +62,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        /*Here is to add status=0 & confcod= */
+        /* todo Here is to add status=0 & confcod= */
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

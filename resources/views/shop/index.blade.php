@@ -1,3 +1,12 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
+?>
+
 @extends('layouts.app')
 
 @section('stylesheet')
@@ -11,7 +20,7 @@
             <!--Just for Admin -->
              @if(!Auth::guest())
                 @if(Auth::user()->name == 'Admin')
-                    <a href="{{route('shop/create')}}" class="btn" id="Button">
+                    <a href="{{route('shop.create')}}" class="btn" id="Button">
                         add Product
                     </a>
                 @endif
@@ -26,7 +35,10 @@
                          <a href="shop/{{$product->id}}">
                          <img src="{{asset('images/'.$product->image)}}" alt="{{$product->name}}">
                         </a>
-                        <div class="desc">{{$product->descr}}</div>
+                        <div class="desc">
+                            <p>{{$product->name}}</p>
+                            <p>{{$product->price}}€, {{$product->size}}</p>
+                        </div>
                     </div>
                   @endforeach
             @else

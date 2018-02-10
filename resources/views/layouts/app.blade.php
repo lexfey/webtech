@@ -1,3 +1,12 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -19,6 +28,8 @@
     <script type="text/javascript" src="{{ asset('js/productslide.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/overlayer.js') }}"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    @yield('script')
+
 </head>
 
 

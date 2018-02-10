@@ -1,3 +1,11 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
+?>
 @if(count($errors)>0)
 	@foreach($errors->all() as $error)
 	<div class='alert alert-danger'>

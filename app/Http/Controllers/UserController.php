@@ -1,7 +1,13 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 /*NOT USED / NEEDED -- replaced by AuthControllers*/
@@ -16,6 +22,11 @@ class UserController extends Controller
     public function index()
     {
         return view('user.index');
+    }
+
+    public function account(){
+
+        return view('user.account');
     }
     /**
      * Show the form for creating a new resource.
@@ -36,31 +47,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-       
+        //RegisterController
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $user = User::find($id);
-        return view('user.edit')->with('user', $user);
+
     }
 
     /**
@@ -70,21 +69,42 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
-        
-       $this->validate($request, [
-       'firstname'=>'required',
-        'lastname'=>'required',
-        'email'=>'required',
-        'password'=>'required',
-       ]);
 
-       //Create User 
-       $user  = User::find($id);
+        $user = User::find($id);
+        //todo error kein zugriff auf pass wort
+        $password=$user->password;
+        $input=$request->input('oldpassword');
 
-      //Redirect
-      return redirect('/')->with('success','Successfuly updated');
+        $passwordIsOk = password_verify($request->input('oldpassword'), $user->password);
+
+        if (password_verify($input, $password)) {
+            if($request->input('password')==$request->input('password-confirm')){
+
+                if (!$request->input('password') == '') {
+                    $user->password = bcrypt($request->input('password'));
+                }
+                $user->save();
+                return redirect('/user')->with('success', 'Successfuly updated');
+
+            }else{
+                return redirect('/user')->with('success', 'NOT same');
+            }
+        }else{
+            return redirect('/user')->with('success', 'Wroooong old');
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id){
+
     }
 
     /**
@@ -93,7 +113,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($user)
     {
         //todo
     }

@@ -1,7 +1,16 @@
-
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
+?>
 
 @extends('layouts.app')
-
+@section('stylesheet')
+	<link href="{{ asset('css/form.css') }}" media="all" rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
 <div class="registerbox">
 <h2>Editing the ProductDatabase for Admin</h2>

@@ -46,6 +46,7 @@ body {
     background-color: #ffffff;
     text-align: center;
 }
+
 IMG.logo{
     width: 8%;
     display: block;
@@ -130,13 +131,15 @@ IMG.logo{
     position: absolute;
     width: 100%;
 }
-
-.icon{
+.linkIc{
     text-decoration: none;
-    width: 40px;
+    color: white;
+}
+.icon{
     float: right;
     margin: 4px;
 }
+
 
 a{
     text-decoration: none;
@@ -144,4 +147,9 @@ a{
 
 #copywrite{
     color: grey;
+}
+
+/** over all**/
+.titel{
+    margin-bottom: 15px;
 }
