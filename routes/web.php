@@ -28,6 +28,8 @@ Route::post('/contact/submit', 'MessageController@submit');
 
 
 Auth::routes();
+Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
+Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 Route::resource('/shop', 'ProductController');
 Route::resource('/cart', 'CartController');
 Route::resource('/user', 'UserController');
@@ -41,7 +43,7 @@ Route::get('/checkout', [
 
 Route::get('/account', [
     'uses'=>'UserController@account',
-    'as'=>'checkout']);
+    'as'=>'account']);
 
 Route::post('/checkout', [
     'uses'=>'ProductController@postCheckout',
