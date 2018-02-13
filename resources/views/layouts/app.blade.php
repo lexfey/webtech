@@ -20,7 +20,6 @@
     <title>{{ config('app.name', 'Webtech Online Shop') }}</title>
 
     <!-- Styles -->
-    <!---->
     <link href="{{asset('css/layout.css') }}" media="all" rel="stylesheet" type="text/css" />
     @yield('stylesheet')
        
@@ -28,6 +27,7 @@
     <script type="text/javascript" src="{{ asset('js/productslide.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/overlayer.js') }}"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('script')
 
 </head>
@@ -38,17 +38,10 @@
         @include ('inc.header')
         @include('inc.navbar')
         @include ('inc/messages')
-
+        <div class="content">
         @yield('content')
-
+        </div>
         @include ('inc/footer')
     </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <!--Texteditorbar to use for text areas ..by giving id="article-ckeditor"-->
-        <script>
-            CKEDITOR.replace('article-ckeditor');
-        </script>
 </body>
 </html>

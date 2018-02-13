@@ -40,7 +40,12 @@ class ProductController extends Controller
     }
 
 
-    /*** for shopping Cart-----------------------*/
+    /*** ------------------------for shopping Cart-----------------------*/
+
+    /*
+   * Returns the shopping cart View with all the cart items
+   * @created by Demi
+   */
     public function getCart(){
         if(!Session::has('cart')){
             return view('shop.shoppingCart');
@@ -49,7 +54,10 @@ class ProductController extends Controller
         return view('shop.shoppingCart', ['products'=>$cart->items , 'totalPrice'=> $cart->totalPrice]);
     }
 
-
+    /*
+    * Adds one item from the Cart
+    * @created by Demi
+    */
     public function getAddToCart(Request $request, $id){
         $product = Product::find($id);
         //check if there is already a cart and gets it.
@@ -62,7 +70,24 @@ class ProductController extends Controller
         return redirect()->route('product.shoppingCart');
     }
 
-    /**Checking out**/
+    /*
+     * Deletes one item from the Cart (no matter the quantity)
+     * @created by Demi
+     */
+    public function getDeleteFromCart(Request $request, $id){
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $cart->remove($id);
+        $request->session()->put('cart', $cart);
+        return redirect()->route('product.shoppingCart');
+    }
+
+
+    /**-----------Checking out---------------------**/
+    /*
+   *  @created by Demi
+   * @return checkoutView with the total price
+   */
     public function getCheckout(){
         if(!Session::has('cart')){
             return view("shop.shoppingcart");
@@ -77,10 +102,10 @@ class ProductController extends Controller
     }
 
 
-    /**For Admin only*/
+    /**-----------------------For Admin only------------------*/
     /**
      * Show the form for creating a new resource.
-     *
+     * @created by Demi
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -91,7 +116,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *  created New Product is saved to Database
-     *
+     * @created by Demi
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -188,7 +213,7 @@ class ProductController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * @created by Demi
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -200,7 +225,7 @@ class ProductController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     * @created by Demi
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -212,7 +237,7 @@ class ProductController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
+     * @created by Demi
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -309,7 +334,7 @@ class ProductController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @created by Demi
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

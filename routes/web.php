@@ -50,6 +50,8 @@ Route::post('/checkout', [
     'as'=>'checkout']);
 
 Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
+Route::get('/deleteFromCart/{id}', 'ProductController@getDeleteFromCart');
+
 Route::get('/shoppingCart', [
     'uses'=>'ProductController@getCart',
     'as'=>'product.shoppingCart']);

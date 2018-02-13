@@ -10,16 +10,16 @@
 
 @section('stylesheet')
     <link href="{{ asset('css/cart.css') }}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/form.css') }}" media="all" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-   <div>
-       <div>
-           <h1>Checkout</h1>
+
+       <div class="container">
+           <h2 class="title">Checkout</h2>
            <h4>Your Total: {{$total}}€ </h4>
+           <div class="panel-body">
            <form action="{{route('checkout')}}" method="post" id="checkoutform" >
-               <h2>Adress</h2>
+              <div class="innerform">
                <div class="Adress">
                    <div class="form-group">
                        <p class="label">Full Name: </p>
@@ -39,8 +39,9 @@
                    </div>
                </div>
                <button type="submit" class="btn" id="submitButton">Buy Now!</button>
+              </div>
            </form>
+           </div>
        </div>
-   </div>
 @endsection
 

@@ -21,7 +21,6 @@
 }
 .items:hover{
     background: #eee;
-    cursor: pointer;
 }
 
 .items img{
@@ -53,11 +52,15 @@
     margin: 5%;
     font-size: large;
     text-decoration: none;
+    cursor: pointer;
 }
 .final{
     margin: 20px;
     padding: 20px;
     float: right;
+}
+.checkout{
+    width: 200px;
 }
 
 

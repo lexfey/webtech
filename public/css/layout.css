@@ -6,6 +6,13 @@ body {
     margin: 0;
     font-family: Verdana,sans-serif;
 }
+
+
+.container{
+    margin: 5%;
+    min-height: 60vh;
+}
+
 /*------------------------Messages (warning) -----------------------*/
 
 /* The close button */
@@ -89,12 +96,11 @@ IMG.logo{
     display: none;
     position: absolute;
     background-color: #747474;
-    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(87, 95, 84, 0.64);
     z-index: 1;
     margin-top: 12px;
     float: none;
-
+    width: inherit;
 }
 /* Links inside the dropdown */
 .LogStat_dropdown_content a {
@@ -128,7 +134,8 @@ IMG.logo{
     background-color: #333;
     text-align: center;
     padding: 10px;
-    position: absolute;
+
+    bottom: 0;
     width: 100%;
 }
 .linkIc{
@@ -149,7 +156,93 @@ a{
     color: grey;
 }
 
-/** over all**/
+/** -------- Form --------**/
 .titel{
     margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.container{
+    margin: 40px;
+    border: solid 1px black;
+}
+
+.panel-body{
+    width: 80%;
+    margin: auto;
+    padding: 5%;
+    border: solid 1px #db3e9f;
+}
+
+
+.innerform{
+    width: 90vh;
+    margin:auto;
+    padding: 20px;
+    border: solid 1px #d6db25;
+}
+
+.lables{
+    margin-bottom: 0;
+}
+
+/*Input*/
+.form-control{
+    border: none;
+    height: 30px;
+    width:100%;
+    background-color: #c7c7c7;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+#pwforgot{
+    font-size: small;
+    font-style: oblique;
+    color: #333;
+}
+
+#submitButton{
+    background-color: white;
+    border: 2px solid #333;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 2px;
+    width: 100%;
+}
+#submitButton:hover {
+    background-color: #333;
+    color: white;
+}
+
+#Button{
+    background-color: white;
+    border: 2px solid #b3b3b3;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 2px;
+    width: 60%;
+}
+#Button:hover {
+    background-color: #b3b3b3;
+    color: white;
 }

@@ -49,4 +49,15 @@ class Cart
         $this->totalPrice += $item->price;
     }
 
+    public function remove($id){
+        $qty = $this->items[$id]['qty'];
+        $price = $this->items[$id]['price'];
+        while ($qty!=0){
+            $this->totalQty--;
+            $this->totalPrice -= $price;
+            $qty--;
+        }
+       unset($this->items[$id]);
+    }
+
 }
