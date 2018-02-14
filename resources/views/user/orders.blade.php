@@ -7,7 +7,9 @@
  */
 ?>
 @extends('layouts.app')
-
+@section('stylesheet')
+    <link href="{{ asset('css/orders.css') }}" media="all" rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
     <div class="container">
         <h2 class="titel">My Orders</h2>
@@ -21,9 +23,10 @@
                 </li>
                 @endforeach
             </ul>
-        </div>
-        <div>
-            <strong>Total Price: {{$order->cart->totalPrice}}€</strong>
+            <div>
+            <span class="status">Status</span>
+            <strong class="price">Total Price: {{$order->cart->totalPrice}}€</strong>
+            </div>
         </div>
         @endforeach
     </div>
