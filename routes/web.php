@@ -41,13 +41,11 @@ Route::get('/checkout', [
     'uses'=>'ProductController@getCheckout',
     'as'=>'checkout']);
 
+Route::post('pay', 'ProductController@postCheckout')->name('pay');
+
 Route::get('/account', [
     'uses'=>'UserController@account',
     'as'=>'account']);
-
-Route::post('/checkout', [
-    'uses'=>'ProductController@postCheckout',
-    'as'=>'checkout']);
 
 Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
 Route::get('/deleteFromCart/{id}', 'ProductController@getDeleteFromCart');

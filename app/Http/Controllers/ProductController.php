@@ -12,8 +12,11 @@ use Faker\Provider\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use App\Product;   
+use App\Product;
+use App\Order;
+use Illuminate\Support\Facades\Auth;
 use DB;
+use PhpParser\Node\Stmt\Catch_;
 
 class ProductController extends Controller
 {
@@ -97,9 +100,27 @@ class ProductController extends Controller
         $total = $cart->totalPrice;
         return view('shop.checkout', ['total'=>$total]);
     }
-    public function postCheckout(){
-        return view('shop.index');
+    public function postCheckout(Request $request){
+       $oldCart = Session::get('cart');
+       $cart = new Cart($oldCart);
+        //try{getpayment
+            //$charge = getsPaymentID
+            $order = new Order();
+            $order->cart= serialize($cart);
+            $order->street = $request->input('street');
+            $order->city = $request->input('city');
+            $order->country = $request->input('country');
+            $order->name = $request->input('name');
+            //$order->payment_id = $charge->id; //works with strip
+
+            Auth::user()->orders()->save($order);
+
+        //}catch(Exception e){}
+
+        Session::forget('cart');
+        return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
     }
+
 
 
     /**-----------------------For Admin only------------------*/
