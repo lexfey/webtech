@@ -39,7 +39,9 @@ Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/checkout', [
     'uses'=>'ProductController@getCheckout',
-    'as'=>'checkout']);
+    'as'=>'checkout',
+    'middleware'=>'auth'   //to protect from not logged in users accessing it
+]);
 
 Route::post('pay', 'ProductController@postCheckout')->name('pay');
 
