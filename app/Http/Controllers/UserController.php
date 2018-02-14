@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 /*NOT USED / NEEDED -- replaced by AuthControllers*/
@@ -95,6 +96,17 @@ class UserController extends Controller
         }else{
             return redirect('/user')->with('success', 'Wroooong old');
         }
+    }
+
+
+    public function getOrders(){
+        $orders = Auth::user()->orders;
+        //to unserialise all the orders
+        $orders->transform(function ($order, $key){
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+            return view('user.orders', ['orders' =>$orders]);
     }
 
     /**

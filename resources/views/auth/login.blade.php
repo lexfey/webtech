@@ -58,6 +58,7 @@
                     <a id="Button" href="{{ route('password.request') }}">
                         Forgot Your Password?
                     </a>
+                    <p>No account yet? <a href="{{route('register')}}">Register Now!</a></p>
                 </div>
             </div>
             </div>

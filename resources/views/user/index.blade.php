@@ -22,7 +22,7 @@
                  <p class="btn_description">Edit Logindata, Name and Number</p>
              </div>
          </a> 
-         <a class="btn" href="#">
+         <a class="btn" href="{{ route('orders')}}">
              <div class="column  btn_column">
                  <p class="btn_title"><i class="fas fa-truck"></i> Orders</p>
                  <p class="btn_description">See the status of your Orders</p>

@@ -100,6 +100,7 @@ class ProductController extends Controller
         $total = $cart->totalPrice;
         return view('shop.checkout', ['total'=>$total]);
     }
+
     public function postCheckout(Request $request){
        $oldCart = Session::get('cart');
        $cart = new Cart($oldCart);
@@ -111,7 +112,7 @@ class ProductController extends Controller
             $order->city = $request->input('city');
             $order->country = $request->input('country');
             $order->name = $request->input('name');
-            //$order->payment_id = $charge->id; //works with strip
+            //$order->payment_id = $charge->id; //works with stripe
 
             Auth::user()->orders()->save($order);
 
