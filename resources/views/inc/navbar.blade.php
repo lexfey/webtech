@@ -14,6 +14,8 @@
                 <a class="nav_item_left" href="{{ route('shop.index') }}">Shop</a>
                 <a class="nav_item_left" href="/about">About</a>
 
+                <a class="nav_item_right" href="{{route("product.shoppingCart")}}">Cart <i class="fas fa-shopping-cart"></i>
+                    <span>{{Session:: has('cart')? Session::get('cart')->totalQty: ''}}</span></a>
 
                 <!-- Right Side Of Navbar -->
                 <div class="LogStat_dropdown">
@@ -25,8 +27,9 @@
                             <a  href="{{ route('register') }}">Register</a>
                          </div>
                     @else
-                        <span class="log_status">Welcome {{ Auth::user()->name }}</span>
-                         <div class="LogStat_dropdown_content">
+
+                         <span class="log_status child">Welcome {{ Auth::user()->name }}</span>
+                         <div class="LogStat_dropdown_content child">
                             <a  href="{{route('user.index') }}">Profile</a>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -39,8 +42,5 @@
                          </div>
                     @endguest
                 </div>
-                <a class="nav_item_right" href="{{route("product.shoppingCart")}}">Cart <i class="fas fa-shopping-cart"></i>
-                    <span>{{Session:: has('cart')? Session::get('cart')->totalQty: ''}}</span></a>
-
             </div>
-        </nav>
+</nav>

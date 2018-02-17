@@ -57,7 +57,7 @@
 			<div class="form-group">
 				{{Form::label('status', 'Product Status')}}
 				<div class="col-md-6">
-					{{Form::select('status', ['av'=>'Available', 'cs'=>'Coming soon', 'out'=>'Sold out'], null, ['class' => 'form-control'])}}
+					{{Form::select('status', ['av'=>'Available', 'out'=>'Sold out'], $product->status , ['class' => 'form-control'])}}
 				</div>
 			</div>
 			<div class="form-group">

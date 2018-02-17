@@ -50,15 +50,17 @@
 			<div class="form-group">
 				{{Form::label('status', 'Product Status')}}
 				<div class="col-md-6">
-				{{Form::select('status', ['av'=>'Available', 'cs'=>'Coming soon', 'out'=>'Sold out'], null, ['class' => 'form-control'])}}
+				{{Form::select('status', ['av'=>'Available', 'out'=>'Sold out'], null, ['class' => 'form-control'])}}
 				</div>
 			</div>
+				<!--todo check abhängig von status-->
 			<div class="form-group">
-				{{Form::label('quantity', 'Product Quantity')}}
+				{{Form::label('quantity', 'Quantity')}}
 				<div class="col-md-6">
 					{{Form::number('quantity','', ['class' => 'form-control'])}}
 				</div>
 			</div>
+
 			<div class="form-group">
 				{{Form::label('image', 'Uploade Image')}}
 				{{Form::file('image')}}

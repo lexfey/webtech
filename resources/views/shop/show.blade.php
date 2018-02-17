@@ -21,14 +21,22 @@
         <div class="container">
             <!-- Full-width images -->
             <div class="mySlides">
-                 <img src="{{asset('images/'.$product->image)}}" style="width:100%">
+                 <img class="img" src="{{asset('images/'.$product->image)}}" style="width:100%">
+                @if($product->status == 'out')
+                 <img class="imgOverlayer" src="{{asset('img/soldout2.png')}}" style="width:100%">
+                @endif
             </div>
             <div class="mySlides">
-                 <img src="{{asset('images/'.$product->image2)}}" style="width:100%">
+                 <img  class="img" src="{{asset('images/'.$product->image2)}}" style="width:100%">
+                @if($product->status == 'out')
+                    <img class="imgOverlayer" src="{{asset('img/soldout2.png')}}" style="width:100%">
+                @endif
             </div>
             <div class="mySlides">
-
-                 <img src="{{asset('images/'.$product->image3)}}" style="width:100%">
+                 <img  class="img" src="{{asset('images/'.$product->image3)}}" style="width:100%">
+                @if($product->status == 'out')
+                    <img class="imgOverlayer" src="{{asset('img/soldout2.png')}}" style="width:100%">
+                @endif
             </div>
 
 
@@ -62,8 +70,12 @@
             <div class="product_description">
                 <p class="product_name">{{$product->name}}</p>
                 <p class="product_price">{{$product->price}}</p>
+                @if($product->quantity == 0)
+                <p class="info"> Sorry we are sold out right now, check again for more later </p>
+                @else
+                <p class="info"> Just {{$product->quantity}} more available</p>
+                @endif
                 <p>{{$product->descr}}</p>
-                <p> Just{{$product->quantity}} more available</p>
             </div>
 
             <div class="product_description">

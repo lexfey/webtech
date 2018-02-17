@@ -14,8 +14,8 @@
 @endsection
 
 @section('content')
-
- <div class="row">
+<div class="container">
+    <div class="row">
         <div class="column side">
             <!--Just for Admin -->
              @if(!Auth::guest())
@@ -30,17 +30,17 @@
         <div class="column middle">
             <!--Get Products from Database-->
             @if(count($products)>0)
-                  @foreach($products as $product)
-                    <div class="gallery">
-                         <a href="shop/{{$product->id}}">
-                         <img src="{{asset('images/'.$product->image)}}" alt="{{$product->name}}">
-                        </a>
-                        <div class="desc">
-                            <p>{{$product->name}}</p>
-                            <p>{{$product->price}}€, {{$product->size}}</p>
-                        </div>
+              @foreach($products as $product)
+                <div class="gallery">
+                    <a href="shop/{{$product->id}}">
+                     <img src="{{asset('images/'.$product->image)}}" alt="{{$product->name}}">
+                    </a>
+                    <div class="desc">
+                        <p>{{$product->name}}</p>
+                        <p>{{$product->price}}€, {{$product->size}}</p>
                     </div>
-                  @endforeach
+                </div>
+              @endforeach
             @else
             <!--Default Pics-->
             <div class="gallery">
@@ -53,4 +53,5 @@
 
         </div>    <!--toDo bind phpFile that creats for each Product one Gallary-->
     </div>
+</div>
 @endsection
