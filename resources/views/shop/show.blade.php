@@ -16,6 +16,7 @@
 @section('content')
 <div class="mainContent"  >
     <div class="column-left">
+        <!-- todo Status mit einbinden-->
         <!-- Container for the image gallery -->
         <div class="container">
             <!-- Full-width images -->
@@ -62,6 +63,7 @@
                 <p class="product_name">{{$product->name}}</p>
                 <p class="product_price">{{$product->price}}</p>
                 <p>{{$product->descr}}</p>
+                <p> Just{{$product->quantity}} more available</p>
             </div>
 
             <div class="product_description">
@@ -73,15 +75,19 @@
                  <a href="#">Sizetable</a>
             </div>
 
-            <!--Nur für Admin-->
-             @if(!Auth::guest())
-                @if(Auth::user()->name == 'Admin')
+
+             @if(!Auth::guest() && Auth::user()->name == 'Admin')
+                 <!--Nur für Admin-->
                     <a href="/shop/{{$product->id}}/edit" class="btn adminBtn" id="Button">
                         edit Product
                     </a>
+            @else
+                @if($product->status == 'av')
+                    <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
+                 @else
+                     <a href="{{ route('shop.index') }}" class="btn adminBtn" id="Button"> Back to Store</a>
                 @endif
-            @endif
-            <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
+           @endif
 
        </form>
 

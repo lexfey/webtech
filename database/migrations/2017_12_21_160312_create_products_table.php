@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('color');
             $table->string('status');
             $table->string('price');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

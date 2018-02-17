@@ -64,12 +64,13 @@ class ProductController extends Controller
     public function getAddToCart(Request $request, $id){
         $product = Product::find($id);
         //check if there is already a cart and gets it.
-        $oldCart = Session::has('cart') ? Session::get('cart'): null;
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
         //make a new cart and add the product
         $cart = new Cart($oldCart);
-        $cart->add($product,$product->id);
+        $cart->add($product, $product->id);
         //update the session by giving it the new cart
         $request->session()->put('cart', $cart);
+        $this->reduceQty($id);
         return redirect()->route('product.shoppingCart');
     }
 
@@ -82,15 +83,42 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $cart->remove($id);
         $request->session()->put('cart', $cart);
+        $this->addQty($id);
         return redirect()->route('product.shoppingCart');
     }
 
+    /*
+     * Deletes one item from the Cart (no matter the quantity)
+     * @created by Demi
+     */
+    public function getRemoveOneFromCart(Request $request, $id){
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+        $request->session()->put('cart', $cart);
+        $this->addQty($id);
+        return redirect()->route('product.shoppingCart');
+    }
+
+    /*
+     * Deletes one item from the Cart (no matter the quantity)
+     * @created by Demi
+     */
+    public function getAddOneToCart(Request $request, $id){
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $cart->addOne($id);
+        $request->session()->put('cart', $cart);
+        $this->reduceQty($id);
+        return redirect()->route('product.shoppingCart');
+    }
 
     /**-----------Checking out---------------------**/
     /*
    *  @created by Demi
    * @return checkoutView with the total price
    */
+    //todo check if produkt (still) available
     public function getCheckout(){
         if(!Session::has('cart')){
             return view("shop.shoppingcart");
@@ -104,6 +132,7 @@ class ProductController extends Controller
     public function postCheckout(Request $request){
        $oldCart = Session::get('cart');
        $cart = new Cart($oldCart);
+       //todo finish up
         //try{getpayment
             //$charge = getsPaymentID
             $order = new Order();
@@ -209,7 +238,8 @@ class ProductController extends Controller
 
       //Create new Product 
       $product =new Product; 
-      
+
+        //todo make size a range (more values)
       $product->name = $request->input('name');
       $product->descr = $request->input('descr');
       $product->image = $fileNameToStore0;
@@ -217,6 +247,8 @@ class ProductController extends Controller
       $product->color = $request->input('color');
       $product->status = $request->input('status');
       $product->price = $request->input('price');
+      $product->quantity = $request->input('quantity');
+
       if($fileNameToStore2 != null){
           $product->image2 = $fileNameToStore2;
       }
@@ -266,7 +298,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //What needs to be validated
+        //todo What needs to be validated
        $this->validate($request, [
         'name' =>'required',
         'price' =>'required',
@@ -326,7 +358,7 @@ class ProductController extends Controller
             $fileNameToStore3 = null;
         }
 
-      //Create new Product 
+      //find Product
       $product = Product::find($id); 
       
       $product->name = $request->input('name');
@@ -344,6 +376,7 @@ class ProductController extends Controller
       $product->color = $request->input('color');
       $product->status = $request->input('status');
       $product->price = $request->input('price');
+      $product->quantity = $request->input('quantity');
         
       //Save Product
       $product->save();
@@ -352,6 +385,24 @@ class ProductController extends Controller
       //Redirect
       return redirect('/shop')->with('success','Successfuly edited');
       
+    }
+
+    public function reduceQty($id){
+        $product = Product::find($id);
+        $product->quantity --;
+        if($product->quantity == 0){
+            $product->status='out';
+        }
+        $product->save();
+
+    }
+    public function addQty($id){
+        $product = Product::find($id);
+        $product->quantity ++;
+        if($product->quantity == 1){
+            $product->status='av';
+        }
+        $product->save();
     }
 
     /**

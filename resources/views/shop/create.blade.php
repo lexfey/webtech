@@ -54,6 +54,12 @@
 				</div>
 			</div>
 			<div class="form-group">
+				{{Form::label('quantity', 'Product Quantity')}}
+				<div class="col-md-6">
+					{{Form::number('quantity','', ['class' => 'form-control'])}}
+				</div>
+			</div>
+			<div class="form-group">
 				{{Form::label('image', 'Uploade Image')}}
 				{{Form::file('image')}}
 			</div>

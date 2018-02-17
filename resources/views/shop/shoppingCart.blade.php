@@ -21,12 +21,22 @@
                     @foreach((array)$products as $product)
                         <li class="items">
                             <div class="infoWrap" >
-                            <img class="itemImg" src="{{asset('images/'.$product['item']['image'])}}" alt="{{$product['item']['name']}}">
+                            <a href="shop/{{$product['item']['id']}}"><img class="itemImg" src="{{asset('images/'.$product['item']['image'])}}" alt="{{$product['item']['name']}}"></a>
                             </div>
                                 <div class="infoWrap">
                                 <h3>{{$product['item']['name']}}</h3>
                                 <p>Size: {{$product['item']['size']}} </p>
-                                <p>Quantity: {{$product['qty']}}</p>
+                                <p>Quantity:
+                                    @if($product['item']['quantity'] > 0)
+                                    <a href="removeOneFromCart/{{$product['item']['id']}}"><i class="fas fa-arrow-left"></i></a>
+                                    @endif
+
+                                    {{$product['qty']}}
+
+                                    @if($product['item']['quantity'] > $product['qty'])
+                                    <a href="addOneToCart/{{$product['item']['id']}}"><i class="fas fa-arrow-right"></i></a>
+                                    @endif
+                                </p>
                                 <p>Price: {{$product['price']}} € </p>
                             </div>
                             <div class="removeWrap">
