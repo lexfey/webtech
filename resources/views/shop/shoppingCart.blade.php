@@ -30,9 +30,7 @@
                                     @if($product['item']['quantity'] > 0)
                                     <a href="removeOneFromCart/{{$product['item']['id']}}"><i class="fas fa-arrow-left"></i></a>
                                     @endif
-
                                     {{$product['qty']}}
-
                                     @if($product['item']['quantity'] > $product['qty'])
                                     <a href="addOneToCart/{{$product['item']['id']}}"><i class="fas fa-arrow-right"></i></a>
                                     @endif
