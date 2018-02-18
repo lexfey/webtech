@@ -1,8 +1,19 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+
+use Hash;
 
 /*NOT USED / NEEDED -- replaced by AuthControllers*/
 
@@ -15,7 +26,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        
+        return view('user.index');
+    }
+
+    public function account()
+    {
+
+        return view('user.account');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,96 +42,160 @@ class UserController extends Controller
      */
     public function create()
     {
-        //Register
-        
+        //RegisterController
+
+    }
+
+    /**
+     * Display the form for changing user's password
+     */
+    public function showChangePasswordForm()
+    {
+        return view('user.changepassword');
+    }
+
+    /**
+     * Display the form for deleting user's account
+     */
+    public function showDeleteAccountForm()
+    {
+        return view('user.deleteaccount');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-       
+        //RegisterController
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $user = User::find($id);
-        return view('user.edit')->with('user', $user);
+
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    /* public function update(Request $request, $id)
+     {
+
+         $user = User::find($id);
+         //todo error kein zugriff auf pass wort
+         $password=$user->password;
+         $input=$request->input('oldpassword');
+
+         $passwordIsOk = password_verify($request->input('oldpassword'), $user->password);
+
+         $hashedinput = Hash::make($input);
+
+         if(Hash::check($input, $password)) {
+             if($request->input('password')==$request->input('password-confirm')){
+
+                 if (!$request->input('password') == '') {
+                     $user->password = bcrypt($request->input('password'));
+                 }
+                 $user->save();
+                 return redirect('/user')->with('success', 'Successfuly updated');
+
+             }else{
+                 return redirect('/user')->with('success', 'NOT SAME');
+             }
+         }else{
+             return redirect('/user')->with('success', 'Wroooong old');
+         }
+     }*/
+
+    public function changePassword(Request $request)
     {
-        
-       $this->validate($request, [
-       'firstname'=>'required',
-        'lastname'=>'required',
-        'email'=>'required',
-        'password'=>'required',
-       ]);
 
-       //Create User 
-       $user  = User::find($id);
-       /*
-        //Create new Message
-      $register =new Register;
-      $register->firstName =$request->input('firstname');
-      $register->lastName =$request->input('lastname');
-      $register->email =$request->input('email');
-      //$register->password =$request->input('password');
-      $register->street =$request->input('street');
-      $register->city =$request->input('city');
-      $register->zipcode =$request->input('zipcode');
-      $register->country =$request->input('country');
+        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
+            // The passwords matches
+            return redirect()->back()->with("error", "Your current password does not matches with the password you provided. Please try again.");
+        }
 
-      $register->confcode="notavalible";
-      $register->status=0; 
+        if (strcmp($request->get('current-password'), $request->get('new-password')) == 0) {
+            //Current password and new password are same
+            return redirect()->back()->with("error", "New Password cannot be same as your current password. Please choose a different password.");
+        }
 
-      //Save Message
-      $register->save();
-      */
+        $validatedData = $request->validate([
+            'current-password' => 'required',
+            'new-password' => 'required|string|min:6|confirmed',
+        ]);
+
+        //Change Password
+        $user = Auth::user();
+        $user->password = bcrypt($request->get('new-password'));
+        $user->save();
+
+        return redirect()->back()->with("success", "Password changed successfully !");
+
+    }
 
 
-      //Redirect
-      return redirect('/')->with('success','Successfuly updated');
+    public function getOrders()
+    {
+        $orders = Auth::user()->orders;
+        //to unserialise all the orders
+        $orders->transform(function ($order, $key) {
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        return view('user.orders', ['orders' => $orders]);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function show($id)
     {
-        //
+
     }
+
+    /**
+     * Sets the user status to '2', logs out and redirects to home screen.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
+            // The passwords matches
+            return redirect()->back()->with("error", "Your current password does not matches with the password you provided. Please try again.");
+        }
+
+        $id = Auth::id();
+
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['status' => 2]);
+
+        Auth::logout();
+
+        return redirect('/home')->with("success", "Account deleted successfully !");
+
+    }
+
+
 }
