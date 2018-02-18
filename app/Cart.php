@@ -95,7 +95,7 @@ class Cart
             $this->totalPrice -= $price;
             $qty--;
         }
-       
+
        unset($this->items[$id]);
     }
 

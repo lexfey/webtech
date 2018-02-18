@@ -1,7 +1,16 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
+?>
+
 <footer class="footer">
-        <a href="http://facebook.com"><img class="icon" src="{{asset('img/facebook.jpg')}}"></a>
-        <a href="https://instagram.com"><img class="icon" src="{{asset('img/instagram.png')}}"></a>
-        <a href="http://youtube.com"><img class="icon" src="{{asset('img/YouTube.png')}}"></a>
-        <a href="http://twitter.com"><img class="icon" src="{{asset('img/twitter.png')}}"></a>
+        <a class="linkIc" href="https://www.facebook.com/samo.kozar"><i class="fab fa-facebook icon"></i></a>
+        <a class="linkIc" href="https://instagram.com"><i class="fab fa-instagram icon"></i></a>
+        <a class="linkIc" href="https://www.youtube.com/channel/UCCm_PUXcpk2eu3C4nIG8oCQ"><i class="fab fa-youtube icon"></i></a>
+        <a class="linkIc" href="http://twitter.com"><i class="fab fa-twitter icon"></i></a>
         <p id="copywrite">Copyright 2017 &copy; Group4</p>
 </footer>

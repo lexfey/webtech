@@ -1,14 +1,32 @@
 
 .panel-body{
-    padding: 5px;
+    padding: 15px;
     margin-top: 10px;
     width: 60%;
     background-color: rgba(51, 51, 51, 0.76);
-    color: white;
+    color: #eee;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+.date{
+    font-size: small;
+    font-style: italic;
+}
+
+.id{
+    float: right;
+}
+
+.panel-body:hover{
+    background: #f9f9f9;
+    color: rgba(51, 51, 51, 0.76);
+}
+
 .order{
     list-style: none;
+}
+.orders{
+    margin-top: 30px;
 }
 .price{
     float: right;

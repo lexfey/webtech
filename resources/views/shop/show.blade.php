@@ -1,28 +1,43 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
+?>
+
 @extends('layouts.app')
 
-<!--
-ToDo with $product->X die daten des produkts aufrufen
--->
+@section('stylesheet')
+    <link href="{{ asset('css/product.css') }}" media="all" rel="stylesheet" type="text/css" />
+@endsection
 
 @section('content')
-<div class="mainContent" >
+<div class="mainContent"  >
     <div class="column-left">
         <!-- Container for the image gallery -->
         <div class="container">
-            <!-- Full-width images with number text -->
+            <!-- Full-width images -->
             <div class="mySlides">
-                 <img src="{{asset('images/'.$product->image)}}" style="width:100%">
+                 <img class="img" src="{{asset('images/'.$product->image)}}" style="width:100%">
+                @if($product->status == 'out')
+                 <img class="imgOverlayer" src="{{asset('img/soldout2.png')}}" style="width:100%">
+                @endif
             </div>
             <div class="mySlides">
-                 <img src="img/product2.jpg" style="width:100%">
+                 <img  class="img" src="{{asset('images/'.$product->image2)}}" style="width:100%">
+                @if($product->status == 'out')
+                    <img class="imgOverlayer" src="{{asset('img/soldout2.png')}}" style="width:100%">
+                @endif
             </div>
             <div class="mySlides">
+                 <img  class="img" src="{{asset('images/'.$product->image3)}}" style="width:100%">
+                @if($product->status == 'out')
+                    <img class="imgOverlayer" src="{{asset('img/soldout2.png')}}" style="width:100%">
+                @endif
+            </div>
 
-                 <img src="img/product3.jpg" style="width:100%">
-            </div>
-            <div class="mySlides">
-                 <img src="img/product4.jpg" style="width:100%">
-            </div>
 
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -34,65 +49,59 @@ ToDo with $product->X die daten des produkts aufrufen
                 <div class="column">
                     <img class="demo cursor" src="{{asset('images/'.$product->image)}}" style="width:100%" onclick="currentSlide(1)" >
                 </div>
+                @if($product->image2!=null)
                 <div class="column">
-                    <img class="demo cursor" src="img/product2.jpg" style="width:100%" onclick="currentSlide(2)" >
+                    <img class="demo cursor" src="{{asset('images/'.$product->image2)}}" style="width:100%" onclick="currentSlide(2)" >
                 </div>
+                @endif
+                @if($product->image3!=null)
                 <div class="column">
-                    <img class="demo cursor" src="img/product3.jpg" style="width:100%" onclick="currentSlide(3)" >
+                    <img class="demo cursor" src="{{asset('images/'.$product->image3)}}" style="width:100%" onclick="currentSlide(3)" >
                 </div>
-                <div class="column">
-                    <img class="demo cursor" src="img/product4.jpg" style="width:100%" onclick="currentSlide(4)" >
-                </div>
+                @endif
              </div>
         </div>  
     </div>
-    
+
 
     <div class="column-right">
-        <form method="post" action="cart.php">
+       <form action="addToCart/{{$product->id}}" method="get" >
             <div class="product_description">
                 <p class="product_name">{{$product->name}}</p>
-                <p class="product_price">{{$product->price}}</p>
-                <p>{{$product->descr}}</p>
+                <p class="product_price">{{$product->price}}€</p>
+                @if($product->quantity == 0)
+                <p class="info"> Sorry we are sold out right now, check again for more later </p>
+                @else
+                <p class="info"> Just {{$product->quantity}} more available</p>
+                @endif
+                <p class="desc">{{$product->descr}}</p>
             </div>
 
             <div class="product_description">
-            <p class="lables">Color</p>
-            <p class="color">{{$product->color}}</p>
-           <!-- <ul class="color_option">    
-                <li class="color"><a href="#"><img src="img/red.png"></a></li>
-                <li class="color"><a href="#"><img src="img/green.png"></a></li>
-                <li class="color"><a href="#"><img src="img/yellow.jpe"></a></li>
-            </ul> -->
+                <p class="lables">Color:  {{$product->color}}</p>
             </div>
 
             <div class="product_description">
-            <span class="lables">Size</span><span class="product_options">
-                <p>{{$product->size}}</p>
-                <!--
-                <select name="Size">
-                    <option value="null">    </option>
-	                <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
-                -->
-            </span>
-            <a href="#">Sizetable</a>
+                <p class="lables">Size:  <span>{{$product->size}}</span></p>
+                 <a href="#">Sizetable</a>
             </div>
 
-            <!--Nur für Admin-->
-             @if(!Auth::guest())
-                @if(Auth::user()->name == 'Admin')
-                    <a href="/shop/{{$product->id}}/edit" class="btn" id="Button">
+
+             @if(!Auth::guest() && Auth::user()->name == 'Admin')
+                 <!--Nur für Admin-->
+                    <a href="/shop/{{$product->id}}/edit" class="btn adminBtn" id="Button">
                         edit Product
                     </a>
+            @else
+                @if($product->status == 'av')
+                    <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
+                 @else
+                     <a href="{{ route('shop.index') }}" class="AddToCart">Back to Store</a>
                 @endif
-            @endif
+           @endif
 
-            <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
-        </form>
+       </form>
+
     </div>
 </div>
 @endsection

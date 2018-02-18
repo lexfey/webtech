@@ -7,10 +7,12 @@
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
+        "gloudemans/shoppingcart": "^2.4",
+        "intervention/image": "dev-master",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
-        "unisharp/laravel-ckeditor": "^4.6",
+        "unisharp/laravel-ckeditor": "^4.6"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -48,7 +50,8 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
-        ]
+        ],
+        "minimum-stability": "dev"
     },
     "config": {
         "preferred-install": "dist",

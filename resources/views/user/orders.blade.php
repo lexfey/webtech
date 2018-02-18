@@ -13,22 +13,24 @@
 @section('content')
     <div class="container">
         <h2 class="titel">My Orders</h2>
-        @foreach($orders as $order)
-        <div class="panel-body">
-            <ul class="orders">
-                @foreach($order->cart->items as $item)
-                <li class="order">
-                    <span class="badge">{{$item['price']}}€</span>
-                    {{$item['item']['name']}} | {{$item['qty']}} Units
-                </li>
-                @endforeach
-            </ul>
-            <div>
-            <span class="status">Status</span>
-            <strong class="price">Total Price: {{$order->cart->totalPrice}}€</strong>
+        <div class="orders">
+            @foreach($orders as $order)
+                <!--todo link status & shipping number-->
+            <div class="panel-body">
+                <div class="date">Ordered on the {{$order->created_at}} <span class="id">Shipping ID xxxxxxxxx</span></div>
+                <ul class="orders">
+                    @foreach($order->cart->items as $item)
+                    <li class="order">
+                        <span class="badge">{{$item['qty']}}x {{$item['item']['name']}} | {{$item['price']}}€</span>
+                    </li>
+                    @endforeach
+                </ul>
+                <div>
+                <span class="status">Status</span>
+                <strong class="price">Total Price: {{$order->cart->totalPrice}}€</strong>
+                </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
-
 @endsection

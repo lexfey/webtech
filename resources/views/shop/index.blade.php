@@ -1,37 +1,45 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Demi
+ * Date: 09.02.2018
+ * Time: 11:34
+ */
+?>
+
 @extends('layouts.app')
 
+@section('stylesheet')
+    <link href="{{ asset('css/shop.css') }}" media="all" rel="stylesheet" type="text/css" />
+@endsection
+
 @section('content')
-
- <div class="row">
+<div class="container">
+    <div class="row">
         <div class="column side">
-            <h2>Side</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-
-            <a href="shop/create" class="btn" id="Button">
-                add Product
-            </a>
-
             <!--Just for Admin -->
              @if(!Auth::guest())
                 @if(Auth::user()->name == 'Admin')
-                    <a href="shop/create" class="btn" id="Button">
+                    <a href="{{route('shop.create')}}"  class="adminBtn">
                         add Product
                     </a>
                 @endif
             @endif
-
         </div>
         <div class="column middle">
             <!--Get Products from Database-->
             @if(count($products)>0)
-                  @foreach($products as $product)
-                    <div class="gallery">
-                         <a href="shop/{{$product->id}}">
-                         <img src="{{asset('images/'.$product->image)}}" alt="{{$product->name}}">
-                        </a>
-                        <div class="desc">{{$product->descr}}</div>
+              @foreach($products as $product)
+                <div class="gallery">
+                    <a href="shop/{{$product->id}}">
+                     <img src="{{asset('images/'.$product->image)}}" alt="{{$product->name}}">
+                    </a>
+                    <div class="desc">
+                        <p>{{$product->name}}</p>
+                        <p>{{$product->price}}€, {{$product->size}}</p>
                     </div>
-                  @endforeach
+                </div>
+              @endforeach
             @else
             <!--Default Pics-->
             <div class="gallery">
@@ -44,4 +52,5 @@
 
         </div>    <!--toDo bind phpFile that creats for each Product one Gallary-->
     </div>
+</div>
 @endsection

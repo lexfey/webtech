@@ -18,9 +18,10 @@
     display: table;
     background-color: rgba(86, 86, 86, 0.51);
     margin-bottom: 1%;
+    padding: 5px;
 }
 .items:hover{
-    background: #eee;
+    background: #fdfdfd;
 }
 
 .items img{
@@ -35,6 +36,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 }
+
 .infoWrap{
     height: auto;
     width: 30%;
@@ -48,20 +50,24 @@
     position: relative;
     display: table-cell;
 }
+
+.final{
+    padding: 20px;
+    float: right;
+}
+
+.final p{
+    margin: 4px;
+}
+
+.linkIc2{
+    text-decoration: none;
+    color: black;
+}
 .remove{
-    margin: 5%;
     font-size: large;
     text-decoration: none;
     cursor: pointer;
 }
-.final{
-    margin: 20px;
-    padding: 20px;
-    float: right;
-}
-.checkout{
-    width: 200px;
-}
-
 
 /*-----------------------------------*/
