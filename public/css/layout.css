@@ -154,6 +154,10 @@ IMG.logo{
     text-decoration: none;
     color: white;
 }
+.linkIc2{
+    text-decoration: none;
+    color: black;
+}
 .icon{
     float: right;
     margin: 4px;
@@ -200,6 +204,12 @@ margin-bottom: 0;
     margin-top: 5px;
     margin-bottom: 10px;
 
+}
+
+/* Fehlermeldung*/
+.help-block{
+    font-style: italic;
+    color: rgba(185, 19, 16, 0.78);
 }
 
 #submitButton{

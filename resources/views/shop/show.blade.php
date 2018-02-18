@@ -16,7 +16,6 @@
 @section('content')
 <div class="mainContent"  >
     <div class="column-left">
-        <!-- todo Status mit einbinden-->
         <!-- Container for the image gallery -->
         <div class="container">
             <!-- Full-width images -->
@@ -69,13 +68,13 @@
        <form action="addToCart/{{$product->id}}" method="get" >
             <div class="product_description">
                 <p class="product_name">{{$product->name}}</p>
-                <p class="product_price">{{$product->price}}</p>
+                <p class="product_price">{{$product->price}}€</p>
                 @if($product->quantity == 0)
                 <p class="info"> Sorry we are sold out right now, check again for more later </p>
                 @else
                 <p class="info"> Just {{$product->quantity}} more available</p>
                 @endif
-                <p>{{$product->descr}}</p>
+                <p class="desc">{{$product->descr}}</p>
             </div>
 
             <div class="product_description">
@@ -97,7 +96,7 @@
                 @if($product->status == 'av')
                     <input type="submit" class="AddToCart" name="submitButton" value="Add to Cart">
                  @else
-                     <a href="{{ route('shop.index') }}" class="btn adminBtn" id="Button"> Back to Store</a>
+                     <a href="{{ route('shop.index') }}" class="AddToCart">Back to Store</a>
                 @endif
            @endif
 

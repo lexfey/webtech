@@ -130,10 +130,19 @@ class ProductController extends Controller
     }
 
     public function postCheckout(Request $request){
-       $oldCart = Session::get('cart');
-       $cart = new Cart($oldCart);
-       //todo finish up
-        //try{getpayment
+        //What needs to be validated
+        $this->validate($request, [
+            'name' =>'required',
+            'street' =>'required',
+            'country' =>'required',
+            'city' =>'required',
+        ]);
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        //todo finish up
+        //try{
+            //getpayment
             //$charge = getsPaymentID
             $order = new Order();
             $order->cart= serialize($cart);
@@ -144,10 +153,9 @@ class ProductController extends Controller
             //$order->payment_id = $charge->id; //works with stripe
 
             Auth::user()->orders()->save($order);
-
         //}catch(Exception e){}
 
-        Session::forget('cart');
+         Session::forget('cart');
         return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
     }
 

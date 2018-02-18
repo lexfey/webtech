@@ -50,9 +50,30 @@ div.gallery img {
 }
 
 div.desc {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     background-color: #ffffff;
+}
+
+.adminBtn{
+    background-color: white;
+    border: 2px solid #b3b3b3;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 2px;
+    width: auto;
+}
+.adminBtn:hover {
+    background-color: #b3b3b3;
+    color: white;
 }
 
 /*-----------------------------------*/

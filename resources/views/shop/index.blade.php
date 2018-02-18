@@ -20,12 +20,11 @@
             <!--Just for Admin -->
              @if(!Auth::guest())
                 @if(Auth::user()->name == 'Admin')
-                    <a href="{{route('shop.create')}}" class="btn" id="Button">
+                    <a href="{{route('shop.create')}}"  class="adminBtn">
                         add Product
                     </a>
                 @endif
             @endif
-
         </div>
         <div class="column middle">
             <!--Get Products from Database-->
