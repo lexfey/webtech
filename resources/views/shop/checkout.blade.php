@@ -23,7 +23,7 @@
                    </div>
                    <div class="checkItem">
                        {!! Form::open(['action' => 'ProductController@postCheckout', 'method'=> 'POST']) !!}
-                       <h3>Adress Infos</h3>
+                       <h3>Adress Details</h3>
                             <div class="Adress">
                                <div class="form-group">
                                    <label class="label">Full Name: </label>
@@ -64,14 +64,15 @@
                             </div>
                    </div>
                    <div class="checkItem">
-                       <h3>Payment Details</h3>
+                       <h3>Payment Method</h3>
                        <div class="form-group">
-                           <label class="label">What ever is needed </label>
-                           <input type="text" class="form-control" name="pay" value="">
+                           <p>{{ Form::radio('payment', 'prepayment') }} Prepayment (order will be process after we've received your payment)</p>
+                           <p>{{ Form::radio('payment', 'paypal')}} Paypal</p>
+
                        </div>
                    </div>
                    <div class="checkItem">
-                       {{Form::submit('Buy Now', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
+                       {{Form::submit('Review Your Order', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
                        {!! Form::close() !!}
                    </div>
                    <a  href="https://www.paypal.com/us/webapps/mpp/pay-online" class="info linkIc2" target="_blank">

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Product;
@@ -129,15 +130,32 @@ class ProductController extends Controller
         return view('shop.checkout', ['total'=>$total]);
     }
 
-    public function postCheckout(Request $request){
+    public function postCheckout(Request $request)
+    {
         //What needs to be validated
         $this->validate($request, [
-            'name' =>'required',
-            'street' =>'required',
-            'country' =>'required',
-            'city' =>'required',
+            'name' => 'required',
+            'street' => 'required',
+            'country' => 'required',
+            'city' => 'required',
+            'payment' => 'required'
         ]);
 
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+
+        $name = Input::get('name');
+        $street = Input::get('street');
+        $country = Input::get('country');
+        $city = Input::get('city');
+        $payment = Input::get('payment');
+
+        return view('shop.finalCheckout', ['total' => $total, 'name' => $name, 'street' => $street, 'city' => $city, 'country' => $country, 'payment' => $payment]);
+
+    }
+
+        public function finalCheckout(Request $request){
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         //todo finish up

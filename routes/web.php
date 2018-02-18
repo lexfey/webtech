@@ -44,7 +44,8 @@ Route::get('/checkout', [
     'middleware'=>'auth'   //to protect from not logged in users accessing it
 ]);
 
-Route::post('pay', 'ProductController@postCheckout')->name('pay');
+Route::post('check', 'ProductController@postCheckout')->name('check');
+Route::post('pay', 'ProductController@finalCheckout')->name('pay');
 
 Route::get('/account', [
     'uses'=>'UserController@account',
