@@ -1,0 +1,181 @@
+/*-----------------ProductLayout----------------*/
+
+.column-left, .column-right {
+    float: left;
+}
+
+/* Left and right column */
+.column-left {
+    width: 55%;
+}
+
+/* Middle column */
+.column-right {
+    width: 45%;
+}
+
+/* Clear floats after the columns */
+.mainContent:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+
+
+/*-------------------------SlideShow-------------------*/
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+    display: block;
+    margin: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Remove bottom margin. Needed for some browsers */
+img{
+    margin-bottom: -4px;
+}
+/* Because ist gets overwritten and im to lazy to rewrite now..*/
+img.logo{
+    width: 8%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+/*-------------------------ProductDes-----------------------*/
+
+.column-right form{
+    width: 90%;
+    float: left;
+    margin-top: 12%;
+    margin-bottom: 20px;
+}
+.product_description{
+    width: 100%;
+    display: block;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* --- General Infos ----*/
+.product_name, .product_price{
+    margin: 0;
+}
+
+.product_name{
+    font-size: xx-large;
+}
+.product_price{
+    font-size: x-large;
+    color: #4b4b4b;
+}
+
+
+/* --- Button ----*/
+.AddToCart {
+    background-color: white;
+    border: 2px solid #333;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top: 20px;
+
+    float: right;
+    margin-right: 30%;
+}
+.AddToCart:hover {
+    background-color: #333;
+    color: white;
+}
+
+/*-----------------End ProductLayout----------------*/
