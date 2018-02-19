@@ -296,7 +296,18 @@ class ProductController extends Controller
       $product->color = $request->input('color');
       $product->status = $request->input('status');
       $product->price = $request->input('price');
-      $product->quantity = $request->input('quantity');
+      $product->quantity = $request->input('sizeS')+$request->input('sizeM')+$request->input('sizeL');
+        $product->sizeS = $request->input('sizeS');
+        $product->sizeM = $request->input('sizeM');
+        $product->sizeL = $request->input('sizeL');
+
+        $product->sizeArray = array();
+
+        if($product->sizeS > '0') {
+            array_add($product->sizeArray, 'S', $product->sizeS);
+        }
+
+
 
       if($fileNameToStore2 != null){
           $product->image2 = $fileNameToStore2;
