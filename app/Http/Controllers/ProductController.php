@@ -18,6 +18,9 @@ use App\Order;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use PhpParser\Node\Stmt\Catch_;
+use App\Mail\confirmationEmail;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
 {
@@ -177,9 +180,11 @@ class ProductController extends Controller
             $order->city = $request->input('city');
             $order->country = $request->input('country');
             $order->name = $request->input('name');
+            $order->payment = $request->input('payment');
             //$order->payment_id = $charge->id; //works with stripe
 
             Auth::user()->orders()->save($order);
+            $this->sendConfirmationEmail($order);
        // }catch(Exception $e){
 
         //}
@@ -188,6 +193,13 @@ class ProductController extends Controller
         return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
     }
 
+    public function sendConfirmationEmail($order){
+        $thisUser = Auth::user();
+
+
+        Mail::to($thisUser['email'])->send(new confirmationEmail($order));
+
+    }
 
 
     /**-----------------------For Admin only------------------*/

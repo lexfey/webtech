@@ -58,6 +58,10 @@
                     {{Form::submit('Submit Your Order', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
                     {!! Form::close() !!}
                 </div>
+
+                <div href="{{ URL::previous() }}">Back</div>
+                <br>
+
                 <a  href="https://www.paypal.com/us/webapps/mpp/pay-online" class="info linkIc2" target="_blank">
                     <i class="fab fa-paypal"></i> PayPal Info
                 </a>

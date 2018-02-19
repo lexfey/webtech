@@ -67,7 +67,7 @@
                        <h3>Payment Method</h3>
                        <div class="form-group">
                            <p>{{ Form::radio('payment', 'prepayment') }} Prepayment (order will be process after we've received your payment)</p>
-                           <p>{{ Form::radio('payment', 'paypal')}} Paypal</p>
+                           <p>{{ Form::radio('payment', 'invoice')}} Invoice</p>
 
                        </div>
                    </div>
@@ -75,9 +75,12 @@
                        {{Form::submit('Review Your Order', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
                        {!! Form::close() !!}
                    </div>
-                   <a  href="https://www.paypal.com/us/webapps/mpp/pay-online" class="info linkIc2" target="_blank">
+
+                   <div href="{{ URL::previous() }}">Back</div>
+<br>
+                   <div  href="https://www.paypal.com/us/webapps/mpp/pay-online" class="info linkIc2" target="_blank">
                        <i class="fab fa-paypal"></i> PayPal Info
-                   </a>
+                   </div>
                 </div>
             </div>
        </div>
