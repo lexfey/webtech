@@ -13,6 +13,7 @@
     <link href="{{ asset('css/profile.css') }}" media="all" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
+    <div class="container">
     <h2 class="titel">Welcome {{ Auth::user()->name }}</h2>
 
     <div class="btn_box">
@@ -29,5 +30,6 @@
             </div>
         </a>
 
+    </div>
     </div>
 @endsection

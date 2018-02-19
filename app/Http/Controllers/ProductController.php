@@ -32,7 +32,7 @@ class ProductController extends Controller
     }
    */
 
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -130,6 +130,10 @@ class ProductController extends Controller
         return view('shop.checkout', ['total'=>$total]);
     }
 
+    /*
+     *  @created by Alex
+     *  @return finalcheckoutView with
+    */
     public function postCheckout(Request $request)
     {
         //What needs to be validated
@@ -155,10 +159,15 @@ class ProductController extends Controller
 
     }
 
-        public function finalCheckout(Request $request){
+    /*
+     *  @created by Demi
+     *  @return save order and redirect to store
+    */
+    public function finalCheckout(Request $request){
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         //todo finish up
+        //todo checkpayment method -> set status
         //try{
             //getpayment
             //$charge = getsPaymentID
@@ -171,9 +180,11 @@ class ProductController extends Controller
             //$order->payment_id = $charge->id; //works with stripe
 
             Auth::user()->orders()->save($order);
-        //}catch(Exception e){}
+       // }catch(Exception $e){
 
-         Session::forget('cart');
+        //}
+
+        Session::forget('cart');
         return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
     }
 

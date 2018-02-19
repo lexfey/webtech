@@ -14,12 +14,11 @@
 @endsection
 
 @section('content')
-    <h2 class="titel">Delete Account</h2>
     <div class="container">
+        <h2 class="titel">Delete Account</h2>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-
                     <div class="panel-body">
                         @if (session('error'))
                             <div class="alert alert-danger">
@@ -60,7 +59,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" id="submitButton">
                                         Delete account (Cannot be undone)
                                     </button>
                                 </div>

@@ -14,8 +14,8 @@
 @endsection
 
 @section('content')
-    <h2 class="titel">Change Password</h2>
     <div class="container">
+        <h2 class="titel">Change Password</h2>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -74,7 +74,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" id="submitButton">
                                         Change Password
                                     </button>
                                 </div>
