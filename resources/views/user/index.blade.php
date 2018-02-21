@@ -28,19 +28,7 @@
                  <p class="btn_title"><i class="fas fa-truck"></i> Orders</p>
                  <p class="btn_description">See the status of your orders</p>
              </div>
-         </a> 
-         <a class="btn" href="#">
-             <div class="column  btn_column">
-                 <p class="btn_title"><i class="fab fa-paypal"></i> Payment Details</p>
-                 <p class="btn_description">bla bla bla</p>
-             </div>
          </a>
-         <a class="btn" href="#">
-             <div class="column  btn_column">
-                 <p class="btn_title"><i class="fas fa-map-marker"></i> Adress</p>
-                 <p class="btn_description">Check your address details</p>
-             </div>
-         </a> 
      </div>
     </div>
 @endsection

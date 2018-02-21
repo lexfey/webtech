@@ -17,22 +17,19 @@
         <div class="orders">
         @foreach($orders as $order)
                 <div class="panel-body">
-                    <form action="#">
-                        <p>Order: {{$order->id}}</p>
-                        <div class="date line">Ordered on the {{$order->created_at}}</div>
-                            <span>
+                    <form action="/changeOrder/{{$order->id}}">
+                        <br>
+                        <p class="boxTitel head"> Order: {{$order->id}} <span class="date line">Ordered on the {{$order->created_at}}</span></p>
+                        <div class="box">
+                            <span class="input">
                                 {{Form::label('status', 'Status:')}}
-                                <div class="col-md-6">
-                                    {{Form::text('status', $order->status, ['class' => 'orderInfo'])}}
-                                </div>
+                                {{Form::text('status', $order->status, ['class' => 'orderInfo'])}}
                             </span>
-                            <span>
+                            <span class="input">
                                 {{Form::label('shippingID', 'Shipping ID:')}}
-                                <div class="col-md-6">
-                                    {{Form::text('shippingID', $order->shipping_Id, ['class' => 'orderInfo'])}}
-                                </div>
+                                {{Form::text('shippingID', $order->shipping_Id, ['class' => 'orderInfo'])}}
                             </span>
-
+                        </div>
                         <br>
                         <div class="box">
                             <p class="boxTitel">Order Details</p>
@@ -48,18 +45,15 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <div>
-                                <p>Payment: {{$order->payment}}</p>
-                                <strong class="price">Total Price: {{$order->cart->totalPrice}}€</strong>
-                            </div>
+                            <p class="price">Payment: {{$order->payment}}  -  Total Price: {{$order->cart->totalPrice}}€ </p>
                         </div>
                         <br>
                         <div class="box">
                             <p class="boxTitel">Shipping Adress</p>
                             <div class="adress">
-                                <p class="line">{{$order->name}}</p>
-                                <p class="line">{{$order->straße}}</p>
-                                <p class="line">{{$order->city}}</p>
+                                <p class="line">{{$order->firstName}} {{$order->lastName}} </p>
+                                <p class="line">{{$order->street}}, {{$order->number}}</p>
+                                <p class="line"> {{$order->zip}} {{$order->city}}</p>
                                 <p class="line">{{$order->country}}</p>
                             </div>
                             <p>Email:  | UserID: {{$order->user_id}}</p>

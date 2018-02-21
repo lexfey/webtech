@@ -10,7 +10,6 @@
             <div class="nav">
                 
                 <!-- Left Side Of Navbar -->
-                <a class="nav_item_left" href="/home">Home</a>
                 <a class="nav_item_left" href="{{ route('shop.index') }}">Shop</a>
                 <a class="nav_item_left" href="/about">About</a>
 

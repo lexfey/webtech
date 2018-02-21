@@ -71,4 +71,16 @@
     font-style: oblique;
 }
 
+.content_center{
+    text-align: center;
+    position: relative;
+    width: auto;
+}
+
+h1{
+   text-align: center;
+    position: relative;
+    width: auto;
+}
+
 /*-----------------------------------*/

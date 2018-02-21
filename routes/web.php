@@ -13,19 +13,11 @@
 
 
 Route::get('/', function () {
-    return view('home');
-});
-Route::get('/home', function () {
-    return view('home');
+    return view('about');
 });
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::post('/contact/submit', 'MessageController@submit');
-
 
 Auth::routes();
 Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
@@ -33,18 +25,17 @@ Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDon
 Route::resource('/shop', 'ProductController');
 Route::resource('/cart', 'CartController');
 Route::resource('/user', 'UserController');
-
-
 Route::get('/dashboard', 'DashboardController@index');
 
+
+Route::post('check', 'ProductController@postCheckout')->name('check');
+Route::post('pay', 'ProductController@finalCheckout')->name('pay');
 Route::get('/checkout', [
     'uses' => 'ProductController@getCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'   //to protect from not logged in users accessing it
 ]);
 
-Route::post('check', 'ProductController@postCheckout')->name('check');
-Route::post('pay', 'ProductController@finalCheckout')->name('pay');
 
 Route::get('/account', [
     'uses' => 'UserController@account',
@@ -53,18 +44,18 @@ Route::get('/orders', [
     'uses' => 'UserController@getOrders',
     'as' => 'orders',
     'middleware' => 'auth']);
+
 Route::get('/changepassword', [
     'uses' => 'UserController@showChangePasswordForm',
     'as' => 'changepassword']);
-
-Route::post('/changepassword', 'UserController@changePassword')->name('changepassword');
-
 Route::get('/deleteaccount', [
     'uses' => 'UserController@showDeleteAccountForm',
     'as' => 'deleteaccount']);
 
+Route::post('/changepassword', 'UserController@changePassword')->name('changepassword');
 Route::post('/deleteaccount', 'UserController@destroy')->name('deleteaccount');
 
+Route::get('/changeOrder/{id}', 'UserController@changeOrder');
 
 Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
 Route::get('/deleteFromCart/{id}', 'ProductController@getDeleteFromCart');

@@ -139,6 +139,20 @@ class UserController extends Controller
         }
     }
 
+    public function changeOrder(Request $request, $id){
+
+        $this->validate($request, [
+            'status' => 'required'
+        ]);
+        $order = Order::find($id);
+        $order->status = $request->input('status');
+        if($request->has('shippingID')) {
+            $order->shipping_Id = $request->input('shippingID');
+        }
+        $order->save();
+        return view('user.index')->with('success','Successfuly edited');
+    }
+
     /**
      * Display the specified resource.
      *
