@@ -85,45 +85,14 @@ class UserController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-
-    /* public function update(Request $request, $id)
-     {
-
-         $user = User::find($id);
-         //todo error kein zugriff auf pass wort
-         $password=$user->password;
-         $input=$request->input('oldpassword');
-
-         $passwordIsOk = password_verify($request->input('oldpassword'), $user->password);
-
-         $hashedinput = Hash::make($input);
-
-         if(Hash::check($input, $password)) {
-             if($request->input('password')==$request->input('password-confirm')){
-
-                 if (!$request->input('password') == '') {
-                     $user->password = bcrypt($request->input('password'));
-                 }
-                 $user->save();
-                 return redirect('/user')->with('success', 'Successfuly updated');
-
-             }else{
-                 return redirect('/user')->with('success', 'NOT SAME');
-             }
-         }else{
-             return redirect('/user')->with('success', 'Wroooong old');
-         }
-     }*/
 
     public function changePassword(Request $request)
     {
+
+        $this->validate($request, [
+            'current-password' => 'required',
+            'new-password' => 'required|string|min:6|confirmed',
+        ]);
 
         if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
             // The passwords matches
@@ -135,10 +104,7 @@ class UserController extends Controller
             return redirect()->back()->with("error", "New Password cannot be same as your current password. Please choose a different password.");
         }
 
-        $validatedData = $request->validate([
-            'current-password' => 'required',
-            'new-password' => 'required|string|min:6|confirmed',
-        ]);
+        //todo double check confirm password
 
         //Change Password
         $user = Auth::user();

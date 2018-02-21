@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.world4you.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'webshop@feyertag.family'),
+        'name' => env('MAIL_FROM_NAME', 'Webshop'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME', 'gruppe4webtech'),
+    'username' => env('webshop@feyertag.family'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('n=heaMitus'),
 
     /*
     |--------------------------------------------------------------------------

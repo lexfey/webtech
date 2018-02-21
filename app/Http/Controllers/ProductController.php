@@ -54,6 +54,7 @@ class ProductController extends Controller
    * @created by Demi
    */
     public function getCart(){
+
         if(!Session::has('cart')){
             return view('shop.shoppingCart');
         }
@@ -66,15 +67,17 @@ class ProductController extends Controller
     * @created by Demi
     */
     public function getAddToCart(Request $request, $id){
+
+        $size = Input::get('size');
         $product = Product::find($id);
         //check if there is already a cart and gets it.
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         //make a new cart and add the product
         $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
+        $cart->add($product, $product->id, $size);
         //update the session by giving it the new cart
         $request->session()->put('cart', $cart);
-        $this->reduceQty($id);
+        $this->reduceQty($id, $size);
         return redirect()->route('product.shoppingCart');
     }
 
@@ -82,12 +85,19 @@ class ProductController extends Controller
      * Deletes one item from the Cart (no matter the quantity)
      * @created by Demi
      */
-    public function getDeleteFromCart(Request $request, $id){
+    public function getDeleteFromCart(Request $request, $id)
+    {
+
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $cart->remove($id);
         $request->session()->put('cart', $cart);
-        $this->addQty($id);
+        //toDo die Größen wieder zurück geben (qty erhöhen) [Außer wir machen das reduzieren der Qty erst bei Kauf]
+        //$sizes = //split after ','
+        //foreach ($size in $sizes)
+
+       // $this->addQty($id, $s);
+
         return redirect()->route('product.shoppingCart');
     }
 
@@ -95,26 +105,53 @@ class ProductController extends Controller
      * Deletes one item from the Cart (no matter the quantity)
      * @created by Demi
      */
-    public function getRemoveOneFromCart(Request $request, $id){
+    /*
+    public function getRemoveOneFromCart(Request $request, $id, $size){
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
-        $cart->reduceByOne($id);
+        $cart->reduceByOne($id, $size);
         $request->session()->put('cart', $cart);
-        $this->addQty($id);
+        $this->addQty($id, $size);
         return redirect()->route('product.shoppingCart');
     }
-
+    */
     /*
      * Deletes one item from the Cart (no matter the quantity)
      * @created by Demi
      */
-    public function getAddOneToCart(Request $request, $id){
+    /*
+    public function getAddOneToCart(Request $request, $id, $size){
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
-        $cart->addOne($id);
+        $cart->addOne($id, $size);
         $request->session()->put('cart', $cart);
-        $this->reduceQty($id);
+        $this->reduceQty($id, $size);
         return redirect()->route('product.shoppingCart');
+    }
+    */
+
+    public function reduceQty($id,$size){
+        $product = Product::find($id);
+        if($size=='small'){
+            $product->sizeS --;
+        }else if($size == 'medium'){
+            $product->sizeM--;
+        }else{
+            $product->sizeL--;
+        }
+        $product->save();
+
+    }
+    public function addQty($id, $size){
+        $product = Product::find($id);
+        if($size=='small'){
+            $product->sizeS ++;
+        }else if($size == 'medium'){
+            $product->sizeM++;
+        }else{
+            $product->sizeL++;
+        }
+        $product->save();
     }
 
     /**-----------Checking out---------------------**/
@@ -288,26 +325,23 @@ class ProductController extends Controller
       //Create new Product 
       $product =new Product; 
 
-        //todo make size a range (more values)
+
       $product->name = $request->input('name');
       $product->descr = $request->input('descr');
       $product->image = $fileNameToStore0;
-      $product->size = $request->input('size');
       $product->color = $request->input('color');
-      $product->status = $request->input('status');
       $product->price = $request->input('price');
-      $product->quantity = $request->input('sizeS')+$request->input('sizeM')+$request->input('sizeL');
-        $product->sizeS = $request->input('sizeS');
-        $product->sizeM = $request->input('sizeM');
-        $product->sizeL = $request->input('sizeL');
 
-        $product->sizeArray = array();
-
-        if($product->sizeS > '0') {
-            array_add($product->sizeArray, 'S', $product->sizeS);
-        }
+      $product->sizeS = $request->input('sizeS');
+      $product->sizeM = $request->input('sizeM');
+      $product->sizeL = $request->input('sizeL');
+        /*$product->sizeArray = array();
 
 
+          if($product->sizeS > '0') {
+              array_add($product->sizeArray, 'S', $product->sizeS);
+          }
+          */
 
       if($fileNameToStore2 != null){
           $product->image2 = $fileNameToStore2;
@@ -421,8 +455,7 @@ class ProductController extends Controller
       //find Product
       $product = Product::find($id); 
       
-      $product->name = $request->input('name');
-      $product->descr = $request->input('descr');
+
       if($request->hasFile('image')){
           $product->image = $fileNameToStore;
       }
@@ -432,11 +465,15 @@ class ProductController extends Controller
       if($request->hasFile('image3')){
         $product->image3 = $fileNameToStore3;
       }
-      $product->size = $request->input('size');
-      $product->color = $request->input('color');
-      $product->status = $request->input('status');
-      $product->price = $request->input('price');
-      $product->quantity = $request->input('quantity');
+
+    $product->name = $request->input('name');
+    $product->descr = $request->input('descr');
+    $product->color = $request->input('color');
+    $product->price = $request->input('price');
+
+    $product->sizeS = $request->input('sizeS');
+    $product->sizeM = $request->input('sizeM');
+    $product->sizeL = $request->input('sizeL');
         
       //Save Product
       $product->save();
@@ -447,23 +484,7 @@ class ProductController extends Controller
       
     }
 
-    public function reduceQty($id){
-        $product = Product::find($id);
-        $product->quantity --;
-        if($product->quantity == 0){
-            $product->status='out';
-        }
-        $product->save();
 
-    }
-    public function addQty($id){
-        $product = Product::find($id);
-        $product->quantity ++;
-        if($product->quantity == 1){
-            $product->status='av';
-        }
-        $product->save();
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -486,4 +507,5 @@ class ProductController extends Controller
         return redirect('/shop')->with('success','Successfuly deleted');
         
     }
+
 }

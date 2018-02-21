@@ -68,8 +68,8 @@ Route::post('/deleteaccount', 'UserController@destroy')->name('deleteaccount');
 
 Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
 Route::get('/deleteFromCart/{id}', 'ProductController@getDeleteFromCart');
-Route::get('/removeOneFromCart/{id}', 'ProductController@getRemoveOneFromCart');
-Route::get('/addOneToCart/{id}', 'ProductController@getAddOneToCart');
+//Route::get('/removeOneFromCart/{id}', 'ProductController@getRemoveOneFromCart');
+//Route::get('/addOneToCart/{id}', 'ProductController@getAddOneToCart');
 
 Route::get('/shoppingCart', [
     'uses' => 'ProductController@getCart',

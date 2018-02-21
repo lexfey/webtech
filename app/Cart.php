@@ -32,16 +32,18 @@ class Cart
      * One item is added to shoppingcart
      * @created by Demi
      */
-    public function add($item, $id){
+    public function add($item, $id, $size){
         //one Group/Item as assotiatives Array
-        $storedItem = ['qty'=>0, 'price'=>$item->price, 'item'=>$item];
+        $storedItem = ['qty'=>0, 'price'=>$item->price, 'item'=>$item, 'sizes'=>$size];
 
         //checking if item already exists
         if($this->items){
             if(array_key_exists($id, $this->items)){
                 $storedItem = $this->items[$id];
+                $storedItem['sizes']= $storedItem['sizes'].', '.$size;
             }
         }
+
 
         //increment Quantity
         $storedItem['qty']++;
@@ -60,7 +62,8 @@ class Cart
      * Qty of an item in the shoppingcart is reduced by one
      * @created by Demi
      */
-    public function reduceByOne($id){
+    /*
+    public function reduceByOne($id, $size){
         $this->items[$id]['qty']--;
         $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
         $this->totalQty--;
@@ -70,18 +73,21 @@ class Cart
             unset($this->items[$id]);
         }
     }
+    */
 
     /*
      * Qty of an item in the shoppingcart is added one
      * @created by Demi
      */
-    public function addOne($id){
+    /*
+    public function addOne($id, $size){
         $this->items[$id]['qty']++;
         $this->items[$id]['price'] += $this->items[$id]['item']['price'];
         $this->totalQty++;
 
         $this->totalPrice += $this->items[$id]['item']['price'];
     }
+    */
 
     /*
      * the whole item in the shoppingcart is removed

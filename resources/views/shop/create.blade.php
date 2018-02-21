@@ -36,28 +36,27 @@
 				</div>
 			</div>
 			<div class="form-group">
-				{{Form::label('size', 'Product Size')}}
-				<div class="col-md-6">
-				{{Form::select('size', ['small'=>'Small', 'medium'=>'Medium', 'large'=>'Large'], null, ['class' => 'form-control'])}}
-				</div>
-			</div>
-			<div class="form-group">
 				{{Form::label('color', 'Product Color')}}
 				<div class="col-md-6">
 				{{Form::text('color', '', ['class' => 'form-control'])}}
 				</div>
 			</div>
 			<div class="form-group">
-				{{Form::label('status', 'Product Status')}}
+				{{Form::label('sizeS', 'Quantity of S')}}
 				<div class="col-md-6">
-				{{Form::select('status', ['av'=>'Available', 'out'=>'Sold out'], null, ['class' => 'form-control'])}}
+					{{Form::number('sizeS','', ['class' => 'form-control'])}}
 				</div>
 			</div>
-				<!--todo check abhängig von status-->
 			<div class="form-group">
-				{{Form::label('quantity', 'Quantity')}}
+				{{Form::label('sizeM', 'Quantity of M')}}
 				<div class="col-md-6">
-					{{Form::number('quantity','', ['class' => 'form-control'])}}
+					{{Form::number('sizeM','', ['class' => 'form-control'])}}
+				</div>
+			</div>
+			<div class="form-group">
+				{{Form::label('sizeL', 'Quantity of L')}}
+				<div class="col-md-6">
+					{{Form::number('sizeL','', ['class' => 'form-control'])}}
 				</div>
 			</div>
 

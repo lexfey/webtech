@@ -37,27 +37,27 @@
 				</div>
 			</div>
 			<div class="form-group">
-				{{Form::label('size', 'Product Size')}}
-				<div class="col-md-6">
-					{{Form::select('size', ['small'=>'Small', 'medium'=>'Medium', 'large'=>'Large'], $product->size, ['class' => 'form-control'])}}
-				</div>
-			</div>
-			<div class="form-group">
 				{{Form::label('color', 'Product Color')}}
 				<div class="col-md-6">
 				{{Form::text('color', $product->color, ['class' => 'form-control'])}}
 				</div>
 			</div>
 			<div class="form-group">
-				{{Form::label('quantity', 'Product Quantity')}}
+				{{Form::label('sizeS', 'Quantity of S')}}
 				<div class="col-md-6">
-					{{Form::number('quantity', $product->quantity, ['class' => 'form-control'])}}
+					{{Form::number('sizeS',$product->sizeS , ['class' => 'form-control'])}}
 				</div>
 			</div>
 			<div class="form-group">
-				{{Form::label('status', 'Product Status')}}
+				{{Form::label('sizeM', 'Quantity of M')}}
 				<div class="col-md-6">
-					{{Form::select('status', ['av'=>'Available', 'out'=>'Sold out'], $product->status , ['class' => 'form-control'])}}
+					{{Form::number('sizeM', $product->sizeM , ['class' => 'form-control'])}}
+				</div>
+			</div>
+			<div class="form-group">
+				{{Form::label('sizeL', 'Quantity of L')}}
+				<div class="col-md-6">
+					{{Form::number('sizeL', $product->sizeL , ['class' => 'form-control'])}}
 				</div>
 			</div>
 			<div class="form-group">

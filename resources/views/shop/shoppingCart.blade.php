@@ -25,16 +25,8 @@
                                 </div>
                                     <div class="infoWrap">
                                     <h3>{{$product['item']['name']}}</h3>
-                                    <p>Size: {{$product['item']['size']}} </p>
-                                    <p>Quantity:
-                                        @if($product['item']['quantity'] > 0)
-                                        <a class="linkIc2" href="removeOneFromCart/{{$product['item']['id']}}"><i class="fas fa-minus"></i></a>
-                                        @endif
-                                        {{$product['qty']}}
-                                        @if($product['item']['quantity'] > $product['qty'])
-                                        <a class="linkIc2" href="addOneToCart/{{$product['item']['id']}}"><i class="fas fa-plus"></i></a>
-                                        @endif
-                                    </p>
+                                    <p>Size(s): {{$product['sizes']}} </p>
+                                    <p>Quantity: {{$product['qty']}}</p>
                                     <p>Price: {{$product['price']}} € </p>
                                 </div>
                                 <div class="removeWrap">

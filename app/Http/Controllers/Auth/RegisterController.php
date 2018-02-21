@@ -112,7 +112,7 @@ class RegisterController extends Controller
         $user = User::where(['email'=>$email, 'verifyToken'=>$verifyToken])->first();
         if($user){
             User::where(['email'=>$email, 'verifyToken'=>$verifyToken])->update(['status'=>1, 'verifyToken'=>NULL]);
-            return view('login'); //todo with email prefilled
+            return view('auth.login'); //todo with email prefilled
         }else{
             return 'user not found';
         }
