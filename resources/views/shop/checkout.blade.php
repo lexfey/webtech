@@ -19,38 +19,66 @@
            <div class="panel-body">
                <div class="innerform">
                    <div class="checkItem">
-                       <h3>Your Total: {{$total}}€ </h3>
-                   </div>
-                   <div class="checkItem">
                        {!! Form::open(['action' => 'ProductController@postCheckout', 'method'=> 'POST']) !!}
+                       <!--todo! input wird bei white space gecutet-->
                        <h3>Adress Details</h3>
                             <div class="Adress">
                                <div class="form-group">
-                                   <label class="label">Full Name: </label>
+                                   <span>
+                                   <label class="label">First Name: </label>
                                    @if ($errors->has('name'))
                                        <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('name1') }}</strong>
                                         </span>
                                    @endif
-                                   <input type="text" class="form-control" name="name" value="">
+                                   <input type="text" class="form-control" name="name1" value="">
+                                   </span>
+                                   <span>
+                                       <label class="label">Last Name: </label>
+                                       @if ($errors->has('name'))
+                                       <span class="help-block">
+                                            <strong>{{ $errors->first('name2')}}</strong>
+                                        </span>
+                                       @endif
+                                       <input type="text" class="form-control" name="name2" value="">
+                                   </span>
                                </div>
                                <div class="form-group">
-                                   <label class="label">Street, number: </label>
+                                   <label class="label">Street: </label>
                                    @if ($errors->has('street'))
                                        <span class="help-block">
                                             <strong>{{ $errors->first('street') }}</strong>
                                         </span>
                                    @endif
                                    <input type="text" class="form-control" name="street" value="">
+                                   <span>
+                                       <label class="label">Number: </label>
+                                       @if ($errors->has('number'))
+                                           <span class="help-block">
+                                            <strong>{{ $errors->first('number')}}</strong>
+                                        </span>
+                                       @endif
+                                       <input type="number" class="form-control" name="number" value="">
+                                   </span>
                                </div>
                                <div class="form-group">
-                                   <label class="label"> Zip-Code, City: </label>
+                                   <span>
+                                       <label class="label">Zip: </label>
+                                       @if ($errors->has('zip'))
+                                           <span class="help-block">
+                                            <strong>{{ $errors->first('zip')}}</strong>
+                                        </span>
+                                       @endif
+                                       <input type="number" class="form-control" name="zip" value="">
+                                   </span>
+                                   <label class="label">City: </label>
                                    @if ($errors->has('city'))
                                        <span class="help-block">
                                             <strong>{{ $errors->first('city') }}</strong>
                                         </span>
                                    @endif
                                    <input type="text" class="form-control" name="city" value="">
+
                                </div>
                                <div class="form-group">
                                    <label class="label">Country: </label>

@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -118,13 +119,24 @@ class UserController extends Controller
 
     public function getOrders()
     {
-        $orders = Auth::user()->orders;
-        //to unserialise all the orders
-        $orders->transform(function ($order, $key) {
-            $order->cart = unserialize($order->cart);
-            return $order;
-        });
-        return view('user.orders', ['orders' => $orders]);
+        $user = Auth::user();
+
+        if ($user->name != 'Admin') {
+            $orders = Auth::user()->orders;
+            //to unserialise all the orders
+            $orders->transform(function ($order, $key) {
+                $order->cart = unserialize($order->cart);
+                return $order;
+            });
+            return view('user.orders', ['orders' => $orders]);
+        }else{
+            $orders= Order::all();
+            $orders->transform(function ($order, $key) {
+                $order->cart = unserialize($order->cart);
+                return $order;
+            });
+            return view('user.allOrders',  ['orders' => $orders]);
+        }
     }
 
     /**

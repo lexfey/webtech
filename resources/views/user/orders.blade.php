@@ -17,7 +17,14 @@
             @foreach($orders as $order)
                 <!--todo link status & shipping number-->
             <div class="panel-body">
-                <div class="date">Ordered on the {{$order->created_at}} <span class="id">Shipping ID xxxxxxxxx</span></div>
+                <div class="date">Ordered on the {{$order->created_at}}
+                    @if ($order->shipping_Id != null)
+                        <span class="id">{{$order->shipping_Id}}</span>
+                    @else
+                        <span class="id"> Unknown </span>
+                    @endif
+                    <span class="id">Shipping ID: </span>
+                </div>
                 <ul class="orders">
                     @foreach($order->cart->items as $item)
                     <li class="order">
@@ -26,7 +33,7 @@
                     @endforeach
                 </ul>
                 <div>
-                <span class="status">Status</span>
+                <span class="status">{{$order->status}}</span>
                 <strong class="price">Total Price: {{$order->cart->totalPrice}}€</strong>
                 </div>
             </div>

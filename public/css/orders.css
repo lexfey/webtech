@@ -31,3 +31,19 @@
 .price{
     float: right;
 }
+
+.box{
+    border: solid 1px #f9f9f9;
+}
+.box:hover{
+    border: solid 1px rgba(51, 51, 51, 0.76);
+}
+.line{
+    margin: 1px;
+}
+.boxTitel{
+    font-size: x-large;
+}
+.adress{
+    margin: 5px;
+}

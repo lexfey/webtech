@@ -176,9 +176,8 @@ class ProductController extends Controller
     */
     public function postCheckout(Request $request)
     {
-        //What needs to be validated
+        //todo What needs to be validated
         $this->validate($request, [
-            'name' => 'required',
             'street' => 'required',
             'country' => 'required',
             'city' => 'required',
@@ -189,13 +188,19 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
 
-        $name = Input::get('name');
+        $firstName = Input::get('name1');
+        $lastName = Input::get('name2');
         $street = Input::get('street');
+        $number = Input::get('number');
         $country = Input::get('country');
+        $zip = Input::get('zip');
         $city = Input::get('city');
         $payment = Input::get('payment');
 
-        return view('shop.finalCheckout', ['total' => $total, 'name' => $name, 'street' => $street, 'city' => $city, 'country' => $country, 'payment' => $payment]);
+        return view('shop.finalCheckout', ['total' => $total, 'name1' => $firstName, 'street' => $street,
+            'city' => $city, 'country' => $country, 'payment' => $payment,
+            'number'=>$number ,'zip'=>$zip  ,'name2'=>$lastName
+        ]);
 
     }
 
@@ -214,12 +219,17 @@ class ProductController extends Controller
             $order = new Order();
             $order->cart= serialize($cart);
             $order->street = $request->input('street');
+            $order->number = $request->input('number');
             $order->city = $request->input('city');
+            $order->zip =$request->input('zip');
             $order->country = $request->input('country');
-            $order->name = $request->input('name');
+            $order->firstName = $request->input('name1');
+            $order->lastName =$request->input('name2');
             $order->payment = $request->input('payment');
+            $order->status = 'ordered';
             //$order->payment_id = $charge->id; //works with stripe
 
+            //sending Confirmation email and saving order
             Auth::user()->orders()->save($order);
             $this->sendConfirmationEmail($order);
        // }catch(Exception $e){
