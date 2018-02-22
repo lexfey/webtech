@@ -66,10 +66,11 @@ body {
 }
 
 IMG.logo{
-    width: 8%;
+    width: 30%;
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    padding: 20px;
 }
 
 /* -------------- Navigation Bar ------------------- */

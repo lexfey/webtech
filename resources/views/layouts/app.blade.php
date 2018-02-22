@@ -23,9 +23,7 @@
     <link href="{{asset('css/layout.css') }}" media="all" rel="stylesheet" type="text/css" />
     @yield('stylesheet')
        
-    <!--Script-->    
-    <script type="text/javascript" src="{{ asset('js/productslide.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/overlayer.js') }}"></script>
+    <!--Script-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('script')

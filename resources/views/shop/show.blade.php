@@ -8,6 +8,9 @@
 ?>
 
 @extends('layouts.app')
+@section('script')
+    <script type="text/javascript" src="{{ asset('js/productslide.js') }}"></script>
+@endsection
 
 @section('stylesheet')
     <link href="{{ asset('css/product.css') }}" media="all" rel="stylesheet" type="text/css"/>
