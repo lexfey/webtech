@@ -197,9 +197,10 @@ class ProductController extends Controller
         $city = Input::get('city');
         $payment = Input::get('payment');
 
+
         return view('shop.finalCheckout', ['total' => $total, 'name1' => $firstName, 'street' => $street,
             'city' => $city, 'country' => $country, 'payment' => $payment,
-            'number'=>$number ,'zip'=>$zip  ,'name2'=>$lastName
+            'number'=>$number ,'zip'=>$zip  ,'name2'=>$lastName, 'products'=>$cart->items
         ]);
 
     }

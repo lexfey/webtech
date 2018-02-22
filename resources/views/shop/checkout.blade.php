@@ -94,20 +94,18 @@
                    <div class="checkItem">
                        <h3>Payment Method</h3>
                        <div class="form-group">
-                           <p>{{ Form::radio('payment', 'prepayment') }} Prepayment (order will be process after we've received your payment)</p>
                            <p>{{ Form::radio('payment', 'invoice')}} Invoice</p>
-
                        </div>
+                       <br>
+                       <a  href=# class="info" target="_blank">
+                           <i class="fas fa-info-circle"></i> Right now you can only pay on Invoice
+                       </a>
                    </div>
                    <div class="checkItem">
                        {{Form::submit('Review Your Order', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
                        {!! Form::close() !!}
-                   </div>
 
-                   <div href="{{ URL::previous() }}">Back</div>
-<br>
-                   <div  href="https://www.paypal.com/us/webapps/mpp/pay-online" class="info linkIc2" target="_blank">
-                       <i class="fab fa-paypal"></i> PayPal Info
+                       <a id="Button" href="{{ URL::previous() }}">Back</a>
                    </div>
                 </div>
             </div>

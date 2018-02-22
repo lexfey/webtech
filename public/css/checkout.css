@@ -1,10 +1,76 @@
 
 .checkItem{
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 .innerform{
     width: 80%;
 }
+.checkItem p{
+    margin: 10px;
+}
+.rightItem{
+    float: right;
+    margin: 10px;
+}
 .info{
     margin-left: 10px;
+    font-size: small;
+}
+.total{
+    font-size: large;
+}
+.cartWrap{
+    list-style-type: none;
+    width: 100%;
+    padding: 10%;
+    padding-top: 5%;
+}
+.items{
+    border: solid 1px rgba(86, 86, 86, 0.51);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    display: table;
+    margin-bottom: 1%;
+    padding: 5px;
+}
+.items img{
+    position: relative;
+    display: table-cell;
+    float: left;
+    height: 75px;
+    width: auto;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.infoWrap p{
+    margin: 2px;
+    font-size: small;
+}
+.infoWrap h4{
+    margin: 4px;
+}
+.infoWrap {
+    height: auto;
+    width: 20%;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+.right{
+    width: 70%;
+    float: left;
+}
+
+.readForm{
+    border: none;
+    background-color: gainsboro;
+    text-align: left;
+    width: auto;
+    font-family: Verdana,sans-serif;
+    padding: 4px;
+    margin-bottom: 4px;
 }

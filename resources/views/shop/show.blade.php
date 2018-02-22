@@ -86,13 +86,13 @@
                     @else
                         <p class="labels">Select your size:</p>
                         @if($product->sizeS>'0')
-                            <span>{{ Form::radio('size', 'small') }}Small <span class="info">({{$product->sizeS}})</span></span>
+                            <span>{{ Form::radio('size', 'small') }} Small <span class="info">({{$product->sizeS}})</span></span>
                         @endif
                         @if($product->sizeM>'0')
-                            <span>{{ Form::radio('size', 'medium') }}Medium <span class="info">({{$product->sizeM}})</span></span>
+                            <span>{{ Form::radio('size', 'medium') }} Medium <span class="info">({{$product->sizeM}})</span></span>
                         @endif
                         @if($product->sizeL>'0')
-                            <span>{{ Form::radio('size', 'large') }}Large <span class="info">({{$product->sizeL}})</span></span>
+                            <span>{{ Form::radio('size', 'large') }} Large <span class="info">({{$product->sizeL}})</span></span>
                         @endif
                         <br>
                         <br>

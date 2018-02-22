@@ -17,7 +17,8 @@
             @foreach($orders as $order)
                 <!--todo link status & shipping number-->
             <div class="panel-body">
-                <div class="date">Ordered on the {{$order->created_at}}
+
+                <div class="date">Ordered on the {{$order->created_at}} - OrderID: {{$order->id}}
                     @if ($order->shipping_Id != null)
                         <span class="id">{{$order->shipping_Id}}</span>
                     @else
