@@ -5,6 +5,7 @@
  * Date: 09.02.2018
  * Time: 11:34
  */
+
 namespace App\Http\Controllers;
 
 use App\Cart;
@@ -24,16 +25,16 @@ use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
 {
-   //Überprüfen ob user eingeloggt ist. Hier nicht notwendig (aber vielleicht wo anders später) 
-   /**
+    //Überprüfen ob user eingeloggt ist. Hier nicht notwendig (aber vielleicht wo anders später)
+    /**
      * Create a new controller instance.
      *
      * @return void
-   public function __construct()
-    {
-    $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
-   */
+    public function __construct()
+     * {
+     * $this->middleware('auth', ['except' => ['index', 'show']]);
+     * }
+     */
 
     /**
      * Display a listing of the resource.
@@ -53,20 +54,22 @@ class ProductController extends Controller
    * Returns the shopping cart View with all the cart items
    * @created by Demi
    */
-    public function getCart(){
+    public function getCart()
+    {
 
-        if(!Session::has('cart')){
+        if (!Session::has('cart')) {
             return view('shop.shoppingCart');
         }
-        $cart  = Session::get('cart');
-        return view('shop.shoppingCart', ['products'=>$cart->items , 'totalPrice'=> $cart->totalPrice]);
+        $cart = Session::get('cart');
+        return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
     /*
     * Adds one item from the Cart
     * @created by Demi
     */
-    public function getAddToCart(Request $request, $id){
+    public function getAddToCart(Request $request, $id)
+    {
 
         $size = Input::get('size');
         $product = Product::find($id);
@@ -96,7 +99,7 @@ class ProductController extends Controller
         //$sizes = //split after ','
         //foreach ($size in $sizes)
 
-       // $this->addQty($id, $s);
+        // $this->addQty($id, $s);
 
         return redirect()->route('product.shoppingCart');
     }
@@ -130,25 +133,28 @@ class ProductController extends Controller
     }
     */
 
-    public function reduceQty($id,$size){
+    public function reduceQty($id, $size)
+    {
         $product = Product::find($id);
-        if($size=='small'){
-            $product->sizeS --;
-        }else if($size == 'medium'){
+        if ($size == 'small') {
+            $product->sizeS--;
+        } else if ($size == 'medium') {
             $product->sizeM--;
-        }else{
+        } else {
             $product->sizeL--;
         }
         $product->save();
 
     }
-    public function addQty($id, $size){
+
+    public function addQty($id, $size)
+    {
         $product = Product::find($id);
-        if($size=='small'){
-            $product->sizeS ++;
-        }else if($size == 'medium'){
+        if ($size == 'small') {
+            $product->sizeS++;
+        } else if ($size == 'medium') {
             $product->sizeM++;
-        }else{
+        } else {
             $product->sizeL++;
         }
         $product->save();
@@ -160,14 +166,15 @@ class ProductController extends Controller
    * @return checkoutView with the total price
    */
     //todo check if produkt (still) available
-    public function getCheckout(){
-        if(!Session::has('cart')){
+    public function getCheckout()
+    {
+        if (!Session::has('cart')) {
             return view("shop.shoppingcart");
         }
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
-        return view('shop.checkout', ['total'=>$total]);
+        return view('shop.checkout', ['total' => $total]);
     }
 
     /*
@@ -200,7 +207,7 @@ class ProductController extends Controller
 
         return view('shop.finalCheckout', ['total' => $total, 'name1' => $firstName, 'street' => $street,
             'city' => $city, 'country' => $country, 'payment' => $payment,
-            'number'=>$number ,'zip'=>$zip  ,'name2'=>$lastName, 'products'=>$cart->items
+            'number' => $number, 'zip' => $zip, 'name2' => $lastName, 'products' => $cart->items
         ]);
 
     }
@@ -209,39 +216,47 @@ class ProductController extends Controller
      *  @created by Demi
      *  @return save order and redirect to store
     */
-    public function finalCheckout(Request $request){
+    public function finalCheckout(Request $request)
+    {
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         //todo finish up
         //todo checkpayment method -> set status
         //try{
-            //getpayment
-            //$charge = getsPaymentID
-            $order = new Order();
-            $order->cart= serialize($cart);
-            $order->street = $request->input('street');
-            $order->number = $request->input('number');
-            $order->city = $request->input('city');
-            $order->zip =$request->input('zip');
-            $order->country = $request->input('country');
-            $order->firstName = $request->input('name1');
-            $order->lastName =$request->input('name2');
-            $order->payment = $request->input('payment');
+        //getpayment
+        //$charge = getsPaymentID
+        $order = new Order();
+        $order->cart = serialize($cart);
+        $order->street = $request->input('street');
+        $order->number = $request->input('number');
+        $order->city = $request->input('city');
+        $order->zip = $request->input('zip');
+        $order->country = $request->input('country');
+        $order->firstName = $request->input('name1');
+        $order->lastName = $request->input('name2');
+        $order->payment = $request->input('payment');
+
+        if ($order->status = 'ordered') {
+            return redirect()->route('shop.index')->with('error', 'You already placed your order!');
+        } else {
             $order->status = 'ordered';
             //$order->payment_id = $charge->id; //works with stripe
 
             //sending Confirmation email and saving order
             Auth::user()->orders()->save($order);
             $this->sendConfirmationEmail($order);
-       // }catch(Exception $e){
+            // }catch(Exception $e){
 
-        //}
+            //}
 
-        Session::forget('cart');
-        return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
+            Session::forget('cart');
+
+            return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
+        }
     }
 
-    public function sendConfirmationEmail($order){
+    public function sendConfirmationEmail($order)
+    {
         $thisUser = Auth::user();
 
 
@@ -265,87 +280,87 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *  created New Product is saved to Database
      * @created by Demi
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)  
+    public function store(Request $request)
     {
-       
-      //What needs to be validated
-       $this->validate($request, [
-        'name' =>'required',
-        'price' =>'required',
-        'image'=>'image|max:1999|required',
-       ]);
 
-       //Handel file upload for img |nullable| (here no nullable possible)
-       /*
-       * Saves file new under unique name and gives the name to database
-       */
-       if($request->hasFile('image')){
-        //Get filename with the extension
-          $filenameWithEXT= $request->file('image')->getClientOriginalName();
-          //Get just filename
-          $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
-          //Get just ext
-          $extension = $request->file('image')->getClientOriginalExtension();
-          //Filename to store
-          $fileNameToStore0 =$filename.'_'.time().'.'.$extension; //makes file name unique
-          //Upload Image
-           // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-           $path =$request->file('image')->move('images', $fileNameToStore0);
-           
-       }else{
-          $fileNameToStore0 = 'noimage.jpg';
-       }
+        //What needs to be validated
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'image' => 'image|max:1999|required',
+        ]);
 
-        if($request->hasFile('image2')){
+        //Handel file upload for img |nullable| (here no nullable possible)
+        /*
+        * Saves file new under unique name and gives the name to database
+        */
+        if ($request->hasFile('image')) {
             //Get filename with the extension
-            $filenameWithEXT= $request->file('image2')->getClientOriginalName();
+            $filenameWithEXT = $request->file('image')->getClientOriginalName();
             //Get just filename
-            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            $filename = pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore0 = $filename . '_' . time() . '.' . $extension; //makes file name unique
+            //Upload Image
+            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path = $request->file('image')->move('images', $fileNameToStore0);
+
+        } else {
+            $fileNameToStore0 = 'noimage.jpg';
+        }
+
+        if ($request->hasFile('image2')) {
+            //Get filename with the extension
+            $filenameWithEXT = $request->file('image2')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithEXT, PATHINFO_FILENAME);
             //Get just ext
             $extension = $request->file('image2')->getClientOriginalExtension();
             //Filename to store
-            $fileNameToStore2 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            $fileNameToStore2 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
             // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-            $path =$request->file('image2')->move('images', $fileNameToStore2);
+            $path = $request->file('image2')->move('images', $fileNameToStore2);
 
-        }else{
+        } else {
             $fileNameToStore2 = null;
         }
 
-        if($request->hasFile('image3')){
+        if ($request->hasFile('image3')) {
             //Get filename with the extension
-            $filenameWithEXT= $request->file('image3')->getClientOriginalName();
+            $filenameWithEXT = $request->file('image3')->getClientOriginalName();
             //Get just filename
-            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            $filename = pathinfo($filenameWithEXT, PATHINFO_FILENAME);
             //Get just ext
             $extension = $request->file('image3')->getClientOriginalExtension();
             //Filename to store
-            $fileNameToStore3 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            $fileNameToStore3 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
             // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-            $path =$request->file('image3')->move('images', $fileNameToStore3);
+            $path = $request->file('image3')->move('images', $fileNameToStore3);
 
-        }else{
+        } else {
             $fileNameToStore3 = null;
         }
 
-      //Create new Product 
-      $product =new Product; 
+        //Create new Product
+        $product = new Product;
 
 
-      $product->name = $request->input('name');
-      $product->descr = $request->input('descr');
-      $product->image = $fileNameToStore0;
-      $product->color = $request->input('color');
-      $product->price = $request->input('price');
+        $product->name = $request->input('name');
+        $product->descr = $request->input('descr');
+        $product->image = $fileNameToStore0;
+        $product->color = $request->input('color');
+        $product->price = $request->input('price');
 
-      $product->sizeS = $request->input('sizeS');
-      $product->sizeM = $request->input('sizeM');
-      $product->sizeL = $request->input('sizeL');
+        $product->sizeS = $request->input('sizeS');
+        $product->sizeM = $request->input('sizeM');
+        $product->sizeL = $request->input('sizeL');
         /*$product->sizeArray = array();
 
 
@@ -354,153 +369,152 @@ class ProductController extends Controller
           }
           */
 
-      if($fileNameToStore2 != null){
-          $product->image2 = $fileNameToStore2;
-      }
-      if($fileNameToStore3 != null){
-        $product->image3 = $fileNameToStore3;
-      }
-        
-      //Save Product
-      $product->save();
-      
+        if ($fileNameToStore2 != null) {
+            $product->image2 = $fileNameToStore2;
+        }
+        if ($fileNameToStore3 != null) {
+            $product->image3 = $fileNameToStore3;
+        }
 
-      //Redirect
-      return redirect('/shop')->with('success','Successfuly added');
+        //Save Product
+        $product->save();
+
+
+        //Redirect
+        return redirect('/shop')->with('success', 'Successfuly added');
 
     }
 
     /**
      * Display the specified resource.
      * @created by Demi
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $product= Product::find($id);
+        $product = Product::find($id);
         return view('shop.show')->with('product', $product);
     }
 
     /**
      * Show the form for editing the specified resource.
      * @created by Demi
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-       $product= Product::find($id);
-       return view('shop.edit')->with('product', $product);
+        $product = Product::find($id);
+        return view('shop.edit')->with('product', $product);
     }
 
     /**
      * Update the specified resource in storage.
      * @created by Demi
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //todo What needs to be validated
-       $this->validate($request, [
-        'name' =>'required',
-        'price' =>'required',
-        'image'=>'image|max:1999',
-       ]);
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'image' => 'image|max:1999',
+        ]);
 
-       //Handel file upload for img |nullable| (here no nullable possible)
-       /*
-       * Saves file new under unique name and gives the name to database
-       */
-       if($request->hasFile('image')){
-        //Get filename with the extension
-          $filenameWithEXT= $request->file('image')->getClientOriginalName();
-          //Get just filename
-          $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
-          //Get just ext
-          $extension = $request->file('image')->getClientOriginalExtension();
-          //Filename to store
-          $fileNameToStore =$filename.'_'.time().'.'.$extension; //makes file name unique
-          //Upload Image
-          $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-       }else{
-           $fileNameToStore = null;
-       }
-
-        if($request->hasFile('image2')){
+        //Handel file upload for img |nullable| (here no nullable possible)
+        /*
+        * Saves file new under unique name and gives the name to database
+        */
+        if ($request->hasFile('image')) {
             //Get filename with the extension
-            $filenameWithEXT= $request->file('image2')->getClientOriginalName();
+            $filenameWithEXT = $request->file('image')->getClientOriginalName();
             //Get just filename
-            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            $filename = pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension; //makes file name unique
+            //Upload Image
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+        } else {
+            $fileNameToStore = null;
+        }
+
+        if ($request->hasFile('image2')) {
+            //Get filename with the extension
+            $filenameWithEXT = $request->file('image2')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithEXT, PATHINFO_FILENAME);
             //Get just ext
             $extension = $request->file('image2')->getClientOriginalExtension();
             //Filename to store
-            $fileNameToStore2 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            $fileNameToStore2 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
             // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-            $path =$request->file('image2')->move('images', $fileNameToStore2);
+            $path = $request->file('image2')->move('images', $fileNameToStore2);
 
-        }else{
+        } else {
             $fileNameToStore2 = null;
         }
 
-        if($request->hasFile('image3')){
+        if ($request->hasFile('image3')) {
             //Get filename with the extension
-            $filenameWithEXT= $request->file('image3')->getClientOriginalName();
+            $filenameWithEXT = $request->file('image3')->getClientOriginalName();
             //Get just filename
-            $filename=pathinfo($filenameWithEXT, PATHINFO_FILENAME);
+            $filename = pathinfo($filenameWithEXT, PATHINFO_FILENAME);
             //Get just ext
             $extension = $request->file('image3')->getClientOriginalExtension();
             //Filename to store
-            $fileNameToStore3 =$filename.'_'.time().'.'.$extension; //makes file name unique
+            $fileNameToStore3 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
             // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-            $path =$request->file('image3')->move('images', $fileNameToStore3);
+            $path = $request->file('image3')->move('images', $fileNameToStore3);
 
-        }else{
+        } else {
             $fileNameToStore3 = null;
         }
 
-      //find Product
-      $product = Product::find($id); 
-      
+        //find Product
+        $product = Product::find($id);
 
-      if($request->hasFile('image')){
-          $product->image = $fileNameToStore;
-      }
-      if($request->hasFile('image2')){
-        $product->image2 = $fileNameToStore2;
-      }
-      if($request->hasFile('image3')){
-        $product->image3 = $fileNameToStore3;
-      }
 
-    $product->name = $request->input('name');
-    $product->descr = $request->input('descr');
-    $product->color = $request->input('color');
-    $product->price = $request->input('price');
+        if ($request->hasFile('image')) {
+            $product->image = $fileNameToStore;
+        }
+        if ($request->hasFile('image2')) {
+            $product->image2 = $fileNameToStore2;
+        }
+        if ($request->hasFile('image3')) {
+            $product->image3 = $fileNameToStore3;
+        }
 
-    $product->sizeS = $request->input('sizeS');
-    $product->sizeM = $request->input('sizeM');
-    $product->sizeL = $request->input('sizeL');
-        
-      //Save Product
-      $product->save();
-      
+        $product->name = $request->input('name');
+        $product->descr = $request->input('descr');
+        $product->color = $request->input('color');
+        $product->price = $request->input('price');
 
-      //Redirect
-      return redirect('/shop')->with('success','Successfuly edited');
-      
+        $product->sizeS = $request->input('sizeS');
+        $product->sizeM = $request->input('sizeM');
+        $product->sizeL = $request->input('sizeL');
+
+        //Save Product
+        $product->save();
+
+
+        //Redirect
+        return redirect('/shop')->with('success', 'Successfuly edited');
+
     }
-
 
 
     /**
      * Remove the specified resource from storage.
      * @created by Demi
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -508,15 +522,15 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //toDo image delete (all)?!
-       if($product->image != 'noimage.jpg'){
+        if ($product->image != 'noimage.jpg') {
             // Delete Image
             Storage::delete("{{asset('images/'.$product->image)}}");
         }
 
 
         $product->delete();
-        return redirect('/shop')->with('success','Successfuly deleted');
-        
+        return redirect('/shop')->with('success', 'Successfuly deleted');
+
     }
 
 }

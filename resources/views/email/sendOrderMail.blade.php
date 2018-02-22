@@ -12,13 +12,13 @@
 
 <h2>Hi {{ $order->firstName }} {{ $order->lastName }},</h2>
 
-<p>Thank you for shopping with us!</p>
+<h3>Thank you for shopping with us!</h3>
 <p>Your order number is {{$order->id}}</p>
-<p>In case of any questions, please don't reply to this email, but send us a message on {{ HTML::mailto('gruppe4webtech@gmail.com') }}</p>
+<p>In case of any questions, please don't reply to this email, but send us a message on</p>
+<span>gruppe4webtech@gmail.com</span>
 
+<h3>Order details</h3>
+<p>Check your order details here: <a href="http://feyertag.family/orders">MY ORDERS</a></p>
 
-<h2>Order details</h2>
-<h3>Check your order details here: <a href="http://feyertag.family/orders">MY ORDERS</a></h3>
-<p></p>
 
 
