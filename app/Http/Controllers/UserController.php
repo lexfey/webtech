@@ -10,45 +10,59 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\User;
+use App\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 use Hash;
 
-/*NOT USED / NEEDED -- replaced by AuthControllers*/
 
 class UserController extends Controller
 {
+
+    public function checkForCart(Request $request){
+       $user = Auth::user();
+        if($user->cart != null){
+            $cart = new Cart(unserialize($user->cart));
+            $request->session()->put('cart', $cart);
+        }
+        return view('user.index');
+    }
+
     /**
-     * Display a listing of the resource.
+     * Display the user.index.
      *
-     * @return \Illuminate\Http\Response
+     *
+     * @created by Demi
+     *
+     * @return view user.index
      */
     public function index()
     {
         return view('user.index');
     }
 
+    /**
+     * Display user.account.
+     *
+     * @created by Demi
+     *
+     * @return view user.account
+     */
     public function account()
     {
-
         return view('user.account');
     }
 
+
     /**
-     * Show the form for creating a new resource.
+     * Display user.changepassword
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //RegisterController
-
-    }
-
-    /**
-     * Display the form for changing user's password
+     * @created by Alex
+     *
+     * @return view user.changepassword
      */
     public function showChangePasswordForm()
     {
@@ -56,37 +70,31 @@ class UserController extends Controller
     }
 
     /**
-     * Display the form for deleting user's account
+     * Display user.deleteaccount
+     *
+     * @created by Alex
+     *
+     * @return view user.deleteaccount
      */
     public function showDeleteAccountForm()
     {
         return view('user.deleteaccount');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //RegisterController
-
-    }
-
 
     /**
-     * Show the form for editing the specified resource.
+     * Change Users Password
      *
-     * @return \Illuminate\Http\Response
+     * Checks if current password is correct, with Hashing.
+     * Checks if new and old password are different.
+     * Saves the new password.
+     *
+     * @param Request $request todo
+     *
+     * @created by Alex
+     *
+     * @return view user.account with success message
      */
-    public function edit()
-    {
-
-    }
-
-
     public function changePassword(Request $request)
     {
 
@@ -105,7 +113,7 @@ class UserController extends Controller
             return redirect()->back()->with("error", "New Password cannot be same as your current password. Please choose a different password.");
         }
 
-        //todo double check confirm password
+        //todo double check confirm password, where?!
 
         //Change Password
         $user = Auth::user();
@@ -113,14 +121,55 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->back()->with("success", "Password changed successfully !");
-
     }
 
 
+    /**
+     * Deletes User account
+     *
+     * Sets the status to 2. To avoid Problem when Ordered something and Account is gone.
+     *
+     * @param Request $request todo
+     *
+     * @created by Alex
+     *
+     * @return view about with success message
+     */
+    public function destroy(Request $request)
+    {
+        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
+            // The passwords matches
+            return redirect()->back()->with("error", "Your current password does not matches with the password you provided. Please try again.");
+        }
+
+        $id = Auth::id();
+
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['status' => 2]);
+
+        Auth::logout();
+
+        return redirect('/about')->with("success", "Account deleted successfully !");
+    }
+
+
+    /**
+     * Display Orders of/for each user
+     *
+     * Gets all the orders of the currently logged in User and displays them.
+     * therefor the cart in the order database needs to be unserialized.
+     * If User = Admin it returns all the orders by all useres. where admin can change status and shipping ID.
+     *
+     *
+     * @created by Demi
+     *
+     * @return view user.account with success message
+     */
     public function getOrders()
     {
         $user = Auth::user();
-
+        //todo check if logdin
         if ($user->name != 'Admin') {
             $orders = Auth::user()->orders;
             //to unserialise all the orders
@@ -139,6 +188,18 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Display Orders of/for each user
+     *
+     * Gets all the orders of the currently logged in User and displays them.
+     * therefor the cart in the order database needs to be unserialized.
+     * If User = Admin it returns all the orders by all useres. where admin can change status and shipping ID.
+     *
+     *
+     * @created by Demi
+     *
+     * @return view user.account with success message
+     */
     public function changeOrder(Request $request, $id){
 
         $this->validate($request, [
@@ -152,42 +213,5 @@ class UserController extends Controller
         $order->save();
         return view('user.index')->with('success','Successfuly edited');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
-    }
-
-    /**
-     * Sets the user status to '2', logs out and redirects to home screen.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
-    {
-        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
-            // The passwords matches
-            return redirect()->back()->with("error", "Your current password does not matches with the password you provided. Please try again.");
-        }
-
-        $id = Auth::id();
-
-        DB::table('users')
-            ->where('id', $id)
-            ->update(['status' => 2]);
-
-        Auth::logout();
-
-        return redirect('/home')->with("success", "Account deleted successfully !");
-
-    }
-
 
 }

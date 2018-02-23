@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Session;
 
 class Cart
 {
-    public $items=null; //Group(Item with all the variabls of Products
-    //total Quantity
+    public $items=null; //Group(Item with all the variabls of Products)
     public $totalQty = 0;
     public $totalPrice =0;
 

@@ -18,13 +18,5 @@ class Product extends Model
     public $primaryKey = 'id';
 
     //Timestamps
-    public $timestamps = true; 
-
-    //Um verbindung zu User herzustellen benötigt beim Warenkorb
-    /*
-    public function user(){
-    	return $this->belongsTo('App/User');
-    }
-    */
-
+    public $timestamps = true;
 }

@@ -28,7 +28,7 @@ class ProductController extends Controller
     //Überprüfen ob user eingeloggt ist. Hier nicht notwendig (aber vielleicht wo anders später)
     /**
      * Create a new controller instance.
-     *
+     *  todo delete
      * @return void
     public function __construct()
      * {
@@ -36,10 +36,13 @@ class ProductController extends Controller
      * }
      */
 
+
     /**
-     * Display a listing of the resource.
+     * Displays all the Products.
      *
-     * @return \Illuminate\Http\Response
+     * @created by Demi
+     *
+     * @return view shop.index with Products
      */
     public function index()
     {
@@ -48,12 +51,19 @@ class ProductController extends Controller
     }
 
 
-    /*** ------------------------for shopping Cart-----------------------*/
+    /*------------------------------------------------------- shopping Cart --------------------------------------------------*/
 
-    /*
-   * Returns the shopping cart View with all the cart items
-   * @created by Demi
-   */
+
+    /**
+     * Gets the ShoppingCart.
+     *
+     * The Method gets the Shopping Cart from the Session and gives it to the return view.
+     *
+     *
+     * @created by Demi
+     *
+     * @return view product.shoppingCart
+     */
     public function getCart()
     {
         //todo check if products are still available
@@ -64,10 +74,21 @@ class ProductController extends Controller
         return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
-    /*
-    * Adds one item from the Cart
-    * @created by Demi
-    */
+
+    /**
+     * Adds a Product to the ShoppingCart.
+     *
+     * The Method adds a Product from the ShoppingCart. Qty = 1.
+     * It gets the Product, checks if there is already something in the Cart.
+     * Makes a new Cart and adds the Product.
+     *
+     * @param Int $id Id of the Product
+     * @param Request $request todo
+     *
+     * @created by Demi
+     *
+     * @return view product.shoppingCart
+     */
     public function getAddToCart(Request $request, $id)
     {
 
@@ -81,16 +102,33 @@ class ProductController extends Controller
         //make a new cart and add the product
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id, $size);
+
+        if(!Auth::guest()) {
+            $user = Auth::user();
+            $user->cart = serialize($cart);
+            $user->save();
+        }
         //update the session by giving it the new cart
         $request->session()->put('cart', $cart);
+
+
         //todo move to finalcheckout
         $this->reduceQty($id, $size);
         return redirect()->route('product.shoppingCart');
     }
 
-    /*
-     * Deletes one item from the Cart (no matter the quantity)
+
+    /**
+     * Deletes a Product from the ShoppingCart.
+     *
+     * The Method deletes a Product from the ShoppingCart. No Matter the Qty.
+     *
+     * @param Int $id Id of the Product
+     * @param Request $request todo
+     *
      * @created by Demi
+     *
+     * @return view product.shoppingCart
      */
     public function getDeleteFromCart(Request $request, $id)
     {
@@ -98,6 +136,13 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $cart->remove($id);
+
+        if(!Auth::guest()) {
+            $user = Auth::user();
+            $user->cart = serialize($cart);
+            $user->save();
+        }
+
         $request->session()->put('cart', $cart);
         //toDo die Größen wieder zurück geben (qty erhöhen) [Außer wir machen das reduzieren der Qty erst bei Kauf]
         //$sizes = //split after ','
@@ -136,6 +181,18 @@ class ProductController extends Controller
     }
     */
 
+    /**
+     * Changes the Qty of a Product, when deleted from Cart.
+     *
+     * The Method reduces to the Qty of a products size when it gets added to the shopping cart
+     *
+     * @param Int $id Id of the Product
+     * @param String $size  the Size of the Product
+     *
+     * @created by Demi
+     *
+     * @return void saves product changes
+     */
     public function reduceQty($id, $size)
     {
         $product = Product::find($id);
@@ -150,6 +207,18 @@ class ProductController extends Controller
 
     }
 
+    /**
+     * Changes the Qty of a Product, when deleted from Cart.
+     *
+     * The Method adds to the Qty of a products size when it gets deleted from the shopping cart
+     *
+     * @param Int $id Id of the Product
+     * @param String $size  the Size of the Product
+     *
+     * @created by Demi
+     *
+     * @return void saves product changes
+     */
     public function addQty($id, $size)
     {
         $product = Product::find($id);
@@ -163,27 +232,40 @@ class ProductController extends Controller
         $product->save();
     }
 
-    /**-----------Checking out---------------------**/
-    /*
-   *  @created by Demi
-   * @return checkoutView with the total price
-   */
-    //todo check if produkt (still) available
+    /**---------------------------------------- Checking out  ---------------------------**/
+
+    /**
+     * Leads to Checkout
+     *
+     * Checks if Cart is filled. Middleware checks if you are logged in.
+     * If so you will be directed to the checkout form.
+     *
+     * @created by Demi
+     *
+     * @return view shop.checkout  or shop.shoppingcart
+     */
     public function getCheckout()
     {
+        //todo check if produkt (still) available
         if (!Session::has('cart')) {
             return view("shop.shoppingcart");
         }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $total = $cart->totalPrice;
-        return view('shop.checkout', ['total' => $total]);
+        return view('shop.checkout');
     }
 
-    /*
-     *  @created by Alex
-     *  @return finalcheckoutView with
-    */
+
+    /**
+     * Checks the Address Input and gives it to the confirmation page.
+     *
+     * The Method gets all the needed Input for the Order and gives it to the
+     * finalCheckout view for confirmation
+     *
+     * @param Request $request Getting the form data, Address & Payment
+     *
+     * @created by Alex & Demi
+     *
+     * @return view finalCheckout.blade with all Information on the Order
+     */
     public function postCheckout(Request $request)
     {
         //todo What needs to be validated
@@ -216,10 +298,18 @@ class ProductController extends Controller
 
     }
 
-    /*
-     *  @created by Demi
-     *  @return save order and redirect to store
-    */
+    /**
+     * Gets all the Data for the Order and creates an Order.
+     *
+     * Gets all the data for the order. Creates a new Order, saves it.
+     * Sends a confirmation Email to the User. Deletes the cart.
+     *
+     * @param Request $request Getting the form data, Address & Payment
+     *
+     * @created by Demi & Alex
+     *
+     * @return view shop.index with success Message
+     */
     public function finalCheckout(Request $request)
     {
        if(Session::has('cart')) {
@@ -262,6 +352,9 @@ class ProductController extends Controller
 
            //todo here reduce product qty
            Session::forget('cart');
+           $user = Auth::user();
+           $user->cart = null;
+           $user->save();
 
            return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
        }
@@ -280,38 +373,45 @@ class ProductController extends Controller
     }
 
 
-    /**-----------------------For Admin only------------------*/
+    /**---------------------------------------------For Admin only: Editing Products---------------------------------------*/
+
+
     /**
-     * Show the form for creating a new resource.
+     * Displays the Form to create a new Product
+     *
      * @created by Demi
-     * @return \Illuminate\Http\Response
+     *
+     * @return view shop.create
      */
     public function create()
     {
         return view('shop.create');
     }
 
+
     /**
-     * Store a newly created resource in storage.
-     *  created New Product is saved to Database
+     * Stores a new created Product.
+     *
+     * It takes the date from the form and saves it after validating.
+     * For the Img (one required) it creates a unique name and saves it to the database.
+     *
+     * @param Request $request todo
+     *
      * @created by Demi
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     *
+     * @return view shop with success message
      */
     public function store(Request $request)
     {
 
-        //What needs to be validated
+        //What needs to be validated todo
         $this->validate($request, [
             'name' => 'required',
             'price' => 'required',
             'image' => 'image|max:1999|required',
         ]);
 
-        //Handel file upload for img |nullable| (here no nullable possible)
-        /*
-        * Saves file new under unique name and gives the name to database
-        */
+        //Saves file new under unique name and gives the name to database
         if ($request->hasFile('image')) {
             //Get filename with the extension
             $filenameWithEXT = $request->file('image')->getClientOriginalName();
@@ -322,11 +422,10 @@ class ProductController extends Controller
             //Filename to store
             $fileNameToStore0 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
-            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
             $path = $request->file('image')->move('images', $fileNameToStore0);
 
         } else {
-            $fileNameToStore0 = 'noimage.jpg';
+            $fileNameToStore0 = null;
         }
 
         if ($request->hasFile('image2')) {
@@ -339,7 +438,6 @@ class ProductController extends Controller
             //Filename to store
             $fileNameToStore2 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
-            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
             $path = $request->file('image2')->move('images', $fileNameToStore2);
 
         } else {
@@ -356,7 +454,6 @@ class ProductController extends Controller
             //Filename to store
             $fileNameToStore3 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
-            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
             $path = $request->file('image3')->move('images', $fileNameToStore3);
 
         } else {
@@ -366,24 +463,16 @@ class ProductController extends Controller
         //Create new Product
         $product = new Product;
 
-
         $product->name = $request->input('name');
         $product->descr = $request->input('descr');
-        $product->image = $fileNameToStore0;
         $product->color = $request->input('color');
         $product->price = $request->input('price');
 
         $product->sizeS = $request->input('sizeS');
         $product->sizeM = $request->input('sizeM');
         $product->sizeL = $request->input('sizeL');
-        /*$product->sizeArray = array();
 
-
-          if($product->sizeS > '0') {
-              array_add($product->sizeArray, 'S', $product->sizeS);
-          }
-          */
-
+        $product->image = $fileNameToStore0;
         if ($fileNameToStore2 != null) {
             $product->image2 = $fileNameToStore2;
         }
@@ -394,17 +483,19 @@ class ProductController extends Controller
         //Save Product
         $product->save();
 
-
         //Redirect
         return redirect('/shop')->with('success', 'Successfuly added');
-
     }
 
+
     /**
-     * Display the specified resource.
+     * Displays a Product.
+     *
+     * @param Int $id is ProductID
+     *
      * @created by Demi
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return view shop.show with product
      */
     public function show($id)
     {
@@ -412,11 +503,15 @@ class ProductController extends Controller
         return view('shop.show')->with('product', $product);
     }
 
+
     /**
-     * Show the form for editing the specified resource.
+     * Display the form for editing the specified Product.
+     *
+     * @param Int $id ProductID
+     *
      * @created by Demi
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return view shop.edit with product
      */
     public function edit($id)
     {
@@ -424,12 +519,19 @@ class ProductController extends Controller
         return view('shop.edit')->with('product', $product);
     }
 
+
     /**
-     * Update the specified resource in storage.
+     * Updates a existing Product.
+     *
+     * It takes the date from the form and saves it after validating.
+     * For the Img (none required) it creates a unique name and saves it to the database and replaces the old pic.
+     *
+     * @param Request $request todo
+     * @param Int $id ProductID
+     *
      * @created by Demi
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return view shop with success message
      */
     public function update(Request $request, $id)
     {
@@ -440,10 +542,7 @@ class ProductController extends Controller
             'image' => 'image|max:1999',
         ]);
 
-        //Handel file upload for img |nullable| (here no nullable possible)
-        /*
-        * Saves file new under unique name and gives the name to database
-        */
+        //Saves file new under unique name and gives the name to database
         if ($request->hasFile('image')) {
             //Get filename with the extension
             $filenameWithEXT = $request->file('image')->getClientOriginalName();
@@ -454,7 +553,7 @@ class ProductController extends Controller
             //Filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
-            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path = $request->file('image')->move('images', $fileNameToStore);
         } else {
             $fileNameToStore = null;
         }
@@ -469,7 +568,6 @@ class ProductController extends Controller
             //Filename to store
             $fileNameToStore2 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
-            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
             $path = $request->file('image2')->move('images', $fileNameToStore2);
 
         } else {
@@ -486,7 +584,6 @@ class ProductController extends Controller
             //Filename to store
             $fileNameToStore3 = $filename . '_' . time() . '.' . $extension; //makes file name unique
             //Upload Image
-            // $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
             $path = $request->file('image3')->move('images', $fileNameToStore3);
 
         } else {
@@ -495,7 +592,6 @@ class ProductController extends Controller
 
         //find Product
         $product = Product::find($id);
-
 
         if ($request->hasFile('image')) {
             $product->image = $fileNameToStore;
@@ -519,18 +615,20 @@ class ProductController extends Controller
         //Save Product
         $product->save();
 
-
         //Redirect
         return redirect('/shop')->with('success', 'Successfuly edited');
-
     }
 
 
+
     /**
-     * Remove the specified resource from storage.
+     * Removes the specified Product.
+     *
+     * @param Int $id ProductID
+     *
      * @created by Demi
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return view shop with success message
      */
     public function destroy($id)
     {

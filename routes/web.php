@@ -36,10 +36,15 @@ Route::get('/checkout', [
     'middleware' => 'auth'   //to protect from not logged in users accessing it
 ]);
 
+Route::get('/cartcheck', [
+    'uses' => 'UserController@checkForCart',
+    'as' => 'cartcheck',
+    'middleware' => 'auth']);
 
 Route::get('/account', [
     'uses' => 'UserController@account',
-    'as' => 'account']);
+    'as' => 'account',
+    'middleware' => 'auth']);
 Route::get('/orders', [
     'uses' => 'UserController@getOrders',
     'as' => 'orders',
@@ -47,14 +52,17 @@ Route::get('/orders', [
 
 Route::get('/changepassword', [
     'uses' => 'UserController@showChangePasswordForm',
-    'as' => 'changepassword']);
+    'as' => 'changepassword',
+    'middleware' => 'auth']);
 Route::get('/deleteaccount', [
     'uses' => 'UserController@showDeleteAccountForm',
-    'as' => 'deleteaccount']);
+    'as' => 'deleteaccount',
+    'middleware' => 'auth']);
 
 Route::post('/changepassword', 'UserController@changePassword')->name('changepassword');
 Route::post('/deleteaccount', 'UserController@destroy')->name('deleteaccount');
 
+//todo check if save
 Route::get('/changeOrder/{id}', 'UserController@changeOrder');
 
 Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');

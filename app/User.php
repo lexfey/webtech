@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'verifyToken'
+        'name', 'email', 'password', 'verifyToken', 'cart'
     ];
 
     /**
@@ -27,15 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    //Ein user kann mehreren Produkten zu geordent werden, benötigt für warenkorb/bestellungen
-    /*
-    public function products(){
-        return $this->hasMany('App\Product');
-    }
-    */
 
     /*
-     * m
+     * @created by Demi
      */
     public function orders(){
         return $this->hasMany('App\Order');

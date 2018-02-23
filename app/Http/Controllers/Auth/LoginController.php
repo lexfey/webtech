@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/user';
+    protected $redirectTo = '/cartcheck';
 
     /**
      * Create a new controller instance.
@@ -47,7 +47,6 @@ class LoginController extends Controller
      */
     protected function credentials(Request $request)
     {
-        //return $request->only($this->username(), 'password');
         return['email'=>$request->{$this->username()}, 'password'=>$request->password, 'status'=>'1'];
     }
 }
