@@ -98,11 +98,10 @@ class Cart
         $price = $this->items[$id]['price'];
         while ($qty!=0){
             $this->totalQty--;
-            $this->totalPrice -= $price;
             $qty--;
         }
-
-       unset($this->items[$id]);
+        $this->totalPrice -= $price;
+        unset($this->items[$id]);
     }
 
     public function buy(){

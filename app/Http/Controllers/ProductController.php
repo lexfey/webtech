@@ -56,7 +56,7 @@ class ProductController extends Controller
    */
     public function getCart()
     {
-
+        //todo check if products are still available
         if (!Session::has('cart')) {
             return view('shop.shoppingCart');
         }
@@ -71,6 +71,9 @@ class ProductController extends Controller
     public function getAddToCart(Request $request, $id)
     {
 
+        $this->validate($request, [
+            'size' => 'required',
+        ]);
         $size = Input::get('size');
         $product = Product::find($id);
         //check if there is already a cart and gets it.
@@ -80,6 +83,7 @@ class ProductController extends Controller
         $cart->add($product, $product->id, $size);
         //update the session by giving it the new cart
         $request->session()->put('cart', $cart);
+        //todo move to finalcheckout
         $this->reduceQty($id, $size);
         return redirect()->route('product.shoppingCart');
     }
@@ -100,7 +104,6 @@ class ProductController extends Controller
         //foreach ($size in $sizes)
 
         // $this->addQty($id, $s);
-
         return redirect()->route('product.shoppingCart');
     }
 
@@ -257,6 +260,7 @@ class ProductController extends Controller
 
            //}
 
+           //todo here reduce product qty
            Session::forget('cart');
 
            return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');

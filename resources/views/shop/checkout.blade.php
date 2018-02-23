@@ -94,7 +94,7 @@
                    <div class="checkItem">
                        <h3>Payment Method</h3>
                        <div class="form-group">
-                           <p>{{ Form::radio('payment', 'invoice')}} Invoice</p>
+                           <p>{{ Form::radio('payment', 'invoice', true)}} Invoice</p>
                        </div>
                        <br>
                        <a  href=# class="info" target="_blank">

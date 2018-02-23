@@ -87,6 +87,11 @@
                     @if($product->sizeS=='0' && $product->sizeM=='0'&& $product->sizeL=='0')
                         <p class="info">Sorry we are sold out at the moment</p>
                     @else
+                        @if ($errors->has('size'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('size') }}</strong>
+                            </span>
+                        @endif
                         <p class="labels">Select your size:</p>
                         @if($product->sizeS>'0')
                             <span>{{ Form::radio('size', 'small') }} Small <span class="info">({{$product->sizeS}})</span></span>
