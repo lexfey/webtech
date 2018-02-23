@@ -191,6 +191,7 @@ class ProductController extends Controller
             'payment' => 'required'
         ]);
 
+        //todo check if has cart
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
@@ -218,41 +219,51 @@ class ProductController extends Controller
     */
     public function finalCheckout(Request $request)
     {
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        //todo finish up
-        //todo checkpayment method -> set status
-        //try{
-        //getpayment
-        //$charge = getsPaymentID
-        $order = new Order();
-        $order->cart = serialize($cart);
-        $order->street = $request->input('street');
-        $order->number = $request->input('number');
-        $order->city = $request->input('city');
-        $order->zip = $request->input('zip');
-        $order->country = $request->input('country');
-        $order->firstName = $request->input('name1');
-        $order->lastName = $request->input('name2');
-        $order->payment = $request->input('payment');
+       if(Session::has('cart')) {
+           $oldCart = Session::get('cart');
+           $cart = new Cart($oldCart);
 
-        if ($order->status = 'ordered') {
-            return redirect()->route('shop.index')->with('error', 'You already placed your order!');
-        } else {
-            $order->status = 'ordered';
-            //$order->payment_id = $charge->id; //works with stripe
 
-            //sending Confirmation email and saving order
-            Auth::user()->orders()->save($order);
-            $this->sendConfirmationEmail($order);
-            // }catch(Exception $e){
+           //todo finish up
+           $this->validate($request, [
+               'street' => 'required',
+               'country' => 'required',
+               'city' => 'required',
+               'payment' => 'required'
+           ]);
 
-            //}
+           //try{
+           //getpayment
+           //$charge = getsPaymentID
+           $order = new Order();
+           //$order->payment_id = $charge->id; //works with stripe
+           $order->cart = serialize($cart);
+           $order->street = $request->input('street');
+           $order->number = $request->input('number');
+           $order->city = $request->input('city');
+           $order->zip = $request->input('zip');
+           $order->country = $request->input('country');
+           $order->firstName = $request->input('name1');
+           $order->lastName = $request->input('name2');
 
-            Session::forget('cart');
+           //todo checkpayment method -> set status
+           $order->payment = $request->input('payment');
+           $order->status = 'ordered';
 
-            return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
-        }
+           //sending Confirmation email and saving order
+           Auth::user()->orders()->save($order);
+           $this->sendConfirmationEmail($order);
+           // }catch(Exception $e){
+
+           //}
+
+           Session::forget('cart');
+
+           return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
+       }
+       else{
+           return redirect()->route('shop.index')->with('error', 'You already placed your order!');
+       }
     }
 
     public function sendConfirmationEmail($order)

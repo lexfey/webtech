@@ -19,3 +19,9 @@
 		{{session('success')}}
 	</div>
 @endif
+@if(session('error'))
+	<div class="alert alert-danger">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		{{session('error')}}
+	</div>
+@endif

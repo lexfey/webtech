@@ -87,14 +87,6 @@
 img{
     margin-bottom: -4px;
 }
-/* Because ist gets overwritten and im to lazy to rewrite now..*/
-img.logo{
-    width: 8%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-}
 
 
 
