@@ -661,12 +661,18 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        //toDo image delete (all)?!
         if ($product->image != 'noimage.jpg') {
             // Delete Image
             Storage::delete("{{asset('images/'.$product->image)}}");
         }
-
+        if ($product->image2 != null) {
+            // Delete Image
+            Storage::delete("{{asset('images/'.$product->image2)}}");
+        }
+        if ($product->image3 != null) {
+            // Delete Image
+            Storage::delete("{{asset('images/'.$product->image3)}}");
+        }
 
         $product->delete();
         return redirect('/shop')->with('success', 'Successfuly deleted');

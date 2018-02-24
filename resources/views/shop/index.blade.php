@@ -50,7 +50,7 @@
             </div>
             @endif
 
-        </div>    <!--toDo bind phpFile that creats for each Product one Gallary-->
+        </div>
     </div>
 </div>
 @endsection
