@@ -20,7 +20,6 @@
                <div class="innerform">
                    <div class="checkItem">
                        {!! Form::open(['action' => 'ProductController@postCheckout', 'method'=> 'POST']) !!}
-                       <!--todo! input wird bei white space gecutet-->
                        <h3>Adress Details</h3>
                             <div class="Adress">
                                <div class="form-group">

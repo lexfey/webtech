@@ -18,11 +18,11 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
             $table->integer('user_id');
             $table->text('cart');
-            $table->text('city'); //todo split up
+            $table->text('city');
             $table->text('street');
             $table->text('country');
-            $table->string('name'); //todo not needed
-            $table->string('payment_id'); //todo check how it works with paypal
+            $table->string('name');
+            $table->string('payment_id'); 
         });
     }
 
