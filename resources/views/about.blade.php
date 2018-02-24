@@ -26,19 +26,19 @@
             <div class="card">
                 <h4>Social media</h4>
 
-                <p><a href="https://www.youtube.com/channel/UCCm_PUXcpk2eu3C4nIG8oCQ"
+                <p class="link"><a href="https://www.youtube.com/channel/UCCm_PUXcpk2eu3C4nIG8oCQ"
                     >MY YOUTUBE CHANNEL</a>
                 </p>
 
-                <p><a href="https://www.facebook.com/samo.kozar"
+                <p class="link"><a href="https://www.facebook.com/samo.kozar"
                     >MY FACEBOOK PAGE</a>
                 </p>
 
-                <p><a href="https://www.instagram.com/samokozar/"
+                <p class="link"><a href="https://www.instagram.com/samokozar/"
                     >MY INSTAGRAM PAGE</a>
                 </p>
 
-                <p><a href="https://www.snapchat.com/add/samokozar"
+                <p class="link"><a href="https://www.snapchat.com/add/samokozar"
                     >ADD ME ON SNAPCHAT</a>
                 </p>
 
@@ -47,13 +47,13 @@
             <div class="card">
                 <h4>News Stories</h4>
 
-                    <p><a href="http://www.delo.si/novice/ljubljana/vsak-najstnik-bi-moral-slisati-da-ga-imamo-radi.html"
+                    <p class="link"><a href="http://www.delo.si/novice/ljubljana/vsak-najstnik-bi-moral-slisati-da-ga-imamo-radi.html"
                       target="_blank"  >DELO, 24.02.2018: Vsak najstnik bi moral slišati, da ga imamo radi</a>
                     </p>
-                    <p><a href="http://www.bajta.si/od-a-do-z/samo-kozar-nogometas-in-reper-mini-intervju"
+                    <p class="link"><a href="http://www.bajta.si/od-a-do-z/samo-kozar-nogometas-in-reper-mini-intervju"
                           target="_blank" >Bajta, 25.08.2009: Samo Kozar, nogometaš in reper</a>
                     </p>
-                    <p><a href="http://www.24ur.com/ekskluziv/glasba/zelenci-se-en-raperski-fenomen-tokrat-iz-koroske.html"
+                    <p class="link"><a href="http://www.24ur.com/ekskluziv/glasba/zelenci-se-en-raperski-fenomen-tokrat-iz-koroske.html"
                           target="_blank" >24ur.com, 17.01.2011: ZELENCI: Še en raperski fenomen, tokrat iz Koroške</a>
                     </p>
 
@@ -62,12 +62,12 @@
             <div class="card">
                 <h4>Music Videos</h4>
 
-                <p><a href="https://youtu.be/A7wx3BLKQ6o"
+                <p class="link"><a href="https://youtu.be/A7wx3BLKQ6o"
                     >Najt Pot</a>
                 </p>
                 <iframe width="768" height="432" src="https://www.youtube.com/embed/A7wx3BLKQ6o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-                <p><a href="https://youtu.be/GyQljopeXzc"
+                <p class="link"><a href="https://youtu.be/GyQljopeXzc"
                     >Edina</a>
                 </p>
                 <iframe width="768" height="432" src="https://www.youtube.com/embed/GyQljopeXzc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
