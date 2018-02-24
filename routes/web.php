@@ -33,16 +33,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/check', function () {
-    return view('about');});
 
 Route::post('check', 'ProductController@postCheckout')->name('check');
-
-Route::get('/pay', function () {
-    return view('about');});
-
 Route::post('pay', 'ProductController@finalCheckout')->name('pay');
-
 Route::get('/checkout', [
     'uses' => 'ProductController@getCheckout',
     'as' => 'checkout',
@@ -78,14 +71,16 @@ Route::post('/changepassword', 'UserController@changePassword')->name('changepas
 
 Route::post('/deleteaccount', 'UserController@destroy')->name('deleteaccount');
 
-//todo check if save
-Route::get('/changeOrder/{id}', 'UserController@changeOrder');
-
 Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
 
-Route::get('/deleteFromCart/{id}', 'ProductController@getDeleteFromCart');
+Route::get('/changeOrder/{id}', [
+    'uses' => 'UserController@changeOrder',
+    'middleware' => 'auth']);
+
+Route::get('/deleteFromCart/{id}', [
+    'uses' => 'ProductController@getDeleteFromCart',
+    'middleware' => 'auth']);
 
 Route::get('/shoppingCart', [
     'uses' => 'ProductController@getCart',
     'as' => 'product.shoppingCart']);
-
