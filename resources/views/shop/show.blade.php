@@ -104,7 +104,7 @@
                         @endif
                         <br>
                         <br>
-                        <a href="#">Sizetable</a>
+                        <a href="{{route('sizetable')}}" target="_blank">Sizetable</a>
                     @endif
                 </div>
 

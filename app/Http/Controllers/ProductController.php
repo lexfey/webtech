@@ -25,17 +25,6 @@ use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
 {
-    //Überprüfen ob user eingeloggt ist. Hier nicht notwendig (aber vielleicht wo anders später)
-    /**
-     * Create a new controller instance.
-     *  todo delete
-     * @return void
-    public function __construct()
-     * {
-     * $this->middleware('auth', ['except' => ['index', 'show']]);
-     * }
-     */
-
 
     /**
      * Displays all the Products.
@@ -55,7 +44,10 @@ class ProductController extends Controller
 
 
     /**
-     *     *
+     * Displays the shopping Cart
+     *
+     * Checks first if shoppingCart is available.
+     * Then Checks if products in the cart still available, if not removes them from cart.
      *
      * @created by Demi
      *
@@ -106,7 +98,7 @@ class ProductController extends Controller
 
         if($changes == true){
             //todo error message
-            return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice])->with('error', 'Some Items are not available anymore and have been deleted from your Cart');
+            return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice, 'error'=>'Some Items are not available anymore and have been deleted from your Cart']);
         }else{
             return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
         }
@@ -156,31 +148,6 @@ class ProductController extends Controller
     }
 
 
-    /**
-     * Changes the Qty of a Product, when deleted from Cart.
-     *
-     * The Method reduces to the Qty of a products size when it gets added to the shopping cart
-     *
-     * @param Int $id Id of the Product
-     * @param String $size  the Size of the Product
-     *
-     * @created by Demi
-     *
-     * @return void saves product changes
-     */
-    public function reduceQty($id, $size)
-    {
-        $product = Product::find($id);
-        if ($size == 'small') {
-            $product->sizeS--;
-        } else if ($size == 'medium') {
-            $product->sizeM--;
-        } else if($size == 'large') {
-            $product->sizeL--;
-        }
-        $product->save();
-
-    }
 
     /**
      * Deletes a Product from the ShoppingCart.
@@ -214,40 +181,17 @@ class ProductController extends Controller
         return redirect()->route('product.shoppingCart');
     }
 
+
+
     /**
-     * Changes the Qty of a Product, when deleted from Cart.
+     * Reducing Quantity of Products
      *
-     * The Method adds to the Qty of a products size when it gets deleted from the shopping cart
-     *
-     * @param Int $id Id of the Product
-     * @param String $size  the Size of the Product
+     * When buying something the metod is called to remove the both item from the store (reduce the quantity)
      *
      * @created by Demi
      *
-     * @return void saves product changes
+     * @return void
      */
-    public function addQty($id)
-    {
-        $cart = Session::get('cart');
-        $cart = new Cart($cart);
-        $item = $cart->getItem($id);
-
-        //todo make sizes to array of size
-        $sizes= explode('|', $item['sizes']);
-
-        $product = Product::find($id);
-        foreach ($sizes as $size) {
-            if ($size == 'small') {
-                $product->sizeS++;
-            } else if ($size == 'medium') {
-                $product->sizeM++;
-            } else {
-                $product->sizeL++;
-            }
-        }
-        $product->save();
-    }
-
     public function buyItems()
     {
         $cart = Session::get('cart');
@@ -317,7 +261,7 @@ class ProductController extends Controller
             'payment' => 'required'
         ]);
 
-        //todo check if has cart
+        //todo check if has cart//still available
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
@@ -344,7 +288,6 @@ class ProductController extends Controller
      *
      * Gets all the data for the order. Creates a new Order, saves it.
      * Sends a confirmation Email to the User. Deletes the cart.
-     * If there is no cart, the user probably returned to this page after submitting his order.
      *
      * @param Request $request Getting the form data, Address & Payment
      *
@@ -363,6 +306,7 @@ class ProductController extends Controller
                'payment' => 'required'
            ]);
 
+           //todo check if has cart//still available
            //try{
            //getpayment
            //$charge = getsPaymentID
@@ -408,7 +352,16 @@ class ProductController extends Controller
 
 
 
-
+    /**
+     * Sending Confirmation Email after Buying
+     *
+     *
+     * @param Order $order
+     *
+     * @created by Alex
+     *
+     * @return void
+     */
     public function sendConfirmationEmail($order)
     {
         $thisUser = Auth::user();
@@ -690,6 +643,11 @@ class ProductController extends Controller
         $product->delete();
         return redirect('/shop')->with('success', 'Successfuly deleted');
 
+    }
+
+
+    public function displaySizetable(){
+        return view('sizetable');
     }
 
 }

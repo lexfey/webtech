@@ -214,4 +214,9 @@ class UserController extends Controller
         return view('user.index')->with('success','Successfuly edited');
     }
 
+
+    public function displayImpressum(){
+        return view('impressum');
+    }
+
 }

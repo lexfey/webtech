@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/impressum', [ 'uses' => 'UserController@displayImpressum', 'as' => 'impressum',]);
+Route::get('/sizetable', [ 'uses' => 'ProductController@displaySizetable', 'as' => 'sizetable',]);
 
 Auth::routes();
 Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');

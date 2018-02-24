@@ -164,6 +164,12 @@ IMG.logo{
     margin: 4px;
 }
 
+.impressum{
+    float: left;
+    text-decoration: none;
+    margin: 2px;
+    color: white;
+}
 
 a{
     text-decoration: none;
