@@ -23,6 +23,7 @@ use App\Mail\confirmationEmail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
+
 class ProductController extends Controller
 {
 
