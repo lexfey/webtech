@@ -39,10 +39,9 @@ class Cart
         if($this->items){
             if(array_key_exists($id, $this->items)){
                 $storedItem = $this->items[$id];
-                $storedItem['sizes']= $storedItem['sizes'].', '.$size;
+                $storedItem['sizes']= $storedItem['sizes'].'|'.$size;
             }
         }
-
 
         //increment Quantity
         $storedItem['qty']++;
@@ -56,37 +55,6 @@ class Cart
         $this->totalPrice += $item->price;
 
     }
-
-    /*
-     * Qty of an item in the shoppingcart is reduced by one
-     * @created by Demi
-     */
-    /*
-    public function reduceByOne($id, $size){
-        $this->items[$id]['qty']--;
-        $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
-        $this->totalQty--;
-        $this->totalPrice -= $this->items[$id]['item']['price'];
-
-        if($this->items[$id]['qty'] == 0){
-            unset($this->items[$id]);
-        }
-    }
-    */
-
-    /*
-     * Qty of an item in the shoppingcart is added one
-     * @created by Demi
-     */
-    /*
-    public function addOne($id, $size){
-        $this->items[$id]['qty']++;
-        $this->items[$id]['price'] += $this->items[$id]['item']['price'];
-        $this->totalQty++;
-
-        $this->totalPrice += $this->items[$id]['item']['price'];
-    }
-    */
 
     /*
      * the whole item in the shoppingcart is removed
@@ -103,8 +71,41 @@ class Cart
         unset($this->items[$id]);
     }
 
-    public function buy(){
-        //alternativ if remove item after buy not after in cart
-        //todo double check if all items available
+    public function soldOut($id, $size){
+        $this->totalQty--;
+        $this->totalPrice -= $this->items[$id]['item']['price'];
+        $this->items[$id]['qty']--;
+        $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+
+        if($this->totalQty==0) {
+            Session::forget('cart');
+        }else{
+            if ($this->items[$id]['qty'] == '0') {
+                unset($this->items[$id]);
+            } else {
+                //remove the size from sizes
+                $oldSizes = explode('|', $this->items[$id]['sizes']);
+                $this->items[$id]['sizes'] = null;
+                $removedOne = false;
+                foreach ($oldSizes as $s) {
+                    if ($size == $s && !$removedOne) {
+                        $removedOne = true;
+                    } else {
+                        if($this->items[$id]['sizes']==null){
+                            $this->items[$id]['sizes'] = $s;
+                        }else {
+                            $this->items[$id]['sizes'] = $this->items[$id]['sizes'] . '|' . $s;
+                        }
+                    }
+
+                }
+            }
+        }
+
     }
+
+    public function getItem($id){
+        return $this->items[$id];
+    }
+
 }

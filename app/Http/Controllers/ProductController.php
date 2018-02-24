@@ -55,23 +55,61 @@ class ProductController extends Controller
 
 
     /**
-     * Gets the ShoppingCart.
-     *
-     * The Method gets the Shopping Cart from the Session and gives it to the return view.
-     *
+     *     *
      *
      * @created by Demi
      *
      * @return view product.shoppingCart
      */
-    public function getCart()
+    public function getCart(Request $request)
     {
-        //todo check if products are still available
+
         if (!Session::has('cart')) {
             return view('shop.shoppingCart');
         }
-        $cart = Session::get('cart');
-        return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+
+        $changes = false;
+        $oldcart = Session::get('cart');
+        $cart = new Cart($oldcart);
+        foreach ($cart->items as $item){
+           $product = Product::find($item['item']['id']);
+           $countS=0;
+           $countM=0;
+           $countL=0;
+           $sizes= explode('|', $item['sizes']);
+           foreach ($sizes as $size) {
+                if ($size == 'small') {
+                    if (($product->sizeS) < ($countS+1)) {
+                        $changes=true;
+                        $cart->soldOut($item['item']['id'], $size);
+                    }else{
+                        $countS++;
+                    }
+                }else if ($size == 'medium') {
+                    if ($product->sizeM < $countM+1) {
+                        $cart->soldOut($item['item']['id'], $size);
+                        $changes=true;
+                    }else{
+                        $countM++;
+                    }
+                } else if ($size == 'large') {
+                    if ($product->sizeL < $countL+1) {
+                        $cart->soldOut($item['item']['id'], $size);
+                        $changes=true;
+                    }else{
+                        $countL++;
+                    }
+                }
+            }
+        }
+        $request->session()->put('cart', $cart);
+
+        if($changes == true){
+            //todo error message
+            return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice])->with('error', 'Some Items are not available anymore and have been deleted from your Cart');
+        }else{
+            return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        }
     }
 
 
@@ -97,6 +135,7 @@ class ProductController extends Controller
         ]);
         $size = Input::get('size');
         $product = Product::find($id);
+
         //check if there is already a cart and gets it.
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         //make a new cart and add the product
@@ -111,12 +150,37 @@ class ProductController extends Controller
         //update the session by giving it the new cart
         $request->session()->put('cart', $cart);
 
+        //$this->reduceQty($id, $size);
 
-        //todo move to finalcheckout
-        $this->reduceQty($id, $size);
         return redirect()->route('product.shoppingCart');
     }
 
+
+    /**
+     * Changes the Qty of a Product, when deleted from Cart.
+     *
+     * The Method reduces to the Qty of a products size when it gets added to the shopping cart
+     *
+     * @param Int $id Id of the Product
+     * @param String $size  the Size of the Product
+     *
+     * @created by Demi
+     *
+     * @return void saves product changes
+     */
+    public function reduceQty($id, $size)
+    {
+        $product = Product::find($id);
+        if ($size == 'small') {
+            $product->sizeS--;
+        } else if ($size == 'medium') {
+            $product->sizeM--;
+        } else if($size == 'large') {
+            $product->sizeL--;
+        }
+        $product->save();
+
+    }
 
     /**
      * Deletes a Product from the ShoppingCart.
@@ -143,68 +207,11 @@ class ProductController extends Controller
             $user->save();
         }
 
+       // $this->addQty($id);
+
         $request->session()->put('cart', $cart);
-        //toDo die Größen wieder zurück geben (qty erhöhen) [Außer wir machen das reduzieren der Qty erst bei Kauf]
-        //$sizes = //split after ','
-        //foreach ($size in $sizes)
 
-        // $this->addQty($id, $s);
         return redirect()->route('product.shoppingCart');
-    }
-
-    /*
-     * Deletes one item from the Cart (no matter the quantity)
-     * @created by Demi
-     */
-    /*
-    public function getRemoveOneFromCart(Request $request, $id, $size){
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $cart->reduceByOne($id, $size);
-        $request->session()->put('cart', $cart);
-        $this->addQty($id, $size);
-        return redirect()->route('product.shoppingCart');
-    }
-    */
-    /*
-     * Deletes one item from the Cart (no matter the quantity)
-     * @created by Demi
-     */
-    /*
-    public function getAddOneToCart(Request $request, $id, $size){
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $cart->addOne($id, $size);
-        $request->session()->put('cart', $cart);
-        $this->reduceQty($id, $size);
-        return redirect()->route('product.shoppingCart');
-    }
-    */
-
-    /**
-     * Changes the Qty of a Product, when deleted from Cart.
-     *
-     * The Method reduces to the Qty of a products size when it gets added to the shopping cart
-     *
-     * @param Int $id Id of the Product
-     * @param String $size  the Size of the Product
-     *
-     * @created by Demi
-     *
-     * @return void saves product changes
-     */
-    public function reduceQty($id, $size)
-    {
-        $product = Product::find($id);
-        if ($size == 'small') {
-            $product->sizeS--;
-        } else if ($size == 'medium') {
-            $product->sizeM--;
-        } else {
-            $product->sizeL--;
-        }
-        $product->save();
-
     }
 
     /**
@@ -219,17 +226,51 @@ class ProductController extends Controller
      *
      * @return void saves product changes
      */
-    public function addQty($id, $size)
+    public function addQty($id)
     {
+        $cart = Session::get('cart');
+        $cart = new Cart($cart);
+        $item = $cart->getItem($id);
+
+        //todo make sizes to array of size
+        $sizes= explode('|', $item['sizes']);
+
         $product = Product::find($id);
-        if ($size == 'small') {
-            $product->sizeS++;
-        } else if ($size == 'medium') {
-            $product->sizeM++;
-        } else {
-            $product->sizeL++;
+        foreach ($sizes as $size) {
+            if ($size == 'small') {
+                $product->sizeS++;
+            } else if ($size == 'medium') {
+                $product->sizeM++;
+            } else {
+                $product->sizeL++;
+            }
         }
         $product->save();
+    }
+
+    public function buyItems()
+    {
+        $cart = Session::get('cart');
+        $cart = new Cart($cart);
+        foreach ($cart->items as $item) {
+            $product = Product::find($item['item']['id']);
+            $sizes = explode('|', $item['sizes']);
+
+            foreach ($sizes as $size) {
+                if ($size == 'small') {
+                    $product->sizeS--;
+
+                } else if ($size == 'medium') {
+                    $product->sizeM--;
+
+                } else if ($size == 'large') {
+                    $product->sizeL--;
+                }
+            }
+
+            $product->save();
+        }
+
     }
 
     /**---------------------------------------- Checking out  ---------------------------**/
@@ -313,10 +354,6 @@ class ProductController extends Controller
     public function finalCheckout(Request $request)
     {
        if(Session::has('cart')) {
-           $oldCart = Session::get('cart');
-           $cart = new Cart($oldCart);
-
-
            //todo finish up
            $this->validate($request, [
                'street' => 'required',
@@ -330,7 +367,10 @@ class ProductController extends Controller
            //$charge = getsPaymentID
            $order = new Order();
            //$order->payment_id = $charge->id; //works with stripe
+           $oldCart = Session::get('cart');
+           $cart = new Cart($oldCart);
            $order->cart = serialize($cart);
+
            $order->street = $request->input('street');
            $order->number = $request->input('number');
            $order->city = $request->input('city');
@@ -350,7 +390,9 @@ class ProductController extends Controller
 
            //}
 
-           //todo here reduce product qty
+           //reduces Qty of Product
+           $this->buyItems();
+
            Session::forget('cart');
            $user = Auth::user();
            $user->cart = null;
@@ -362,6 +404,9 @@ class ProductController extends Controller
            return redirect()->route('shop.index')->with('error', 'You already placed your order!');
        }
     }
+
+
+
 
     public function sendConfirmationEmail($order)
     {
