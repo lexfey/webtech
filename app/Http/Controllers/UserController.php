@@ -226,7 +226,7 @@ class UserController extends Controller
     }
 
     /**
-     * Displays Impressum
+     * Display Impressum
      *
      * @created by Demi
      *
