@@ -61,19 +61,32 @@ class ProductController extends Controller
             return view('shop.shoppingCart', ['change' => false]);
         }
 
+        $changes=$this->checkAvailable($request);
+
+        $oldcart = Session::get('cart');
+        $cart = new Cart($oldcart);
+
+        if($changes == true){
+            return view('shop.shoppingCart', ['change' => true, 'products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        }else{
+            return view('shop.shoppingCart', ['change' => false, 'products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        }
+    }
+
+    public function checkAvailable(Request $request){
         $changes = false;
         $oldcart = Session::get('cart');
         $cart = new Cart($oldcart);
         foreach ($cart->items as $item){
-           $product = Product::find($item['item']['id']);
-           //counter for each size
-           $countS=0;
-           $countM=0;
-           $countL=0;
-           $sizes= explode('|', $item['sizes']);
+            $product = Product::find($item['item']['id']);
+            //counter for each size
+            $countS=0;
+            $countM=0;
+            $countL=0;
+            $sizes= explode('|', $item['sizes']);
 
-           //for each size check if there are more then available sizes
-           foreach ($sizes as $size) {
+            //for each size check if there are more then available sizes
+            foreach ($sizes as $size) {
                 if ($size == 'small') {
                     if (($product->sizeS) < ($countS+1)) {
                         $changes=true;
@@ -99,15 +112,8 @@ class ProductController extends Controller
             }
         }
         $request->session()->put('cart', $cart);
-
-        if($changes == true){
-            //todo error message
-            return view('shop.shoppingCart', ['change' => true, 'products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
-        }else{
-            return view('shop.shoppingCart', ['change' => false, 'products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
-        }
+        return $changes;
     }
-
 
     /**
      * Adds a Product to the ShoppingCart.
@@ -117,7 +123,7 @@ class ProductController extends Controller
      * Makes a new Cart and adds the Product.
      *
      * @param Int $id Id of the Product
-     * @param Request $request todo
+     * @param Request $request
      *
      * @created by Demi
      *
@@ -159,7 +165,7 @@ class ProductController extends Controller
      * The Method deletes a Product from the ShoppingCart. No Matter the Qty.
      *
      * @param Int $id Id of the Product
-     * @param Request $request todo
+     * @param Request $request
      *
      * @created by Demi
      *
@@ -235,7 +241,7 @@ class ProductController extends Controller
      */
     public function getCheckout()
     {
-        //todo check if produkt (still) available
+
         if (!Session::has('cart')) {
             return view("shop.shoppingcart");
         }
@@ -257,15 +263,19 @@ class ProductController extends Controller
      */
     public function postCheckout(Request $request)
     {
-        //todo What needs to be validated
+
         $this->validate($request, [
             'street' => 'required',
+            'name1'=> 'required',
+            'name2'=> 'required',
+            'zip'=> 'required',
+            'number'=> 'required',
             'country' => 'required',
             'city' => 'required',
             'payment' => 'required'
         ]);
 
-        //todo check if has cart//still available
+
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
@@ -301,59 +311,61 @@ class ProductController extends Controller
      */
     public function finalCheckout(Request $request)
     {
-       if(Session::has('cart')) {
-           //todo finish up
-           $this->validate($request, [
-               'street' => 'required',
-               'country' => 'required',
-               'city' => 'required',
-               'payment' => 'required'
-           ]);
+        //check if all Products are still available
+       if(!$this->checkAvailable($request)){
+           if (Session::has('cart')) {
 
-           //todo check if has cart//still available
-           //try{
-           //getpayment
-           //$charge = getsPaymentID
-           $order = new Order();
-           //$order->payment_id = $charge->id; //works with stripe
+               $this->validate($request, [
+                   'street' => 'required',
+                   'name1'=> 'required',
+                   'name2'=> 'required',
+                   'zip'=> 'required',
+                   'number'=> 'required',
+                   'country' => 'required',
+                   'city' => 'required',
+                   'payment' => 'required'
+               ]);
+
+
+               $order = new Order();
+               $oldCart = Session::get('cart');
+               $cart = new Cart($oldCart);
+               $order->cart = serialize($cart);
+
+               $order->street = $request->input('street');
+               $order->number = $request->input('number');
+               $order->city = $request->input('city');
+               $order->zip = $request->input('zip');
+               $order->country = $request->input('country');
+               $order->firstName = $request->input('name1');
+               $order->lastName = $request->input('name2');
+
+               $user = Auth::user();
+               $order->email = $user->email;
+
+               $order->payment = $request->input('payment');
+               $order->status = 'ordered';
+
+               //sending Confirmation email and saving order
+               Auth::user()->orders()->save($order);
+               $this->sendConfirmationEmail($order);
+
+               //reduces Qty of Product
+               $this->buyItems();
+
+               Session::forget('cart');
+               $user = Auth::user();
+               $user->cart = null;
+               $user->save();
+
+               return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
+           } else {
+               return redirect()->route('shop.index')->with('error', 'You already placed your order!');
+           }
+       }else{
            $oldCart = Session::get('cart');
            $cart = new Cart($oldCart);
-           $order->cart = serialize($cart);
-
-           $order->street = $request->input('street');
-           $order->number = $request->input('number');
-           $order->city = $request->input('city');
-           $order->zip = $request->input('zip');
-           $order->country = $request->input('country');
-           $order->firstName = $request->input('name1');
-           $order->lastName = $request->input('name2');
-
-           $user = Auth::user();
-           $order->email = $user->email;
-
-           //todo checkpayment method -> set status
-           $order->payment = $request->input('payment');
-           $order->status = 'ordered';
-
-           //sending Confirmation email and saving order
-           Auth::user()->orders()->save($order);
-           $this->sendConfirmationEmail($order);
-           // }catch(Exception $e){
-
-           //}
-
-           //reduces Qty of Product
-           $this->buyItems();
-
-           Session::forget('cart');
-           $user = Auth::user();
-           $user->cart = null;
-           $user->save();
-
-           return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
-       }
-       else{
-           return redirect()->route('shop.index')->with('error', 'You already placed your order!');
+           return view('shop.shoppingCart', ['change' => true, 'products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
        }
     }
 
@@ -401,7 +413,7 @@ class ProductController extends Controller
      * It takes the date from the form and saves it after validating.
      * For the Img (one required) it creates a unique name and saves it to the database.
      *
-     * @param Request $request todo
+     * @param Request $request
      *
      * @created by Demi
      *
@@ -410,10 +422,14 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        //What needs to be validated todo
         $this->validate($request, [
             'name' => 'required',
             'price' => 'required',
+            'color'=> 'required',
+            'desc'=> 'required',
+            'sizeL'=> 'required',
+            'sizeM'=> 'required',
+            'sizeS'=> 'required',
             'image' => 'image|max:1999|required',
         ]);
 
@@ -532,7 +548,7 @@ class ProductController extends Controller
      * It takes the date from the form and saves it after validating.
      * For the Img (none required) it creates a unique name and saves it to the database and replaces the old pic.
      *
-     * @param Request $request todo
+     * @param Request $request
      * @param Int $id ProductID
      *
      * @created by Demi
@@ -541,10 +557,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //todo What needs to be validated
+
         $this->validate($request, [
             'name' => 'required',
             'price' => 'required',
+            'color'=> 'required',
+            'desc'=> 'required',
+            'sizeL'=> 'required',
+            'sizeM'=> 'required',
+            'sizeS'=> 'required',
             'image' => 'image|max:1999',
         ]);
 

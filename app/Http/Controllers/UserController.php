@@ -28,7 +28,7 @@ class UserController extends Controller
      * Is called after Login to check if the user has something in the cart from old Session
      * if so the cart gets updated to the "old cart"
      *
-     * @param Request $request todo
+     * @param Request $request
      *
      * @created by Demi
      *
@@ -100,7 +100,7 @@ class UserController extends Controller
      * Checks if new and old password are different.
      * Saves the new password.
      *
-     * @param Request $request todo
+     * @param Request $request
      *
      * @created by Alex
      *
@@ -124,7 +124,6 @@ class UserController extends Controller
             return redirect()->back()->with("error", "New Password cannot be same as your current password. Please choose a different password.");
         }
 
-        //todo double check confirm password, where?!
 
         //Change Password
         $user = Auth::user();
@@ -140,7 +139,7 @@ class UserController extends Controller
      *
      * Sets the status to 2. To avoid Problem when Ordered something and Account is gone.
      *
-     * @param Request $request todo
+     * @param Request $request
      *
      * @created by Alex
      *
@@ -180,7 +179,7 @@ class UserController extends Controller
     public function getOrders()
     {
         $user = Auth::user();
-        //todo check if logdin
+
         if ($user->name != 'Admin') {
             $orders = Auth::user()->orders;
             //to unserialise all the orders
