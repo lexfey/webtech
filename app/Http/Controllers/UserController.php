@@ -184,7 +184,8 @@ class UserController extends Controller
                 $order->cart = unserialize($order->cart);
                 return $order;
             });
-            return view('user.allOrders',  ['orders' => $orders]);
+            $users=User::all();
+            return view('user.allOrders',  ['orders' => $orders, 'users'=> $users]);
         }
     }
 

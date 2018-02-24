@@ -324,6 +324,9 @@ class ProductController extends Controller
            $order->firstName = $request->input('name1');
            $order->lastName = $request->input('name2');
 
+           $user = Auth::user();
+           $order->email = $user->email;
+
            //todo checkpayment method -> set status
            $order->payment = $request->input('payment');
            $order->status = 'ordered';

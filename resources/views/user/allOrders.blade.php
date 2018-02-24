@@ -56,7 +56,7 @@
                                 <p class="line"> {{$order->zip}} {{$order->city}}</p>
                                 <p class="line">{{$order->country}}</p>
                             </div>
-                            <p>Email:  | UserID: {{$order->user_id}}</p>
+                            <p>Email: {{$order->email}} | UserID: {{$order->user_id}}</p>
                         </div>
 
                         <input type="submit" value="Save Changes" id="submitButton">
