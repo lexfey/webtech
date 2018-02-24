@@ -77,9 +77,17 @@
                                <div class="form-group">
                                    <label class="label">Country: </label>
                                    @if ($errors->has('country'))
-                                       <input type="text" style="background-color: #f44336 " class="form-control" name="country" value="">
+                                       <select style="background-color: #f44336 " class="form-control" name="country">
+                                           <option value="Slovenia">Slovenia</option>
+                                           <option value="Germany">Germany</option>
+                                           <option value="Austria">Austria</option>
+                                       </select>
                                    @else
-                                       <input type="text"  class="form-control" name="country" value="">
+                                       <select class="form-control" name="country">
+                                           <option value="Slovenia">Slovenia</option>
+                                           <option value="Germany">Germany</option>
+                                           <option value="Austria">Austria</option>
+                                       </select>
                                    @endif
                                    </div>
                             </div>
