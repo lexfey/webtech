@@ -7,7 +7,7 @@
     <h2 class="titel">Login</h2>
     <div class="panel-body">
         @if(session('status'))
-            {{session('status')}}
+            <p class="infoStatus" >{{session('status')}}<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span></p>
         @endif()
         <form class="form-hoizontal" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}

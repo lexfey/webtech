@@ -10,7 +10,7 @@
             {{ csrf_field() }}
             <div class="innerform">
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label for="name" class="col-md-4 control-label">Name</label>
+                    <label for="name" class="col-md-4 control-label">Username</label>
                     <div class="col-md-6">
 
                         @if ($errors->has('name'))

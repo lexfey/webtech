@@ -268,3 +268,10 @@ margin-bottom: 0;
     font-style: oblique;
     color: #333;
 }
+
+.infoStatus{
+    margin-left: 10%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+}
