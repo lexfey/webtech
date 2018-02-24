@@ -18,7 +18,7 @@
             <div class="card">
                 <img src="img/sam.jpg"  style="width:100%">
                 <h1>Samo Kozar</h1>
-                <p>Hi my name is Samo. </p>
+                <p>Hi my name is Samo.</p>
                 <p>I am a Slovenian Rap/Hip-Hop artist.</p>
                 <p>And this is my web-store.</p>
             </div>
@@ -56,6 +56,21 @@
                     <p><a href="http://www.24ur.com/ekskluziv/glasba/zelenci-se-en-raperski-fenomen-tokrat-iz-koroske.html"
                           target="_blank" >24ur.com, 17.01.2011: ZELENCI: Še en raperski fenomen, tokrat iz Koroške</a>
                     </p>
+
+            </div>
+
+            <div class="card">
+                <h4>Music Videos</h4>
+
+                <p><a href="https://youtu.be/A7wx3BLKQ6o"
+                    >Najt Pot</a>
+                </p>
+                <iframe width="500" height="295" src="https://www.youtube.com/embed/A7wx3BLKQ6o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                <p><a href="https://youtu.be/GyQljopeXzc"
+                    >Edina</a>
+                </p>
+                <iframe width="500" height="295" src="https://www.youtube.com/embed/GyQljopeXzc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             </div>
 

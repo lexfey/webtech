@@ -25,6 +25,7 @@
     padding-bottom: 20px;
 }
 
+
 .card h4{
     background-color: #333;
     color: white;
@@ -41,7 +42,7 @@
     padding: 10px;
 }
 
-.card p:hover{
+.card p :hover{
     background-color: #818181;
 }
 
