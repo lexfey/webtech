@@ -57,7 +57,7 @@ class ProductController extends Controller
     {
 
         if (!Session::has('cart')) {
-            return view('shop.shoppingCart');
+            return view('shop.shoppingCart', ['change' => false]);
         }
 
         $changes = false;
@@ -65,10 +65,13 @@ class ProductController extends Controller
         $cart = new Cart($oldcart);
         foreach ($cart->items as $item){
            $product = Product::find($item['item']['id']);
+           //counter for each size
            $countS=0;
            $countM=0;
            $countL=0;
            $sizes= explode('|', $item['sizes']);
+
+           //for each size check if there are more then available sizes
            foreach ($sizes as $size) {
                 if ($size == 'small') {
                     if (($product->sizeS) < ($countS+1)) {
@@ -98,9 +101,9 @@ class ProductController extends Controller
 
         if($changes == true){
             //todo error message
-            return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice, 'error'=>'Some Items are not available anymore and have been deleted from your Cart']);
+            return view('shop.shoppingCart', ['change' => true, 'products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
         }else{
-            return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+            return view('shop.shoppingCart', ['change' => false, 'products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
         }
     }
 
@@ -648,7 +651,13 @@ class ProductController extends Controller
 
     }
 
-
+    /**
+     * Displays Sizetable
+     *
+     * @created by Demi
+     *
+     * @return view sizetable
+     */
     public function displaySizetable(){
         return view('sizetable');
     }

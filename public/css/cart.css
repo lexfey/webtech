@@ -69,5 +69,11 @@
     text-decoration: none;
     cursor: pointer;
 }
-
+.changeAlert{
+    padding: 10px;
+    background-color: red;
+    color: white;
+    margin-left: 10%;
+    width:60%;
+}
 /*-----------------------------------*/

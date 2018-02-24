@@ -22,6 +22,17 @@ use Hash;
 class UserController extends Controller
 {
 
+    /*
+     * Checking and rebuilding last used Cart of User
+     *
+     * Is called after Login to check if the user has something in the cart from old Session
+     * if so the cart gets updated to the "old cart"
+     *
+     * @param Request $request todo
+     *
+     * @created by Demi
+     *
+     */
     public function checkForCart(Request $request){
        $user = Auth::user();
         if($user->cart != null){
@@ -184,8 +195,7 @@ class UserController extends Controller
                 $order->cart = unserialize($order->cart);
                 return $order;
             });
-            $users=User::all();
-            return view('user.allOrders',  ['orders' => $orders, 'users'=> $users]);
+            return view('user.allOrders',  ['orders' => $orders]);
         }
     }
 
@@ -215,7 +225,13 @@ class UserController extends Controller
         return view('user.index')->with('success','Successfuly edited');
     }
 
-
+    /**
+     * Displays Impressum
+     *
+     * @created by Demi
+     *
+     * @return view impressum
+     */
     public function displayImpressum(){
         return view('impressum');
     }

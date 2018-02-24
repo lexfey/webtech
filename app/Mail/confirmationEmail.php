@@ -17,9 +17,15 @@ class confirmationEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
-    public $order;
 
+    public $order;
+    /**
+     * Create a new message instance.
+     *
+     * @param  Order $order giving the Order Information to the Mail
+     * @created by Alex
+     * @return void
+     */
     public function __construct(Order $order)
     {
         $this->order = $order;
@@ -27,6 +33,7 @@ class confirmationEmail extends Mailable
     /**
      * Build the message.
      *
+     * @created by Alex
      * @return $this
      */
     public function build()

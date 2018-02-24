@@ -18,6 +18,15 @@ class Cart
     public $totalQty = 0;
     public $totalPrice =0;
 
+    /*
+     * Cart constructor
+     *
+     * takes old cart if given and sets items & Qty & Price
+     *
+     * @param Cart $oldCart
+     * @created by Demi
+     * @return void
+     */
     public function __construct($oldCart)
     {
         if($oldCart){
@@ -28,8 +37,17 @@ class Cart
     }
 
     /*
-     * One item is added to shoppingcart
+     * Adds one Item to the shopping Cart
+     *
+     * Adds Item to shopping Cart and adjust the values of Qty/Price/Sizes
+     *
+     * @param Product $item the Product that is added
+     * @param Int $id of the Product
+     * @param String $size of the Product
+     *
+     *
      * @created by Demi
+     * @return void
      */
     public function add($item, $id, $size){
         //one Group/Item as assotiatives Array
@@ -57,8 +75,14 @@ class Cart
     }
 
     /*
-     * the whole item in the shoppingcart is removed
+     * Removes one Product to the shopping Cart
+     *
+     * Removes on Product (could be multiple Items) from shopping Cart and adjust the values of Qty/Price/Sizes
+     *
+     * @param Int $id of the Product
+     *
      * @created by Demi
+     * @return void
      */
     public function remove($id){
         $qty = $this->items[$id]['qty'];
@@ -71,6 +95,18 @@ class Cart
         unset($this->items[$id]);
     }
 
+    /*
+     * Removes one Item from the shopping Cart
+     *
+     * Removes one Item (specific size) from shopping Cart when it is not available anymore.
+     *  Adjust the values of Qty/Price/Sizes
+     *
+     * @param Int $id of the Product
+     * @param String $size of the Product Item to remove
+     *
+     * @created by Demi
+     * @return void
+     */
     public function soldOut($id, $size){
         $this->totalQty--;
         $this->totalPrice -= $this->items[$id]['item']['price'];
@@ -104,6 +140,14 @@ class Cart
 
     }
 
+    /*
+     * Return the Item of specific Id
+     *
+     * @param Int $id of the Product
+     *
+     * @created by Demi
+     * @return Item
+     */
     public function getItem($id){
         return $this->items[$id];
     }

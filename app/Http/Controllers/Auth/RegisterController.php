@@ -59,8 +59,11 @@ class RegisterController extends Controller
 
     /**
      * Create a new user instance after a valid registration.
-     * changes by Demi: call the sendMail function
+     *
      * @param  array  $data
+     *
+     * @created by Demi & Laravel
+     *
      * @return \App\User
      */
     protected function create(array $data)
@@ -79,10 +82,14 @@ class RegisterController extends Controller
     }
 
     /**
-     * sendEmail
-     * @created by Demi 10.02.2018
-     * @param user
-     * @return
+     * Sending Email for User to verify their Email
+     *
+     *
+     * @param User $thisUser whom Email needs to be confirmed
+     *
+     * @created by Demi 
+     *
+     * @return void
      */
     public function sendEmail($thisUser){
         Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
@@ -92,6 +99,7 @@ class RegisterController extends Controller
 
     /**
      * VerifyEmailAdress
+     *
      * @created by Demi 10.02.2018
      *
      * @return "view" telling the user to verify email
@@ -100,12 +108,18 @@ class RegisterController extends Controller
         return view('email.verifyEmailFirst');
     }
 
+
     /**
-     * sendEmailDone
-     * @created by Demi 10.02.2018
-     * @param email, token
-     * updating the status to 1 and token to null (so no reuse)
-     * @return "view" telling the user to verify email
+     * After Email is Confirmed
+     *
+     * After the confirmation link is clicked updating the status to 1 and token to null (so no reuse)
+     *
+     * @param String $email which is being confirmed
+     * @param String $verifyToken the token which needs to be compared
+     *
+     * @created by Demi
+     *
+     * @return String "user not found" // view login
      */
     public function sendEmailDone($email, $verifyToken){
 

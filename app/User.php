@@ -29,7 +29,10 @@ class User extends Authenticatable
 
 
     /*
+     * Assigns one User to multiple Orders
+     *
      * @created by Demi
+     * @return hasMany
      */
     public function orders(){
         return $this->hasMany('App\Order');

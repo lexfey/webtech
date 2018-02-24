@@ -16,13 +16,15 @@ class verifyEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+    public $user;
     /**
      * Create a new message instance.
      *
+     * @param  User $order giving the Order Information to the Mail
+     * @created by Demi
      * @return void
      */
-    public $user;
-
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -31,6 +33,7 @@ class verifyEmail extends Mailable
     /**
      * Build the message.
      *
+     * @created by Demi
      * @return $this
      */
     public function build()

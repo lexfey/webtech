@@ -9,7 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //relation user-order
+    /*
+     * Assigns one Order to one User
+     *
+     * @created by Demi
+     * @return belogsTo
+     */
     public function user(){
         return $this->belongsTo('App\User');
     }

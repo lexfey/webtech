@@ -22,6 +22,7 @@ Route::get('/impressum', [ 'uses' => 'UserController@displayImpressum', 'as' => 
 Route::get('/sizetable', [ 'uses' => 'ProductController@displaySizetable', 'as' => 'sizetable',]);
 
 Auth::routes();
+
 Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 Route::resource('/shop', 'ProductController');

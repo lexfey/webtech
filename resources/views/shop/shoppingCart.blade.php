@@ -15,6 +15,12 @@
     <div class="container">
         <div class="cart">
             <h1 class="titel">Shopping Cart</h1>
+            @if($change)
+                <p class="changeAlert">There have been changes to your Cart. Some Items are not available anymore.
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </p>
+            @endif
+
             @if(Session::has('cart'))
                 <ul class="cartWrap">
                     @if(count($products)>0)
@@ -27,7 +33,7 @@
                                     <h3>{{$product['item']['name']}}</h3>
                                     <p>Size(s): {{$product['sizes']}} </p>
                                     <p>Quantity: {{$product['qty']}}</p>
-                                    <p>Price: {{$product['price']}} € </p>
+                                    <p>Price per Item: {{$product['item']['price']}} € </p>
                                 </div>
                                 <div class="removeWrap">
                                     <a href="deleteFromCart/{{$product['item']['id']}}" class="remove linkIc2"><i class="fas fa-times"></i></a>
