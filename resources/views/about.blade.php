@@ -65,12 +65,12 @@
                 <p><a href="https://youtu.be/A7wx3BLKQ6o"
                     >Najt Pot</a>
                 </p>
-                <iframe width="500" height="295" src="https://www.youtube.com/embed/A7wx3BLKQ6o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="768" height="432" src="https://www.youtube.com/embed/A7wx3BLKQ6o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
                 <p><a href="https://youtu.be/GyQljopeXzc"
                     >Edina</a>
                 </p>
-                <iframe width="500" height="295" src="https://www.youtube.com/embed/GyQljopeXzc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="768" height="432" src="https://www.youtube.com/embed/GyQljopeXzc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             </div>
 
