@@ -6,8 +6,6 @@
  * Time: 14:35
  */
 ?>
-
-
 <h1>ORDER CONFIRMATION</h1>
 
 <h2>Hi {{ $order->firstName }} {{ $order->lastName }},</h2>

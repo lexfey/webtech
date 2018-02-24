@@ -358,7 +358,7 @@ class ProductController extends Controller
                $user->cart = null;
                $user->save();
 
-               return redirect()->route('shop.index')->with('success', 'Successfully purchased products!');
+               return redirect()->route('shop.index')->with('success', 'Successfully purchased products! Check your email inbox for the ORDER CONFIRMATION');
            } else {
                return redirect()->route('shop.index')->with('error', 'You already placed your order!');
            }
