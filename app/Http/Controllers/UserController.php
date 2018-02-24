@@ -138,6 +138,7 @@ class UserController extends Controller
      * Deletes User account
      *
      * Sets the status to 2. To avoid Problem when Ordered something and Account is gone.
+     * Sets user's email to "deleted: useremail@email.com" so the user cannot use the forgot password funcntion
      *
      * @param Request $request
      *
@@ -157,6 +158,12 @@ class UserController extends Controller
         DB::table('users')
             ->where('id', $id)
             ->update(['status' => 2]);
+
+        $userEmail = Auth::user()->email;
+
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['email' => 'deleted: '.$userEmail]);
 
         Auth::logout();
 

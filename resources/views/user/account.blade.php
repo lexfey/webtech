@@ -20,7 +20,7 @@
         <a class="btn" href="{{ route('changepassword')}}" >
             <div class="column btn_column">
                 <p class="btn_title"><i class="fas fa-lock"></i> Change password</p>
-                <p class="btn_description">Edit Logindata, Name and Number</p>
+                <p class="btn_description">Change your password</p>
             </div>
         </a>
         <a class="btn" href="{{ route('deleteaccount')}}" >
