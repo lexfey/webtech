@@ -16,7 +16,7 @@
         <div class="content_center">  <!---right now not needed because just one element inside-->
 
             <div class="card">
-                <img src="img/sam.jpg"  style="width:100%">
+                <img src="img/Samo.jpg"  style="width:100%">
                 <h1>Samo Kozar</h1>
                 <p>Hi my name is Samo.</p>
                 <p>I am a Slovenian Rap/Hip-Hop artist.</p>
