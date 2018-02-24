@@ -42,7 +42,7 @@
     padding: 10px;
 }
 
-.card p :hover{
+.card p:hover{
     background-color: #818181;
 }
 
