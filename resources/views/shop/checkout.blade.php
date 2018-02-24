@@ -26,68 +26,62 @@
                                    <span>
                                    <label class="label">First Name: </label>
                                    @if ($errors->has('name'))
-                                       <span class="help-block">
-                                            <strong>{{ $errors->first('name1') }}</strong>
-                                        </span>
+                                           <input type="text" style="background-color: #f44336 " class="form-control" name="name1" value="">
+                                   @else
+                                           <input type="text" class="form-control" name="name1" value="">
                                    @endif
-                                   <input type="text" class="form-control" name="name1" value="">
                                    </span>
                                    <span>
-                                       <label class="label">Last Name: </label>
+                                       <label class="label" >Last Name: </label>
                                        @if ($errors->has('name'))
-                                       <span class="help-block">
-                                            <strong>{{ $errors->first('name2')}}</strong>
-                                        </span>
+                                           <input type="text" style="background-color: #f44336 " class="form-control" name="name2" value="">
+                                       @else
+                                           <input type="text" class="form-control" name="name2" value="">
                                        @endif
-                                       <input type="text" class="form-control" name="name2" value="">
-                                   </span>
+                                       </span>
                                </div>
                                <div class="form-group">
                                    <label class="label">Street: </label>
                                    @if ($errors->has('street'))
-                                       <span class="help-block">
-                                            <strong>{{ $errors->first('street') }}</strong>
-                                        </span>
+                                       <input type="text" style="background-color: #f44336 "  class="form-control" name="street" value="">
+                                   @else
+                                       <input type="text" class="form-control" name="street" value="">
                                    @endif
-                                   <input type="text" class="form-control" name="street" value="">
+
                                    <span>
                                        <label class="label">Number: </label>
                                        @if ($errors->has('number'))
-                                           <span class="help-block">
-                                            <strong>{{ $errors->first('number')}}</strong>
-                                        </span>
+                                           <input type="number" style="background-color: #f44336 "  class="form-control" name="number" value="">
+                                       @else
+                                           <input type="number" class="form-control" name="number" value="">
                                        @endif
-                                       <input type="number" class="form-control" name="number" value="">
-                                   </span>
+                                        </span>
                                </div>
                                <div class="form-group">
                                    <span>
                                        <label class="label">Zip: </label>
                                        @if ($errors->has('zip'))
-                                           <span class="help-block">
-                                            <strong>{{ $errors->first('zip')}}</strong>
-                                        </span>
+                                           <input type="number" style="background-color: #f44336 " class="form-control" name="zip" value="">
+                                       @else
+                                           <input type="number" class="form-control" name="zip" value="">
                                        @endif
-                                       <input type="number" class="form-control" name="zip" value="">
-                                   </span>
+                                      </span>
                                    <label class="label">City: </label>
                                    @if ($errors->has('city'))
-                                       <span class="help-block">
-                                            <strong>{{ $errors->first('city') }}</strong>
-                                        </span>
+                                       <input type="text" style="background-color: #f44336 " class="form-control" name="city" value="">
+                                   @else
+                                       <input type="text" class="form-control" name="city" value="">
                                    @endif
-                                   <input type="text" class="form-control" name="city" value="">
 
                                </div>
                                <div class="form-group">
                                    <label class="label">Country: </label>
                                    @if ($errors->has('country'))
-                                       <span class="help-block">
-                                         <strong>{{ $errors->first('country') }}</strong>
-                                        </span>
+                                       <input type="text" style="background-color: #f44336 " class="form-control" name="country" value="">
+                                   @else
+                                       <input type="text"  class="form-control" name="country" value="">
                                    @endif
-                                   <input type="text" class="form-control" name="country" value="">
-                               </div>
+                                   </div>
                             </div>
                    </div>
                    <div class="checkItem">

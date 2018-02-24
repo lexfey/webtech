@@ -27,13 +27,13 @@
                                 <label for="new-password" class="col-md-4 control-label">Current Password</label>
 
                                 <div class="col-md-6">
-                                    <input id="current-password" type="password" class="form-control"
-                                           name="current-password" required>
 
                                     @if ($errors->has('current-password'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('current-password') }}</strong>
-                                    </span>
+                                        <input id="current-password" style="background-color: #f44336 " type="password" class="form-control"
+                                               name="current-password" required>
+                                    @else
+                                        <input id="current-password"  type="password" class="form-control"
+                                               name="current-password" required>
                                     @endif
                                 </div>
                             </div>
@@ -42,12 +42,12 @@
                                 <label for="new-password" class="col-md-4 control-label">New Password</label>
 
                                 <div class="col-md-6">
-                                    <input id="new-password" type="password" class="form-control" name="new-password"
-                                           required>
                                     @if ($errors->has('new-password'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('new-password') }}</strong>
-                                    </span>
+                                        <input id="new-password" style="background-color: #f44336 "  type="password" class="form-control" name="new-password"
+                                               required>
+                                    @else
+                                        <input id="new-password" type="password" class="form-control" name="new-password"
+                                               required>
                                     @endif
                                 </div>
                             </div>
@@ -57,8 +57,13 @@
                                     Password</label>
 
                                 <div class="col-md-6">
-                                    <input id="new-password-confirm" type="password" class="form-control"
-                                           name="new-password_confirmation" required>
+                                    @if ($errors->has('new-password-confirm'))
+                                        <input id="new-password-confirm" style="background-color: #f44336 "  type="password" class="form-control" name="new-password"
+                                               required>
+                                    @else
+                                        <input id="new-password-confirm" type="password" class="form-control" name="new-password"
+                                               required>
+                                    @endif
                                 </div>
                             </div>
 
