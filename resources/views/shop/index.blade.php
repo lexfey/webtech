@@ -36,7 +36,7 @@
                     </a>
                     <div class="desc">
                         <p>{{$product->name}}</p>
-                        <p>{{$product->price}}€, {{$product->size}}</p>
+                        <strong>{{$product->price}} EUR{{$product->size}}</strong>
                     </div>
                 </div>
               @endforeach
