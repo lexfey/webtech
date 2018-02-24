@@ -74,7 +74,7 @@
             <form action="addToCart/{{$product->id}}" method="get">
                 <div class="product_description">
                     <p class="product_name">{{$product->name}}</p>
-                    <p class="product_price">{{$product->price}}€</p>
+                    <p class="product_price">{{$product->price}} EUR</p>
 
                     <p class="desc">{{$product->descr}}</p>
                 </div>

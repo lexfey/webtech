@@ -303,6 +303,7 @@ class ProductController extends Controller
      *
      * Gets all the data for the order. Creates a new Order, saves it.
      * Sends a confirmation Email to the User. Deletes the cart.
+     * If there is no cart, the user probably returned to this page after submitting his order.
      *
      * @param Request $request Getting the form data, Address & Payment
      *
