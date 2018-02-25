@@ -34,7 +34,7 @@ class confirmationEmail extends Mailable
      * Build the message.
      *
      * @created by Alex
-     * @return $this
+     * @return $this->view with Email content
      */
     public function build()
     {

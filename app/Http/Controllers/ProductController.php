@@ -73,6 +73,13 @@ class ProductController extends Controller
         }
     }
 
+    /**
+     * Checks if all Items in shoppingCart are still available. And deletes items if not available.
+     *
+     * @created by Demi
+     *
+     * @return boolean $changes
+     */
     public function checkAvailable(Request $request){
         $changes = false;
         $oldcart = Session::get('cart');
@@ -263,38 +270,40 @@ class ProductController extends Controller
      */
     public function postCheckout(Request $request)
     {
-
-        $this->validate($request, [
-            'street' => 'required',
-            'name1'=> 'required',
-            'name2'=> 'required',
-            'zip'=> 'required',
-            'number'=> 'required',
-            'country' => 'required',
-            'city' => 'required',
-            'payment' => 'required'
-        ]);
-
-
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $total = $cart->totalPrice;
-
-        $firstName = Input::get('name1');
-        $lastName = Input::get('name2');
-        $street = Input::get('street');
-        $number = Input::get('number');
-        $country = Input::get('country');
-        $zip = Input::get('zip');
-        $city = Input::get('city');
-        $payment = Input::get('payment');
+        if (Session::has('cart')) {
+            $this->validate($request, [
+                'street' => 'required',
+                'name1' => 'required',
+                'name2' => 'required',
+                'zip' => 'required',
+                'number' => 'required',
+                'country' => 'required',
+                'city' => 'required',
+                'payment' => 'required'
+            ]);
 
 
-        return view('shop.finalCheckout', ['total' => $total, 'name1' => $firstName, 'street' => $street,
-            'city' => $city, 'country' => $country, 'payment' => $payment,
-            'number' => $number, 'zip' => $zip, 'name2' => $lastName, 'products' => $cart->items
-        ]);
+            $oldCart = Session::get('cart');
+            $cart = new Cart($oldCart);
+            $total = $cart->totalPrice;
 
+            $firstName = Input::get('name1');
+            $lastName = Input::get('name2');
+            $street = Input::get('street');
+            $number = Input::get('number');
+            $country = Input::get('country');
+            $zip = Input::get('zip');
+            $city = Input::get('city');
+            $payment = Input::get('payment');
+
+
+            return view('shop.finalCheckout', ['total' => $total, 'name1' => $firstName, 'street' => $street,
+                'city' => $city, 'country' => $country, 'payment' => $payment,
+                'number' => $number, 'zip' => $zip, 'name2' => $lastName, 'products' => $cart->items
+            ]);
+        }else{
+            return redirect()->route('shop.index')->with('error', 'You already placed your order!');
+        }
     }
 
     /**
@@ -426,7 +435,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'color'=> 'required',
-            'desc'=> 'required',
+            'descr'=> 'required',
             'sizeL'=> 'required',
             'sizeM'=> 'required',
             'sizeS'=> 'required',
@@ -562,7 +571,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'color'=> 'required',
-            'desc'=> 'required',
+            'descr'=> 'required',
             'sizeL'=> 'required',
             'sizeM'=> 'required',
             'sizeS'=> 'required',

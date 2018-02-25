@@ -71,7 +71,6 @@
                 <div class="checkItem">
                     {{Form::submit('Submit Your Order', ['class'=>'btn btn-primary',  'id'=>'submitButton'])}}
                     {!! Form::close() !!}
-                    <a id="Button" href="{{ URL::previous() }}">Back</a>
                 </div>
             </div>
         </div>
