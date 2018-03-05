@@ -71,15 +71,14 @@ Route::post('/changepassword', 'UserController@changePassword')->name('changepas
 
 Route::post('/deleteaccount', 'UserController@destroy')->name('deleteaccount');
 
-Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
-
 Route::get('/changeOrder/{id}', [
     'uses' => 'UserController@changeOrder',
     'middleware' => 'auth']);
 
+Route::get('/shop/addToCart/{id}', 'ProductController@getAddToCart');
+
 Route::get('/deleteFromCart/{id}', [
-    'uses' => 'ProductController@getDeleteFromCart',
-    'middleware' => 'auth']);
+    'uses' => 'ProductController@getDeleteFromCart']);
 
 Route::get('/shoppingCart', [
     'uses' => 'ProductController@getCart',
